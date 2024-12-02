@@ -83,8 +83,8 @@
 <li style="margin-bottom: 4px;">加载示例：
   <ul>
     <li>在GT HMI Designer中打开文件夹中的工程文件widget.gtui，可以查看界面的内容和进行编译。</li>
-    <li>工程编译后将board文件夹内的resource.bin文件使用烧录器烧录到自己设计的PCB板中的GUI芯片中，如使用高通的HMI模块或者GUI-LCD开发板，则使用SD卡升级即可。</li>
-    <li>如需购买高通的HMI模块或者GUI-LCD开发板请点击<a href="https://shop394781219.taobao.com/index.htm?spm=2013.1.w5002-23418933304.2.44c57b8fcEn8Qf" target="_blank">高通智享工坊</a>购买，</li>
+    <li>工程编译完成后，将board文件夹中的resource.bin文件通过烧录器烧录到您设计的PCB板中的GUI芯片。为确保最佳兼容性，建议您设计的PCB板也采用7寸屏。如果使用高通的HMI模块GTC-800480TFT70GP，则可以通过SD卡进行升级。</li>
+    <li>如需购买高通的HMI模块GTC-800480TFT70GP请点击<a href="https://shop394781219.taobao.com/index.htm?spm=2013.1.w5002-23418933304.2.44c57b8fcEn8Qf" target="_blank">高通智享工坊</a>购买，</li>
   </ul>
 </li>
 <li style="margin-bottom: 4px;">数据手册：<ul>
