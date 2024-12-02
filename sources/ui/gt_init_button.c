@@ -2,8 +2,8 @@
 #include "gt_font_config.h"
 
 
-/** buttonlabel_checkbox_title */
-gt_obj_st * buttonlabel_checkbox_title = NULL;
+/** button */
+gt_obj_st * button = NULL;
 static gt_obj_st * label_button_title = NULL;
 static gt_obj_st * label_image_title = NULL;
 static gt_obj_st * label_label_title = NULL;
@@ -98,21 +98,21 @@ static void lab9_0_cb(gt_event_st * e) {
 }
 
 static void lab10_0_cb(gt_event_st * e) {
-	gt_disp_stack_load_scr_anim(GT_ID_IBPUTNUM, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
+	
 }
 
-gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
+gt_obj_st * gt_init_button(void)
 {
-	buttonlabel_checkbox_title = gt_obj_create(NULL);
+	button = gt_obj_create(NULL);
 
-	gt_screen_set_bgcolor(buttonlabel_checkbox_title, gt_color_hex(0xFFFFFF));
+	gt_screen_set_bgcolor(button, gt_color_hex(0xFFFFFF));
 
 
 	
 
 	/** label_button_title */
 	/** 用于显示“button按钮”的标题 Label */
-	label_button_title = gt_label_create(buttonlabel_checkbox_title);
+	label_button_title = gt_label_create(button);
 	gt_obj_set_pos(label_button_title, 15, 14);
 	gt_obj_set_size(label_button_title, 139, 34);
 	gt_label_set_font_color(label_button_title, gt_color_hex(0x0080ff));
@@ -126,7 +126,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_image_title */
 	/** 用于显示“image图片”的标题 Label */
-	label_image_title = gt_label_create(buttonlabel_checkbox_title);
+	label_image_title = gt_label_create(button);
 	gt_obj_set_pos(label_image_title, 15, 51);
 	gt_obj_set_size(label_image_title, 139, 40);
 	gt_label_set_font_color(label_image_title, gt_color_hex(0x808080));
@@ -140,7 +140,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_label_title */
 	/** 用于显示“label标签”的标题 Label */
-	label_label_title = gt_label_create(buttonlabel_checkbox_title);
+	label_label_title = gt_label_create(button);
 	gt_obj_set_pos(label_label_title, 15, 95);
 	gt_obj_set_size(label_label_title, 139, 40);
 	gt_label_set_font_color(label_label_title, gt_color_hex(0x808080));
@@ -154,7 +154,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_txt_title */
 	/** 用于显示“txt文本区”的标题 Label */
-	label_txt_title = gt_label_create(buttonlabel_checkbox_title);
+	label_txt_title = gt_label_create(button);
 	gt_obj_set_pos(label_txt_title, 15, 138);
 	gt_obj_set_size(label_txt_title, 139, 40);
 	gt_label_set_font_color(label_txt_title, gt_color_hex(0x808080));
@@ -168,7 +168,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_input_title */
 	/** 用于显示“input输入框”的标题 Label */
-	label_input_title = gt_label_create(buttonlabel_checkbox_title);
+	label_input_title = gt_label_create(button);
 	gt_obj_set_pos(label_input_title, 15, 179);
 	gt_obj_set_size(label_input_title, 139, 40);
 	gt_label_set_font_color(label_input_title, gt_color_hex(0x808080));
@@ -182,7 +182,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_imgbtn_title */
 	/** 用于显示“imgbtn图片按钮”的标题 Label */
-	label_imgbtn_title = gt_label_create(buttonlabel_checkbox_title);
+	label_imgbtn_title = gt_label_create(button);
 	gt_obj_set_pos(label_imgbtn_title, 15, 222);
 	gt_obj_set_size(label_imgbtn_title, 159, 40);
 	gt_label_set_font_color(label_imgbtn_title, gt_color_hex(0x808080));
@@ -196,7 +196,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_keyboard_title */
 	/** 用于显示“keyboard键盘”的标题 Label */
-	label_keyboard_title = gt_label_create(buttonlabel_checkbox_title);
+	label_keyboard_title = gt_label_create(button);
 	gt_obj_set_pos(label_keyboard_title, 15, 267);
 	gt_obj_set_size(label_keyboard_title, 159, 40);
 	gt_label_set_font_color(label_keyboard_title, gt_color_hex(0x808080));
@@ -210,7 +210,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_switch10_title */
 	/** 用于显示“switch开关”的标题 Label */
-	label_switch10_title = gt_label_create(buttonlabel_checkbox_title);
+	label_switch10_title = gt_label_create(button);
 	gt_obj_set_pos(label_switch10_title, 15, 309);
 	gt_obj_set_size(label_switch10_title, 159, 40);
 	gt_label_set_font_color(label_switch10_title, gt_color_hex(0x808080));
@@ -224,7 +224,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_player_title */
 	/** 用于显示“player幻灯片”的标题 Label */
-	label_player_title = gt_label_create(buttonlabel_checkbox_title);
+	label_player_title = gt_label_create(button);
 	gt_obj_set_pos(label_player_title, 15, 351);
 	gt_obj_set_size(label_player_title, 159, 40);
 	gt_label_set_font_color(label_player_title, gt_color_hex(0x808080));
@@ -238,7 +238,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_inputNum_title */
 	/** 用于显示“inputNum计数器”的标题 Label */
-	label_inputNum_title = gt_label_create(buttonlabel_checkbox_title);
+	label_inputNum_title = gt_label_create(button);
 	gt_obj_set_pos(label_inputNum_title, 15, 393);
 	gt_obj_set_size(label_inputNum_title, 159, 40);
 	gt_label_set_font_color(label_inputNum_title, gt_color_hex(0x808080));
@@ -247,12 +247,12 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 	gt_label_set_font_align(label_inputNum_title, GT_ALIGN_LEFT_MID);
 	gt_label_set_text(label_inputNum_title, "inputNum 计数器");
 	gt_label_set_space(label_inputNum_title, 0, 0);
-	gt_obj_add_event_cb(label_inputNum_title, lab10_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+
 	
 
 	/** label_clock_title */
 	/** 用于显示“clock时钟”的标题 Label */
-	label_clock_title = gt_label_create(buttonlabel_checkbox_title);
+	label_clock_title = gt_label_create(button);
 	gt_obj_set_pos(label_clock_title, 15, 436);
 	gt_obj_set_size(label_clock_title, 159, 40);
 	gt_label_set_font_color(label_clock_title, gt_color_hex(0x808080));
@@ -266,7 +266,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_barcode_title */
 	/** 用于显示“barcode一维码”的标题 Label */
-	label_barcode_title = gt_label_create(buttonlabel_checkbox_title);
+	label_barcode_title = gt_label_create(button);
 	gt_obj_set_pos(label_barcode_title, 15, 479);
 	gt_obj_set_size(label_barcode_title, 159, 40);
 	gt_label_set_font_color(label_barcode_title, gt_color_hex(0x808080));
@@ -280,7 +280,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_qrcode_title */
 	/** 用于显示“qrcode二维码”的标题 Label */
-	label_qrcode_title = gt_label_create(buttonlabel_checkbox_title);
+	label_qrcode_title = gt_label_create(button);
 	gt_obj_set_pos(label_qrcode_title, 15, 522);
 	gt_obj_set_size(label_qrcode_title, 159, 40);
 	gt_label_set_font_color(label_qrcode_title, gt_color_hex(0x808080));
@@ -294,7 +294,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_viewPager_title */
 	/** 用于显示“viewPager滑窗”的标题 Label */
-	label_viewPager_title = gt_label_create(buttonlabel_checkbox_title);
+	label_viewPager_title = gt_label_create(button);
 	gt_obj_set_pos(label_viewPager_title, 15, 565);
 	gt_obj_set_size(label_viewPager_title, 159, 40);
 	gt_label_set_font_color(label_viewPager_title, gt_color_hex(0x808080));
@@ -308,7 +308,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_diglog_title */
 	/** 用于显示“diglog对话框”的标题 Label */
-	label_diglog_title = gt_label_create(buttonlabel_checkbox_title);
+	label_diglog_title = gt_label_create(button);
 	gt_obj_set_pos(label_diglog_title, 15, 608);
 	gt_obj_set_size(label_diglog_title, 159, 40);
 	gt_label_set_font_color(label_diglog_title, gt_color_hex(0x808080));
@@ -322,7 +322,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_gif_title */
 	/** 用于显示“gifGIF图片”的标题 Label */
-	label_gif_title = gt_label_create(buttonlabel_checkbox_title);
+	label_gif_title = gt_label_create(button);
 	gt_obj_set_pos(label_gif_title, 15, 652);
 	gt_obj_set_size(label_gif_title, 159, 40);
 	gt_label_set_font_color(label_gif_title, gt_color_hex(0x808080));
@@ -336,7 +336,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_layout_title */
 	/** 用于显示“layout布局”的标题 Label */
-	label_layout_title = gt_label_create(buttonlabel_checkbox_title);
+	label_layout_title = gt_label_create(button);
 	gt_obj_set_pos(label_layout_title, 15, 693);
 	gt_obj_set_size(label_layout_title, 159, 40);
 	gt_label_set_font_color(label_layout_title, gt_color_hex(0x808080));
@@ -350,7 +350,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_mediaplayer_title */
 	/** 用于显示“mediaplayer播放器”的标题 Label */
-	label_mediaplayer_title = gt_label_create(buttonlabel_checkbox_title);
+	label_mediaplayer_title = gt_label_create(button);
 	gt_obj_set_pos(label_mediaplayer_title, 15, 732);
 	gt_obj_set_size(label_mediaplayer_title, 172, 40);
 	gt_label_set_font_color(label_mediaplayer_title, gt_color_hex(0x808080));
@@ -364,7 +364,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_group_title */
 	/** 用于显示“group分组”的标题 Label */
-	label_group_title = gt_label_create(buttonlabel_checkbox_title);
+	label_group_title = gt_label_create(button);
 	gt_obj_set_pos(label_group_title, 15, 772);
 	gt_obj_set_size(label_group_title, 159, 40);
 	gt_label_set_font_color(label_group_title, gt_color_hex(0x808080));
@@ -378,7 +378,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_slider_title */
 	/** 用于显示“slider滑动条”的标题 Label */
-	label_slider_title = gt_label_create(buttonlabel_checkbox_title);
+	label_slider_title = gt_label_create(button);
 	gt_obj_set_pos(label_slider_title, 15, 814);
 	gt_obj_set_size(label_slider_title, 159, 40);
 	gt_label_set_font_color(label_slider_title, gt_color_hex(0x808080));
@@ -392,7 +392,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_bar_title */
 	/** 用于显示“bar进度条”的标题 Label */
-	label_bar_title = gt_label_create(buttonlabel_checkbox_title);
+	label_bar_title = gt_label_create(button);
 	gt_obj_set_pos(label_bar_title, 14, 855);
 	gt_obj_set_size(label_bar_title, 159, 40);
 	gt_label_set_font_color(label_bar_title, gt_color_hex(0x808080));
@@ -406,7 +406,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_radio_title */
 	/** 用于显示“radio单选框”的标题 Label */
-	label_radio_title = gt_label_create(buttonlabel_checkbox_title);
+	label_radio_title = gt_label_create(button);
 	gt_obj_set_pos(label_radio_title, 14, 895);
 	gt_obj_set_size(label_radio_title, 159, 40);
 	gt_label_set_font_color(label_radio_title, gt_color_hex(0x808080));
@@ -420,7 +420,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_checkbox_title */
 	/** 用于显示“checkbox复选框”的标题 Label */
-	label_checkbox_title = gt_label_create(buttonlabel_checkbox_title);
+	label_checkbox_title = gt_label_create(button);
 	gt_obj_set_pos(label_checkbox_title, 15, 936);
 	gt_obj_set_size(label_checkbox_title, 159, 40);
 	gt_label_set_font_color(label_checkbox_title, gt_color_hex(0x808080));
@@ -434,7 +434,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_listv_title */
 	/** 用于显示“listv列表”的标题 Label */
-	label_listv_title = gt_label_create(buttonlabel_checkbox_title);
+	label_listv_title = gt_label_create(button);
 	gt_obj_set_pos(label_listv_title, 15, 976);
 	gt_obj_set_size(label_listv_title, 159, 40);
 	gt_label_set_font_color(label_listv_title, gt_color_hex(0x808080));
@@ -448,7 +448,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_roller_title */
 	/** 用于显示“roller滚轮”的标题 Label */
-	label_roller_title = gt_label_create(buttonlabel_checkbox_title);
+	label_roller_title = gt_label_create(button);
 	gt_obj_set_pos(label_roller_title, 15, 1018);
 	gt_obj_set_size(label_roller_title, 159, 40);
 	gt_label_set_font_color(label_roller_title, gt_color_hex(0x808080));
@@ -462,7 +462,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_graph_title */
 	/** 用于显示“graph线图”的标题 Label */
-	label_graph_title = gt_label_create(buttonlabel_checkbox_title);
+	label_graph_title = gt_label_create(button);
 	gt_obj_set_pos(label_graph_title, 15, 1059);
 	gt_obj_set_size(label_graph_title, 159, 40);
 	gt_label_set_font_color(label_graph_title, gt_color_hex(0x808080));
@@ -476,7 +476,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_rect_title */
 	/** 用于显示“rect矩形”的标题 Label */
-	label_rect_title = gt_label_create(buttonlabel_checkbox_title);
+	label_rect_title = gt_label_create(button);
 	gt_obj_set_pos(label_rect_title, 15, 1099);
 	gt_obj_set_size(label_rect_title, 159, 40);
 	gt_label_set_font_color(label_rect_title, gt_color_hex(0x808080));
@@ -490,7 +490,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_statusbartitle */
 	/** 用于显示“statusbar状态栏”的标题 Label */
-	label_statusbartitle = gt_label_create(buttonlabel_checkbox_title);
+	label_statusbartitle = gt_label_create(button);
 	gt_obj_set_pos(label_statusbartitle, 15, 1182);
 	gt_obj_set_size(label_statusbartitle, 159, 40);
 	gt_label_set_font_color(label_statusbartitle, gt_color_hex(0x808080));
@@ -504,7 +504,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_screen_title */
 	/** 用于显示“screen屏幕”的标题 Label */
-	label_screen_title = gt_label_create(buttonlabel_checkbox_title);
+	label_screen_title = gt_label_create(button);
 	gt_obj_set_pos(label_screen_title, 15, 1140);
 	gt_obj_set_size(label_screen_title, 159, 40);
 	gt_label_set_font_color(label_screen_title, gt_color_hex(0x808080));
@@ -518,7 +518,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** rect1 */
 	/** 矩形线框 */
-	rect1 = gt_rect_create(buttonlabel_checkbox_title);
+	rect1 = gt_rect_create(button);
 	gt_obj_set_pos(rect1, 237, 64);
 	gt_obj_set_size(rect1, 509, 270);
 	gt_rect_set_radius(rect1, 0);
@@ -530,7 +530,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 	
 
 	/** rect2 */
-	rect2 = gt_rect_create(buttonlabel_checkbox_title);
+	rect2 = gt_rect_create(button);
 	gt_obj_set_pos(rect2, 216, 73);
 	gt_obj_set_size(rect2, 138, 38);
 	gt_rect_set_radius(rect2, 0);
@@ -542,7 +542,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 	
 
 	/** rect3 */
-	rect3 = gt_rect_create(buttonlabel_checkbox_title);
+	rect3 = gt_rect_create(button);
 	gt_obj_set_pos(rect3, 187, 1);
 	gt_obj_set_size(rect3, 1, 1300);
 	gt_rect_set_radius(rect3, 0);
@@ -555,7 +555,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** blue_button */
 	/**  蓝色实心按钮 */
-	blue_button = gt_btn_create(buttonlabel_checkbox_title);
+	blue_button = gt_btn_create(button);
 	gt_obj_set_pos(blue_button, 601, 137);
 	gt_obj_set_size(blue_button, 120, 50);
 	gt_btn_set_font_color(blue_button, gt_color_hex(0xffffff));
@@ -566,13 +566,13 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 	gt_btn_set_color_background(blue_button, gt_color_hex(0x1976D2));
 	gt_btn_set_color_pressed(blue_button, gt_color_hex(0xb7d7f7));
 	gt_btn_set_font_color_pressed(blue_button, gt_color_hex(0xffffff));
-	gt_btn_set_radius(blue_button, 1);
+	gt_btn_set_radius(blue_button, 0);
 
 	
 
 	/** green_button_outlined */
 	/** 绿色实心带边框按钮 */
-	green_button_outlined = gt_btn_create(buttonlabel_checkbox_title);
+	green_button_outlined = gt_btn_create(button);
 	gt_obj_set_pos(green_button_outlined, 265, 230);
 	gt_obj_set_size(green_button_outlined, 120, 50);
 	gt_btn_set_font_color(green_button_outlined, gt_color_hex(0xffffff));
@@ -585,13 +585,13 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 	gt_btn_set_font_color_pressed(green_button_outlined, gt_color_hex(0x000000));
 	gt_btn_set_color_border(green_button_outlined, gt_color_hex(0x60ffff));
 	gt_btn_set_border_width(green_button_outlined, 3);
-	gt_btn_set_radius(green_button_outlined, 1);
+	gt_btn_set_radius(green_button_outlined, 0);
 
 	
 
 	/** yellow_back_ok_button */
 	/** 黄色“返回”"确定"按钮 */
-	yellow_back_ok_button = gt_btn_create(buttonlabel_checkbox_title);
+	yellow_back_ok_button = gt_btn_create(button);
 	gt_obj_set_pos(yellow_back_ok_button, 432, 230);
 	gt_obj_set_size(yellow_back_ok_button, 120, 50);
 	gt_btn_set_font_color(yellow_back_ok_button, gt_color_hex(0x000000));
@@ -602,7 +602,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 	gt_btn_set_color_background(yellow_back_ok_button, gt_color_hex(0xFECB31));
 	gt_btn_set_color_pressed(yellow_back_ok_button, gt_color_hex(0xfff0c1));
 	gt_btn_set_font_color_pressed(yellow_back_ok_button, gt_color_hex(0x000000));
-	gt_btn_set_radius(yellow_back_ok_button, 1);
+	gt_btn_set_radius(yellow_back_ok_button, 0);
 	gt_btn_add_state_content(yellow_back_ok_button, "OK");
 	gt_btn_add_state_content(yellow_back_ok_button, "back");
 
@@ -610,7 +610,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** fuchsia_outlined */
 	/** 粉红色按钮，带边框 */
-	fuchsia_outlined = gt_btn_create(buttonlabel_checkbox_title);
+	fuchsia_outlined = gt_btn_create(button);
 	gt_obj_set_pos(fuchsia_outlined, 432, 138);
 	gt_obj_set_size(fuchsia_outlined, 120, 50);
 	gt_btn_set_font_color(fuchsia_outlined, gt_color_hex(0xff0080));
@@ -623,12 +623,12 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 	gt_btn_set_font_color_pressed(fuchsia_outlined, gt_color_hex(0xff0080));
 	gt_btn_set_color_border(fuchsia_outlined, gt_color_hex(0xff0080));
 	gt_btn_set_border_width(fuchsia_outlined, 3);
-	gt_btn_set_radius(fuchsia_outlined, 1);
+	gt_btn_set_radius(fuchsia_outlined, 0);
 
 	
 
 	/** rect4 */
-	rect4 = gt_rect_create(buttonlabel_checkbox_title);
+	rect4 = gt_rect_create(button);
 	gt_obj_set_pos(rect4, 237, 354);
 	gt_obj_set_size(rect4, 509, 328);
 	gt_rect_set_radius(rect4, 0);
@@ -640,7 +640,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 	
 
 	/** rect5 */
-	rect5 = gt_rect_create(buttonlabel_checkbox_title);
+	rect5 = gt_rect_create(button);
 	gt_obj_set_pos(rect5, 215, 363);
 	gt_obj_set_size(rect5, 138, 38);
 	gt_rect_set_radius(rect5, 0);
@@ -653,7 +653,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_shape_title */
 	/** 用于显示“形状”的标题 Label */
-	label_shape_title = gt_label_create(buttonlabel_checkbox_title);
+	label_shape_title = gt_label_create(button);
 	gt_obj_set_pos(label_shape_title, 260, 365);
 	gt_obj_set_size(label_shape_title, 66, 34);
 	gt_label_set_font_color(label_shape_title, gt_color_hex(0x000000));
@@ -667,7 +667,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** rounded_brown_button */
 	/**  棕色圆角按钮 */
-	rounded_brown_button = gt_btn_create(buttonlabel_checkbox_title);
+	rounded_brown_button = gt_btn_create(button);
 	gt_obj_set_pos(rounded_brown_button, 268, 444);
 	gt_obj_set_size(rounded_brown_button, 114, 51);
 	gt_btn_set_font_color(rounded_brown_button, gt_color_hex(0xffffff));
@@ -684,7 +684,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** rounded_orange_button */
 	/** 橙色实心圆角按钮 */
-	rounded_orange_button = gt_btn_create(buttonlabel_checkbox_title);
+	rounded_orange_button = gt_btn_create(button);
 	gt_obj_set_pos(rounded_orange_button, 433, 444);
 	gt_obj_set_size(rounded_orange_button, 119, 51);
 	gt_btn_set_font_color(rounded_orange_button, gt_color_hex(0xffffff));
@@ -701,7 +701,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** right_angle_blue_button */
 	/** 蓝色直角按钮 */
-	right_angle_blue_button = gt_btn_create(buttonlabel_checkbox_title);
+	right_angle_blue_button = gt_btn_create(button);
 	gt_obj_set_pos(right_angle_blue_button, 268, 553);
 	gt_obj_set_size(right_angle_blue_button, 116, 50);
 	gt_btn_set_font_color(right_angle_blue_button, gt_color_hex(0xffffff));
@@ -712,14 +712,14 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 	gt_btn_set_color_background(right_angle_blue_button, gt_color_hex(0x1976D2));
 	gt_btn_set_color_pressed(right_angle_blue_button, gt_color_hex(0x5ba4ec));
 	gt_btn_set_font_color_pressed(right_angle_blue_button, gt_color_hex(0xffffff));
-	gt_btn_set_radius(right_angle_blue_button, 1);
+	gt_btn_set_radius(right_angle_blue_button, 0);
 
 	
 
 	/** square_fuchsia_button */
 	/** 粉红色方形按钮 */
-	square_fuchsia_button = gt_btn_create(buttonlabel_checkbox_title);
-	gt_obj_set_pos(square_fuchsia_button, 460, 544);
+	square_fuchsia_button = gt_btn_create(button);
+	gt_obj_set_pos(square_fuchsia_button, 458, 544);
 	gt_obj_set_size(square_fuchsia_button, 70, 70);
 	gt_btn_set_font_color(square_fuchsia_button, gt_color_hex(0xffffff));
 	gt_btn_set_font_family(square_fuchsia_button, gray_black_20);
@@ -735,7 +735,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** circle_cyan_button */
 	/** 青绿色圆形按钮 */
-	circle_cyan_button = gt_btn_create(buttonlabel_checkbox_title);
+	circle_cyan_button = gt_btn_create(button);
 	gt_obj_set_pos(circle_cyan_button, 620, 544);
 	gt_obj_set_size(circle_cyan_button, 70, 70);
 	gt_btn_set_font_color(circle_cyan_button, gt_color_hex(0x000000));
@@ -752,7 +752,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_button_category */
 	/** 按钮控件板块的标题Label */
-	label_button_category = gt_label_create(buttonlabel_checkbox_title);
+	label_button_category = gt_label_create(button);
 	gt_obj_set_pos(label_button_category, 240, 14);
 	gt_obj_set_size(label_button_category, 162, 34);
 	gt_label_set_font_color(label_button_category, gt_color_hex(0x0080ff));
@@ -766,7 +766,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_color_title */
 	/** 用于显示“颜色”的标题 Label */
-	label_color_title = gt_label_create(buttonlabel_checkbox_title);
+	label_color_title = gt_label_create(button);
 	gt_obj_set_pos(label_color_title, 260, 75);
 	gt_obj_set_size(label_color_title, 66, 34);
 	gt_label_set_font_color(label_color_title, gt_color_hex(0x000000));
@@ -779,7 +779,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 	
 
 	/** rect6 */
-	rect6 = gt_rect_create(buttonlabel_checkbox_title);
+	rect6 = gt_rect_create(button);
 	gt_obj_set_pos(rect6, 237, 703);
 	gt_obj_set_size(rect6, 509, 328);
 	gt_rect_set_radius(rect6, 0);
@@ -791,7 +791,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 	
 
 	/** rect7 */
-	rect7 = gt_rect_create(buttonlabel_checkbox_title);
+	rect7 = gt_rect_create(button);
 	gt_obj_set_pos(rect7, 215, 713);
 	gt_obj_set_size(rect7, 138, 38);
 	gt_rect_set_radius(rect7, 0);
@@ -804,7 +804,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** label_icon_title */
 	/** 用于显示“带图标”的标题 Label */
-	label_icon_title = gt_label_create(buttonlabel_checkbox_title);
+	label_icon_title = gt_label_create(button);
 	gt_obj_set_pos(label_icon_title, 259, 715);
 	gt_obj_set_size(label_icon_title, 82, 34);
 	gt_label_set_font_color(label_icon_title, gt_color_hex(0x000000));
@@ -818,7 +818,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** fuchsia_flat */
 	/** 粉红色按钮，无边框 */
-	fuchsia_flat = gt_btn_create(buttonlabel_checkbox_title);
+	fuchsia_flat = gt_btn_create(button);
 	gt_obj_set_pos(fuchsia_flat, 265, 138);
 	gt_obj_set_size(fuchsia_flat, 120, 50);
 	gt_btn_set_font_color(fuchsia_flat, gt_color_hex(0xff0080));
@@ -829,13 +829,13 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 	gt_btn_set_color_background(fuchsia_flat, gt_color_hex(0xffffff));
 	gt_btn_set_color_pressed(fuchsia_flat, gt_color_hex(0xffdbed));
 	gt_btn_set_font_color_pressed(fuchsia_flat, gt_color_hex(0xff0080));
-	gt_btn_set_radius(fuchsia_flat, 1);
+	gt_btn_set_radius(fuchsia_flat, 0);
 
 	
 
 	/** outlined_orange_button */
 	/** 橙色圆角边框按钮 */
-	outlined_orange_button = gt_btn_create(buttonlabel_checkbox_title);
+	outlined_orange_button = gt_btn_create(button);
 	gt_obj_set_pos(outlined_orange_button, 595, 444);
 	gt_obj_set_size(outlined_orange_button, 119, 51);
 	gt_btn_set_font_color(outlined_orange_button, gt_color_hex(0xff8000));
@@ -854,7 +854,7 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** stacked_icon_button */
 	/** 图标与文字垂直堆叠的按钮 */
-	stacked_icon_button = gt_btn_create(buttonlabel_checkbox_title);
+	stacked_icon_button = gt_btn_create(button);
 	gt_obj_set_pos(stacked_icon_button, 484, 887);
 	gt_obj_set_size(stacked_icon_button, 120, 70);
 	gt_btn_set_font_color(stacked_icon_button, gt_color_hex(0xffffff));
@@ -865,22 +865,22 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 	gt_btn_set_color_background(stacked_icon_button, gt_color_hex(0x1976D2));
 	gt_btn_set_color_pressed(stacked_icon_button, gt_color_hex(0xb7d7f7));
 	gt_btn_set_font_color_pressed(stacked_icon_button, gt_color_hex(0xffffff));
-	gt_btn_set_radius(stacked_icon_button, 1);
+	gt_btn_set_radius(stacked_icon_button, 0);
 
 	
 
 	/** icon_click */
 	/** 点击图标 */
-	icon_click = gt_img_create(buttonlabel_checkbox_title);
+	icon_click = gt_img_create(button);
 	gt_obj_set_pos(icon_click, 526, 890);
 	gt_obj_set_size(icon_click, 40, 40);
-	gt_img_set_src(icon_click, "f:img_turn_on_0_52_40x40.png");
+	gt_img_set_src(icon_click, ".:img_turn_on_0_52_40x40.png");
 
 	
 
 	/** icon_left_globe_button */
 	/** 带地球图标，图标居左的按钮 */
-	icon_left_globe_button = gt_btn_create(buttonlabel_checkbox_title);
+	icon_left_globe_button = gt_btn_create(button);
 	gt_obj_set_pos(icon_left_globe_button, 263, 787);
 	gt_obj_set_size(icon_left_globe_button, 125, 43);
 	gt_btn_set_font_color(icon_left_globe_button, gt_color_hex(0xffffff));
@@ -897,16 +897,16 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** icon_globe */
 	/** 地球图标 */
-	icon_globe = gt_img_create(buttonlabel_checkbox_title);
+	icon_globe = gt_img_create(button);
 	gt_obj_set_pos(icon_globe, 279, 794);
 	gt_obj_set_size(icon_globe, 30, 30);
-	gt_img_set_src(icon_globe, "f:img_globe_regular_30x30.png");
+	gt_img_set_src(icon_globe, ".:img_globe_regular_30x30.png");
 
 	
 
 	/** icon_left_right_sun_button */
 	/**  左侧有太阳图标，右侧有箭头图标的按钮 */
-	icon_left_right_sun_button = gt_btn_create(buttonlabel_checkbox_title);
+	icon_left_right_sun_button = gt_btn_create(button);
 	gt_obj_set_pos(icon_left_right_sun_button, 413, 786);
 	gt_obj_set_size(icon_left_right_sun_button, 308, 43);
 	gt_btn_set_font_color(icon_left_right_sun_button, gt_color_hex(0xffffff));
@@ -923,25 +923,25 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** icon_right */
 	/** 箭头图标 */
-	icon_right = gt_img_create(buttonlabel_checkbox_title);
+	icon_right = gt_img_create(button);
 	gt_obj_set_pos(icon_right, 665, 792);
 	gt_obj_set_size(icon_right, 30, 30);
-	gt_img_set_src(icon_right, "f:img_telegram_0_56_30x30.png");
+	gt_img_set_src(icon_right, ".:img_telegram_0_56_30x30.png");
 
 	
 
 	/** icon_sun */
 	/** 太阳图标 */
-	icon_sun = gt_img_create(buttonlabel_checkbox_title);
+	icon_sun = gt_img_create(button);
 	gt_obj_set_pos(icon_sun, 439, 792);
 	gt_obj_set_size(icon_sun, 30, 30);
-	gt_img_set_src(icon_sun, "f:img_concept_sharing_0_57_30x30.png");
+	gt_img_set_src(icon_sun, ".:img_concept_sharing_0_57_30x30.png");
 
 	
 
 	/** icon_right_globe_button */
 	/** 带地球图标，图标居y右的按钮 */
-	icon_right_globe_button = gt_btn_create(buttonlabel_checkbox_title);
+	icon_right_globe_button = gt_btn_create(button);
 	gt_obj_set_pos(icon_right_globe_button, 263, 900);
 	gt_obj_set_size(icon_right_globe_button, 125, 43);
 	gt_btn_set_font_color(icon_right_globe_button, gt_color_hex(0xffffff));
@@ -958,13 +958,13 @@ gt_obj_st * gt_init_buttonlabel_checkbox_title(void)
 
 	/** icon_globe2 */
 	/** 地球图标 */
-	icon_globe2 = gt_img_create(buttonlabel_checkbox_title);
+	icon_globe2 = gt_img_create(button);
 	gt_obj_set_pos(icon_globe2, 344, 907);
 	gt_obj_set_size(icon_globe2, 30, 30);
-	gt_img_set_src(icon_globe2, "f:img_globe_regular_30x30.png");
+	gt_img_set_src(icon_globe2, ".:img_globe_regular_30x30.png");
 
 
 
-	return buttonlabel_checkbox_title;
+	return button;
 }
 

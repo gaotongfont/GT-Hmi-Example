@@ -35,7 +35,7 @@ static gt_obj_st * label_statusbartitle = NULL;
 static gt_obj_st * label_screen_title = NULL;
 static gt_obj_st * rect1 = NULL;
 static gt_obj_st * rect3 = NULL;
-static gt_obj_st * lab31 = NULL;
+static gt_obj_st * label_image_category = NULL;
 static gt_obj_st * img1 = NULL;
 static gt_obj_st * img2 = NULL;
 static gt_obj_st * img3 = NULL;
@@ -43,7 +43,7 @@ static gt_obj_st * img4 = NULL;
 static gt_obj_st * img5 = NULL;
 
 static void lab1_0_cb(gt_event_st * e) {
-	gt_disp_stack_load_scr_anim(GT_ID_BUTTONLABEL_CHECKBOX_TITLE, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
+	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
 static void label_image_title_0_cb(gt_event_st * e) {
@@ -79,7 +79,7 @@ static void lab9_0_cb(gt_event_st * e) {
 }
 
 static void lab10_0_cb(gt_event_st * e) {
-	gt_disp_stack_load_scr_anim(GT_ID_IBPUTNUM, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
+	
 }
 
 gt_obj_st * gt_init_image(void)
@@ -228,7 +228,7 @@ gt_obj_st * gt_init_image(void)
 	gt_label_set_font_align(label_inputNum_title, GT_ALIGN_LEFT_MID);
 	gt_label_set_text(label_inputNum_title, "inputNum 计数器");
 	gt_label_set_space(label_inputNum_title, 0, 0);
-	gt_obj_add_event_cb(label_inputNum_title, lab10_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+
 	
 
 	/** label_clock_title */
@@ -521,16 +521,17 @@ gt_obj_st * gt_init_image(void)
 
 	
 
-	/** lab31 */
-	lab31 = gt_label_create(image);
-	gt_obj_set_pos(lab31, 240, 14);
-	gt_obj_set_size(lab31, 162, 34);
-	gt_label_set_font_color(lab31, gt_color_hex(0x0080ff));
-	gt_label_set_font_family(lab31, gray_black_24);
-	gt_label_set_font_cjk(lab31, 0);
-	gt_label_set_font_align(lab31, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab31, "图片控件");
-	gt_label_set_space(lab31, 0, 0);
+	/** label_image_category */
+	/** 图片控件板块的标题Label */
+	label_image_category = gt_label_create(image);
+	gt_obj_set_pos(label_image_category, 240, 14);
+	gt_obj_set_size(label_image_category, 162, 34);
+	gt_label_set_font_color(label_image_category, gt_color_hex(0x0080ff));
+	gt_label_set_font_family(label_image_category, gray_black_24);
+	gt_label_set_font_cjk(label_image_category, 0);
+	gt_label_set_font_align(label_image_category, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_image_category, "图片控件");
+	gt_label_set_space(label_image_category, 0, 0);
 
 	
 

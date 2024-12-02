@@ -4,49 +4,49 @@
 
 /** player */
 gt_obj_st * player = NULL;
-static gt_obj_st * lab1 = NULL;
-static gt_obj_st * lab2 = NULL;
-static gt_obj_st * lab3 = NULL;
-static gt_obj_st * lab4 = NULL;
-static gt_obj_st * lab5 = NULL;
-static gt_obj_st * lab6 = NULL;
-static gt_obj_st * lab7 = NULL;
-static gt_obj_st * lab8 = NULL;
-static gt_obj_st * lab9 = NULL;
-static gt_obj_st * lab10 = NULL;
-static gt_obj_st * lab11 = NULL;
-static gt_obj_st * lab12 = NULL;
-static gt_obj_st * lab13 = NULL;
-static gt_obj_st * lab14 = NULL;
-static gt_obj_st * lab15 = NULL;
-static gt_obj_st * lab16 = NULL;
-static gt_obj_st * lab17 = NULL;
-static gt_obj_st * lab18 = NULL;
-static gt_obj_st * lab19 = NULL;
-static gt_obj_st * lab20 = NULL;
-static gt_obj_st * lab21 = NULL;
-static gt_obj_st * lab22 = NULL;
-static gt_obj_st * lab23 = NULL;
-static gt_obj_st * lab24 = NULL;
-static gt_obj_st * lab25 = NULL;
-static gt_obj_st * lab26 = NULL;
-static gt_obj_st * lab27 = NULL;
-static gt_obj_st * lab29 = NULL;
-static gt_obj_st * lab28 = NULL;
+static gt_obj_st * label_button_title = NULL;
+static gt_obj_st * label_image_title = NULL;
+static gt_obj_st * label_label_title = NULL;
+static gt_obj_st * label_txt_title = NULL;
+static gt_obj_st * label_input_title = NULL;
+static gt_obj_st * label_imgbtn_title = NULL;
+static gt_obj_st * label_keyboard_title = NULL;
+static gt_obj_st * label_switch10_title = NULL;
+static gt_obj_st * label_player_title = NULL;
+static gt_obj_st * label_inputNum_title = NULL;
+static gt_obj_st * label_clock_title = NULL;
+static gt_obj_st * label_barcode_title = NULL;
+static gt_obj_st * label_qrcode_title = NULL;
+static gt_obj_st * label_viewPager_title = NULL;
+static gt_obj_st * label_diglog_title = NULL;
+static gt_obj_st * label_gif_title = NULL;
+static gt_obj_st * label_layout_title = NULL;
+static gt_obj_st * label_mediaplayer_title = NULL;
+static gt_obj_st * label_group_title = NULL;
+static gt_obj_st * label_slider_title = NULL;
+static gt_obj_st * label_bar_title = NULL;
+static gt_obj_st * label_radio_title = NULL;
+static gt_obj_st * label_checkbox_title = NULL;
+static gt_obj_st * label_listv_title = NULL;
+static gt_obj_st * label_roller_title = NULL;
+static gt_obj_st * label_graph_title = NULL;
+static gt_obj_st * label_rect_title = NULL;
+static gt_obj_st * label_statusbartitle = NULL;
+static gt_obj_st * label_screen_title = NULL;
 static gt_obj_st * rect3 = NULL;
-static gt_obj_st * lab31 = NULL;
+static gt_obj_st * label_player_category = NULL;
 static gt_obj_st * rect4 = NULL;
 static gt_obj_st * player1 = NULL;
 
 static void lab1_0_cb(gt_event_st * e) {
-	gt_disp_stack_load_scr_anim(GT_ID_BUTTONLABEL_CHECKBOX_TITLE, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
+	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
 static void lab2_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_IMAGE, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab3_0_cb(gt_event_st * e) {
+static void label_label_title_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_LABEL, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
@@ -71,7 +71,7 @@ static void lab8_0_cb(gt_event_st * e) {
 }
 
 static void lab10_0_cb(gt_event_st * e) {
-	gt_disp_stack_load_scr_anim(GT_ID_IBPUTNUM, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
+	
 }
 
 gt_obj_st * gt_init_player(void)
@@ -83,380 +83,409 @@ gt_obj_st * gt_init_player(void)
 
 	
 
-	/** lab1 */
-	lab1 = gt_label_create(player);
-	gt_obj_set_pos(lab1, 15, 14);
-	gt_obj_set_size(lab1, 139, 34);
-	gt_label_set_font_color(lab1, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab1, gray_black_16);
-	gt_label_set_font_cjk(lab1, 0);
-	gt_label_set_font_align(lab1, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab1, "button 按钮");
-	gt_label_set_space(lab1, 0, 0);
-	gt_obj_add_event_cb(lab1, lab1_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	/** label_button_title */
+	/** 用于显示“button按钮”的标题 Label */
+	label_button_title = gt_label_create(player);
+	gt_obj_set_pos(label_button_title, 15, 14);
+	gt_obj_set_size(label_button_title, 139, 34);
+	gt_label_set_font_color(label_button_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_button_title, gray_black_16);
+	gt_label_set_font_cjk(label_button_title, 0);
+	gt_label_set_font_align(label_button_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_button_title, "button 按钮");
+	gt_label_set_space(label_button_title, 0, 0);
+	gt_obj_add_event_cb(label_button_title, lab1_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
-	/** lab2 */
-	lab2 = gt_label_create(player);
-	gt_obj_set_pos(lab2, 15, 51);
-	gt_obj_set_size(lab2, 139, 40);
-	gt_label_set_font_color(lab2, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab2, gray_black_16);
-	gt_label_set_font_cjk(lab2, 0);
-	gt_label_set_font_align(lab2, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab2, "image 图片");
-	gt_label_set_space(lab2, 0, 0);
-	gt_obj_add_event_cb(lab2, lab2_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	/** label_image_title */
+	/** 用于显示“image图片”的标题 Label */
+	label_image_title = gt_label_create(player);
+	gt_obj_set_pos(label_image_title, 15, 51);
+	gt_obj_set_size(label_image_title, 139, 40);
+	gt_label_set_font_color(label_image_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_image_title, gray_black_16);
+	gt_label_set_font_cjk(label_image_title, 0);
+	gt_label_set_font_align(label_image_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_image_title, "image 图片");
+	gt_label_set_space(label_image_title, 0, 0);
+	gt_obj_add_event_cb(label_image_title, lab2_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
-	/** lab3 */
-	lab3 = gt_label_create(player);
-	gt_obj_set_pos(lab3, 15, 95);
-	gt_obj_set_size(lab3, 139, 40);
-	gt_label_set_font_color(lab3, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab3, gray_black_16);
-	gt_label_set_font_cjk(lab3, 0);
-	gt_label_set_font_align(lab3, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab3, "label 标签");
-	gt_label_set_space(lab3, 0, 0);
-	gt_obj_add_event_cb(lab3, lab3_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	/** label_label_title */
+	/** 用于显示“label标签”的标题 Label */
+	label_label_title = gt_label_create(player);
+	gt_obj_set_pos(label_label_title, 15, 95);
+	gt_obj_set_size(label_label_title, 139, 40);
+	gt_label_set_font_color(label_label_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_label_title, gray_black_16);
+	gt_label_set_font_cjk(label_label_title, 0);
+	gt_label_set_font_align(label_label_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_label_title, "label 标签");
+	gt_label_set_space(label_label_title, 0, 0);
+	gt_obj_add_event_cb(label_label_title, label_label_title_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
-	/** lab4 */
-	lab4 = gt_label_create(player);
-	gt_obj_set_pos(lab4, 15, 138);
-	gt_obj_set_size(lab4, 139, 40);
-	gt_label_set_font_color(lab4, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab4, gray_black_16);
-	gt_label_set_font_cjk(lab4, 0);
-	gt_label_set_font_align(lab4, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab4, "txt 文本区");
-	gt_label_set_space(lab4, 0, 0);
-	gt_obj_add_event_cb(lab4, lab4_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	/** label_txt_title */
+	/** 用于显示“txt文本区”的标题 Label */
+	label_txt_title = gt_label_create(player);
+	gt_obj_set_pos(label_txt_title, 15, 138);
+	gt_obj_set_size(label_txt_title, 139, 40);
+	gt_label_set_font_color(label_txt_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_txt_title, gray_black_16);
+	gt_label_set_font_cjk(label_txt_title, 0);
+	gt_label_set_font_align(label_txt_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_txt_title, "txt 文本区");
+	gt_label_set_space(label_txt_title, 0, 0);
+	gt_obj_add_event_cb(label_txt_title, lab4_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
-	/** lab5 */
-	lab5 = gt_label_create(player);
-	gt_obj_set_pos(lab5, 15, 179);
-	gt_obj_set_size(lab5, 139, 40);
-	gt_label_set_font_color(lab5, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab5, gray_black_16);
-	gt_label_set_font_cjk(lab5, 0);
-	gt_label_set_font_align(lab5, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab5, "input 输入框");
-	gt_label_set_space(lab5, 0, 0);
-	gt_obj_add_event_cb(lab5, lab5_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	/** label_input_title */
+	/** 用于显示“input输入框”的标题 Label */
+	label_input_title = gt_label_create(player);
+	gt_obj_set_pos(label_input_title, 15, 179);
+	gt_obj_set_size(label_input_title, 139, 40);
+	gt_label_set_font_color(label_input_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_input_title, gray_black_16);
+	gt_label_set_font_cjk(label_input_title, 0);
+	gt_label_set_font_align(label_input_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_input_title, "input 输入框");
+	gt_label_set_space(label_input_title, 0, 0);
+	gt_obj_add_event_cb(label_input_title, lab5_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
-	/** lab6 */
-	lab6 = gt_label_create(player);
-	gt_obj_set_pos(lab6, 15, 222);
-	gt_obj_set_size(lab6, 159, 40);
-	gt_label_set_font_color(lab6, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab6, gray_black_16);
-	gt_label_set_font_cjk(lab6, 0);
-	gt_label_set_font_align(lab6, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab6, "imgbtn 图片按钮");
-	gt_label_set_space(lab6, 0, 0);
-	gt_obj_add_event_cb(lab6, lab6_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	/** label_imgbtn_title */
+	/** 用于显示“imgbtn图片按钮”的标题 Label */
+	label_imgbtn_title = gt_label_create(player);
+	gt_obj_set_pos(label_imgbtn_title, 15, 222);
+	gt_obj_set_size(label_imgbtn_title, 159, 40);
+	gt_label_set_font_color(label_imgbtn_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_imgbtn_title, gray_black_16);
+	gt_label_set_font_cjk(label_imgbtn_title, 0);
+	gt_label_set_font_align(label_imgbtn_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_imgbtn_title, "imgbtn 图片按钮");
+	gt_label_set_space(label_imgbtn_title, 0, 0);
+	gt_obj_add_event_cb(label_imgbtn_title, lab6_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
-	/** lab7 */
-	lab7 = gt_label_create(player);
-	gt_obj_set_pos(lab7, 15, 267);
-	gt_obj_set_size(lab7, 159, 40);
-	gt_label_set_font_color(lab7, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab7, gray_black_16);
-	gt_label_set_font_cjk(lab7, 0);
-	gt_label_set_font_align(lab7, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab7, "keyboard 键盘");
-	gt_label_set_space(lab7, 0, 0);
-	gt_obj_add_event_cb(lab7, lab7_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	/** label_keyboard_title */
+	/** 用于显示“keyboard键盘”的标题 Label */
+	label_keyboard_title = gt_label_create(player);
+	gt_obj_set_pos(label_keyboard_title, 15, 267);
+	gt_obj_set_size(label_keyboard_title, 159, 40);
+	gt_label_set_font_color(label_keyboard_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_keyboard_title, gray_black_16);
+	gt_label_set_font_cjk(label_keyboard_title, 0);
+	gt_label_set_font_align(label_keyboard_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_keyboard_title, "keyboard 键盘");
+	gt_label_set_space(label_keyboard_title, 0, 0);
+	gt_obj_add_event_cb(label_keyboard_title, lab7_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
-	/** lab8 */
-	lab8 = gt_label_create(player);
-	gt_obj_set_pos(lab8, 15, 309);
-	gt_obj_set_size(lab8, 159, 40);
-	gt_label_set_font_color(lab8, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab8, gray_black_16);
-	gt_label_set_font_cjk(lab8, 0);
-	gt_label_set_font_align(lab8, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab8, "switch 开关");
-	gt_label_set_space(lab8, 0, 0);
-	gt_obj_add_event_cb(lab8, lab8_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	/** label_switch10_title */
+	/** 用于显示“switch开关”的标题 Label */
+	label_switch10_title = gt_label_create(player);
+	gt_obj_set_pos(label_switch10_title, 15, 309);
+	gt_obj_set_size(label_switch10_title, 159, 40);
+	gt_label_set_font_color(label_switch10_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_switch10_title, gray_black_16);
+	gt_label_set_font_cjk(label_switch10_title, 0);
+	gt_label_set_font_align(label_switch10_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_switch10_title, "switch 开关");
+	gt_label_set_space(label_switch10_title, 0, 0);
+	gt_obj_add_event_cb(label_switch10_title, lab8_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
-	/** lab9 */
-	lab9 = gt_label_create(player);
-	gt_obj_set_pos(lab9, 15, 351);
-	gt_obj_set_size(lab9, 159, 40);
-	gt_label_set_font_color(lab9, gt_color_hex(0x0080ff));
-	gt_label_set_font_family(lab9, gray_black_16);
-	gt_label_set_font_cjk(lab9, 0);
-	gt_label_set_font_align(lab9, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab9, "player 幻灯片");
-	gt_label_set_space(lab9, 0, 0);
-
-	
-
-	/** lab10 */
-	lab10 = gt_label_create(player);
-	gt_obj_set_pos(lab10, 15, 393);
-	gt_obj_set_size(lab10, 159, 40);
-	gt_label_set_font_color(lab10, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab10, gray_black_16);
-	gt_label_set_font_cjk(lab10, 0);
-	gt_label_set_font_align(lab10, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab10, "inputNum 计数器");
-	gt_label_set_space(lab10, 0, 0);
-	gt_obj_add_event_cb(lab10, lab10_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
-	
-
-	/** lab11 */
-	lab11 = gt_label_create(player);
-	gt_obj_set_pos(lab11, 15, 436);
-	gt_obj_set_size(lab11, 159, 40);
-	gt_label_set_font_color(lab11, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab11, gray_black_16);
-	gt_label_set_font_cjk(lab11, 0);
-	gt_label_set_font_align(lab11, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab11, "clock 时钟");
-	gt_label_set_space(lab11, 0, 0);
+	/** label_player_title */
+	/** 用于显示“player幻灯片”的标题 Label */
+	label_player_title = gt_label_create(player);
+	gt_obj_set_pos(label_player_title, 15, 351);
+	gt_obj_set_size(label_player_title, 159, 40);
+	gt_label_set_font_color(label_player_title, gt_color_hex(0x0080ff));
+	gt_label_set_font_family(label_player_title, gray_black_16);
+	gt_label_set_font_cjk(label_player_title, 0);
+	gt_label_set_font_align(label_player_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_player_title, "player 幻灯片");
+	gt_label_set_space(label_player_title, 0, 0);
 
 	
 
-	/** lab12 */
-	lab12 = gt_label_create(player);
-	gt_obj_set_pos(lab12, 15, 479);
-	gt_obj_set_size(lab12, 159, 40);
-	gt_label_set_font_color(lab12, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab12, gray_black_16);
-	gt_label_set_font_cjk(lab12, 0);
-	gt_label_set_font_align(lab12, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab12, "barcode 一维码");
-	gt_label_set_space(lab12, 0, 0);
+	/** label_inputNum_title */
+	/** 用于显示“inputNum计数器”的标题 Label */
+	label_inputNum_title = gt_label_create(player);
+	gt_obj_set_pos(label_inputNum_title, 15, 393);
+	gt_obj_set_size(label_inputNum_title, 159, 40);
+	gt_label_set_font_color(label_inputNum_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_inputNum_title, gray_black_16);
+	gt_label_set_font_cjk(label_inputNum_title, 0);
+	gt_label_set_font_align(label_inputNum_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_inputNum_title, "inputNum 计数器");
+	gt_label_set_space(label_inputNum_title, 0, 0);
 
 	
 
-	/** lab13 */
-	lab13 = gt_label_create(player);
-	gt_obj_set_pos(lab13, 15, 522);
-	gt_obj_set_size(lab13, 159, 40);
-	gt_label_set_font_color(lab13, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab13, gray_black_16);
-	gt_label_set_font_cjk(lab13, 0);
-	gt_label_set_font_align(lab13, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab13, "qrcode 二维码");
-	gt_label_set_space(lab13, 0, 0);
+	/** label_clock_title */
+	/** 用于显示“clock时钟”的标题 Label */
+	label_clock_title = gt_label_create(player);
+	gt_obj_set_pos(label_clock_title, 15, 436);
+	gt_obj_set_size(label_clock_title, 159, 40);
+	gt_label_set_font_color(label_clock_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_clock_title, gray_black_16);
+	gt_label_set_font_cjk(label_clock_title, 0);
+	gt_label_set_font_align(label_clock_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_clock_title, "clock 时钟");
+	gt_label_set_space(label_clock_title, 0, 0);
 
 	
 
-	/** lab14 */
-	lab14 = gt_label_create(player);
-	gt_obj_set_pos(lab14, 15, 565);
-	gt_obj_set_size(lab14, 159, 40);
-	gt_label_set_font_color(lab14, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab14, gray_black_16);
-	gt_label_set_font_cjk(lab14, 0);
-	gt_label_set_font_align(lab14, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab14, "viewPager 滑窗");
-	gt_label_set_space(lab14, 0, 0);
+	/** label_barcode_title */
+	/** 用于显示“barcode一维码”的标题 Label */
+	label_barcode_title = gt_label_create(player);
+	gt_obj_set_pos(label_barcode_title, 15, 479);
+	gt_obj_set_size(label_barcode_title, 159, 40);
+	gt_label_set_font_color(label_barcode_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_barcode_title, gray_black_16);
+	gt_label_set_font_cjk(label_barcode_title, 0);
+	gt_label_set_font_align(label_barcode_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_barcode_title, "barcode 一维码");
+	gt_label_set_space(label_barcode_title, 0, 0);
 
 	
 
-	/** lab15 */
-	lab15 = gt_label_create(player);
-	gt_obj_set_pos(lab15, 15, 608);
-	gt_obj_set_size(lab15, 159, 40);
-	gt_label_set_font_color(lab15, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab15, gray_black_16);
-	gt_label_set_font_cjk(lab15, 0);
-	gt_label_set_font_align(lab15, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab15, "dialog 对话框");
-	gt_label_set_space(lab15, 0, 0);
+	/** label_qrcode_title */
+	/** 用于显示“qrcode二维码”的标题 Label */
+	label_qrcode_title = gt_label_create(player);
+	gt_obj_set_pos(label_qrcode_title, 15, 522);
+	gt_obj_set_size(label_qrcode_title, 159, 40);
+	gt_label_set_font_color(label_qrcode_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_qrcode_title, gray_black_16);
+	gt_label_set_font_cjk(label_qrcode_title, 0);
+	gt_label_set_font_align(label_qrcode_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_qrcode_title, "qrcode 二维码");
+	gt_label_set_space(label_qrcode_title, 0, 0);
 
 	
 
-	/** lab16 */
-	lab16 = gt_label_create(player);
-	gt_obj_set_pos(lab16, 15, 652);
-	gt_obj_set_size(lab16, 159, 40);
-	gt_label_set_font_color(lab16, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab16, gray_black_16);
-	gt_label_set_font_cjk(lab16, 0);
-	gt_label_set_font_align(lab16, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab16, "gif GIF图片");
-	gt_label_set_space(lab16, 0, 0);
+	/** label_viewPager_title */
+	/** 用于显示“viewPager滑窗”的标题 Label */
+	label_viewPager_title = gt_label_create(player);
+	gt_obj_set_pos(label_viewPager_title, 15, 565);
+	gt_obj_set_size(label_viewPager_title, 159, 40);
+	gt_label_set_font_color(label_viewPager_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_viewPager_title, gray_black_16);
+	gt_label_set_font_cjk(label_viewPager_title, 0);
+	gt_label_set_font_align(label_viewPager_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_viewPager_title, "viewPager 滑窗");
+	gt_label_set_space(label_viewPager_title, 0, 0);
 
 	
 
-	/** lab17 */
-	lab17 = gt_label_create(player);
-	gt_obj_set_pos(lab17, 15, 693);
-	gt_obj_set_size(lab17, 159, 40);
-	gt_label_set_font_color(lab17, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab17, gray_black_16);
-	gt_label_set_font_cjk(lab17, 0);
-	gt_label_set_font_align(lab17, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab17, "layout 布局");
-	gt_label_set_space(lab17, 0, 0);
+	/** label_diglog_title */
+	/** 用于显示“diglog对话框”的标题 Label */
+	label_diglog_title = gt_label_create(player);
+	gt_obj_set_pos(label_diglog_title, 15, 608);
+	gt_obj_set_size(label_diglog_title, 159, 40);
+	gt_label_set_font_color(label_diglog_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_diglog_title, gray_black_16);
+	gt_label_set_font_cjk(label_diglog_title, 0);
+	gt_label_set_font_align(label_diglog_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_diglog_title, "dialog 对话框");
+	gt_label_set_space(label_diglog_title, 0, 0);
 
 	
 
-	/** lab18 */
-	lab18 = gt_label_create(player);
-	gt_obj_set_pos(lab18, 15, 735);
-	gt_obj_set_size(lab18, 167, 40);
-	gt_label_set_font_color(lab18, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab18, gray_black_16);
-	gt_label_set_font_cjk(lab18, 0);
-	gt_label_set_font_align(lab18, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab18, "media_player 播放器");
-	gt_label_set_space(lab18, 0, 0);
+	/** label_gif_title */
+	/** 用于显示“gifGIF图片”的标题 Label */
+	label_gif_title = gt_label_create(player);
+	gt_obj_set_pos(label_gif_title, 15, 652);
+	gt_obj_set_size(label_gif_title, 159, 40);
+	gt_label_set_font_color(label_gif_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_gif_title, gray_black_16);
+	gt_label_set_font_cjk(label_gif_title, 0);
+	gt_label_set_font_align(label_gif_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_gif_title, "gif GIF图片");
+	gt_label_set_space(label_gif_title, 0, 0);
 
 	
 
-	/** lab19 */
-	lab19 = gt_label_create(player);
-	gt_obj_set_pos(lab19, 15, 773);
-	gt_obj_set_size(lab19, 159, 40);
-	gt_label_set_font_color(lab19, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab19, gray_black_16);
-	gt_label_set_font_cjk(lab19, 0);
-	gt_label_set_font_align(lab19, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab19, "group 分组");
-	gt_label_set_space(lab19, 0, 0);
+	/** label_layout_title */
+	/** 用于显示“layout布局”的标题 Label */
+	label_layout_title = gt_label_create(player);
+	gt_obj_set_pos(label_layout_title, 15, 693);
+	gt_obj_set_size(label_layout_title, 159, 40);
+	gt_label_set_font_color(label_layout_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_layout_title, gray_black_16);
+	gt_label_set_font_cjk(label_layout_title, 0);
+	gt_label_set_font_align(label_layout_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_layout_title, "layout 布局");
+	gt_label_set_space(label_layout_title, 0, 0);
 
 	
 
-	/** lab20 */
-	lab20 = gt_label_create(player);
-	gt_obj_set_pos(lab20, 15, 814);
-	gt_obj_set_size(lab20, 159, 40);
-	gt_label_set_font_color(lab20, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab20, gray_black_16);
-	gt_label_set_font_cjk(lab20, 0);
-	gt_label_set_font_align(lab20, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab20, "slider 滑动条");
-	gt_label_set_space(lab20, 0, 0);
+	/** label_mediaplayer_title */
+	/** 用于显示“mediaplayer播放器”的标题 Label */
+	label_mediaplayer_title = gt_label_create(player);
+	gt_obj_set_pos(label_mediaplayer_title, 15, 735);
+	gt_obj_set_size(label_mediaplayer_title, 167, 40);
+	gt_label_set_font_color(label_mediaplayer_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_mediaplayer_title, gray_black_16);
+	gt_label_set_font_cjk(label_mediaplayer_title, 0);
+	gt_label_set_font_align(label_mediaplayer_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_mediaplayer_title, "media_player 播放器");
+	gt_label_set_space(label_mediaplayer_title, 0, 0);
 
 	
 
-	/** lab21 */
-	lab21 = gt_label_create(player);
-	gt_obj_set_pos(lab21, 14, 854);
-	gt_obj_set_size(lab21, 159, 40);
-	gt_label_set_font_color(lab21, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab21, gray_black_16);
-	gt_label_set_font_cjk(lab21, 0);
-	gt_label_set_font_align(lab21, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab21, "bar 进度条");
-	gt_label_set_space(lab21, 0, 0);
+	/** label_group_title */
+	/** 用于显示“group分组”的标题 Label */
+	label_group_title = gt_label_create(player);
+	gt_obj_set_pos(label_group_title, 15, 773);
+	gt_obj_set_size(label_group_title, 159, 40);
+	gt_label_set_font_color(label_group_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_group_title, gray_black_16);
+	gt_label_set_font_cjk(label_group_title, 0);
+	gt_label_set_font_align(label_group_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_group_title, "group 分组");
+	gt_label_set_space(label_group_title, 0, 0);
 
 	
 
-	/** lab22 */
-	lab22 = gt_label_create(player);
-	gt_obj_set_pos(lab22, 14, 895);
-	gt_obj_set_size(lab22, 159, 40);
-	gt_label_set_font_color(lab22, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab22, gray_black_16);
-	gt_label_set_font_cjk(lab22, 0);
-	gt_label_set_font_align(lab22, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab22, "radio 单选框");
-	gt_label_set_space(lab22, 0, 0);
+	/** label_slider_title */
+	/** 用于显示“slider滑动条”的标题 Label */
+	label_slider_title = gt_label_create(player);
+	gt_obj_set_pos(label_slider_title, 15, 814);
+	gt_obj_set_size(label_slider_title, 159, 40);
+	gt_label_set_font_color(label_slider_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_slider_title, gray_black_16);
+	gt_label_set_font_cjk(label_slider_title, 0);
+	gt_label_set_font_align(label_slider_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_slider_title, "slider 滑动条");
+	gt_label_set_space(label_slider_title, 0, 0);
 
 	
 
-	/** lab23 */
-	lab23 = gt_label_create(player);
-	gt_obj_set_pos(lab23, 15, 936);
-	gt_obj_set_size(lab23, 159, 40);
-	gt_label_set_font_color(lab23, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab23, gray_black_16);
-	gt_label_set_font_cjk(lab23, 0);
-	gt_label_set_font_align(lab23, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab23, "checkbox 复选框");
-	gt_label_set_space(lab23, 0, 0);
+	/** label_bar_title */
+	/** 用于显示“bar进度条”的标题 Label */
+	label_bar_title = gt_label_create(player);
+	gt_obj_set_pos(label_bar_title, 14, 854);
+	gt_obj_set_size(label_bar_title, 159, 40);
+	gt_label_set_font_color(label_bar_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_bar_title, gray_black_16);
+	gt_label_set_font_cjk(label_bar_title, 0);
+	gt_label_set_font_align(label_bar_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_bar_title, "bar 进度条");
+	gt_label_set_space(label_bar_title, 0, 0);
 
 	
 
-	/** lab24 */
-	lab24 = gt_label_create(player);
-	gt_obj_set_pos(lab24, 15, 976);
-	gt_obj_set_size(lab24, 159, 40);
-	gt_label_set_font_color(lab24, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab24, gray_black_16);
-	gt_label_set_font_cjk(lab24, 0);
-	gt_label_set_font_align(lab24, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab24, "listv 列表");
-	gt_label_set_space(lab24, 0, 0);
+	/** label_radio_title */
+	/** 用于显示“radio单选框”的标题 Label */
+	label_radio_title = gt_label_create(player);
+	gt_obj_set_pos(label_radio_title, 14, 895);
+	gt_obj_set_size(label_radio_title, 159, 40);
+	gt_label_set_font_color(label_radio_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_radio_title, gray_black_16);
+	gt_label_set_font_cjk(label_radio_title, 0);
+	gt_label_set_font_align(label_radio_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_radio_title, "radio 单选框");
+	gt_label_set_space(label_radio_title, 0, 0);
 
 	
 
-	/** lab25 */
-	lab25 = gt_label_create(player);
-	gt_obj_set_pos(lab25, 15, 1018);
-	gt_obj_set_size(lab25, 159, 40);
-	gt_label_set_font_color(lab25, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab25, gray_black_16);
-	gt_label_set_font_cjk(lab25, 0);
-	gt_label_set_font_align(lab25, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab25, "roller 滚轮");
-	gt_label_set_space(lab25, 0, 0);
+	/** label_checkbox_title */
+	/** 用于显示“checkbox复选框”的标题 Label */
+	label_checkbox_title = gt_label_create(player);
+	gt_obj_set_pos(label_checkbox_title, 15, 936);
+	gt_obj_set_size(label_checkbox_title, 159, 40);
+	gt_label_set_font_color(label_checkbox_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_checkbox_title, gray_black_16);
+	gt_label_set_font_cjk(label_checkbox_title, 0);
+	gt_label_set_font_align(label_checkbox_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_checkbox_title, "checkbox 复选框");
+	gt_label_set_space(label_checkbox_title, 0, 0);
 
 	
 
-	/** lab26 */
-	lab26 = gt_label_create(player);
-	gt_obj_set_pos(lab26, 15, 1060);
-	gt_obj_set_size(lab26, 159, 40);
-	gt_label_set_font_color(lab26, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab26, gray_black_16);
-	gt_label_set_font_cjk(lab26, 0);
-	gt_label_set_font_align(lab26, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab26, "graph 线图");
-	gt_label_set_space(lab26, 0, 0);
+	/** label_listv_title */
+	/** 用于显示“listv列表”的标题 Label */
+	label_listv_title = gt_label_create(player);
+	gt_obj_set_pos(label_listv_title, 15, 976);
+	gt_obj_set_size(label_listv_title, 159, 40);
+	gt_label_set_font_color(label_listv_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_listv_title, gray_black_16);
+	gt_label_set_font_cjk(label_listv_title, 0);
+	gt_label_set_font_align(label_listv_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_listv_title, "listv 列表");
+	gt_label_set_space(label_listv_title, 0, 0);
 
 	
 
-	/** lab27 */
-	lab27 = gt_label_create(player);
-	gt_obj_set_pos(lab27, 15, 1100);
-	gt_obj_set_size(lab27, 159, 40);
-	gt_label_set_font_color(lab27, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab27, gray_black_16);
-	gt_label_set_font_cjk(lab27, 0);
-	gt_label_set_font_align(lab27, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab27, "rect 矩形");
-	gt_label_set_space(lab27, 0, 0);
+	/** label_roller_title */
+	/** 用于显示“roller滚轮”的标题 Label */
+	label_roller_title = gt_label_create(player);
+	gt_obj_set_pos(label_roller_title, 15, 1018);
+	gt_obj_set_size(label_roller_title, 159, 40);
+	gt_label_set_font_color(label_roller_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_roller_title, gray_black_16);
+	gt_label_set_font_cjk(label_roller_title, 0);
+	gt_label_set_font_align(label_roller_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_roller_title, "roller 滚轮");
+	gt_label_set_space(label_roller_title, 0, 0);
 
 	
 
-	/** lab29 */
-	lab29 = gt_label_create(player);
-	gt_obj_set_pos(lab29, 15, 1182);
-	gt_obj_set_size(lab29, 159, 40);
-	gt_label_set_font_color(lab29, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab29, gray_black_16);
-	gt_label_set_font_cjk(lab29, 0);
-	gt_label_set_font_align(lab29, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab29, "status_bar 状态栏");
-	gt_label_set_space(lab29, 0, 0);
+	/** label_graph_title */
+	/** 用于显示“graph线图”的标题 Label */
+	label_graph_title = gt_label_create(player);
+	gt_obj_set_pos(label_graph_title, 15, 1060);
+	gt_obj_set_size(label_graph_title, 159, 40);
+	gt_label_set_font_color(label_graph_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_graph_title, gray_black_16);
+	gt_label_set_font_cjk(label_graph_title, 0);
+	gt_label_set_font_align(label_graph_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_graph_title, "graph 线图");
+	gt_label_set_space(label_graph_title, 0, 0);
 
 	
 
-	/** lab28 */
-	lab28 = gt_label_create(player);
-	gt_obj_set_pos(lab28, 15, 1140);
-	gt_obj_set_size(lab28, 159, 40);
-	gt_label_set_font_color(lab28, gt_color_hex(0x808080));
-	gt_label_set_font_family(lab28, gray_black_16);
-	gt_label_set_font_cjk(lab28, 0);
-	gt_label_set_font_align(lab28, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab28, "screen 屏幕");
-	gt_label_set_space(lab28, 0, 0);
+	/** label_rect_title */
+	/** 用于显示“rect矩形”的标题 Label */
+	label_rect_title = gt_label_create(player);
+	gt_obj_set_pos(label_rect_title, 15, 1100);
+	gt_obj_set_size(label_rect_title, 159, 40);
+	gt_label_set_font_color(label_rect_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_rect_title, gray_black_16);
+	gt_label_set_font_cjk(label_rect_title, 0);
+	gt_label_set_font_align(label_rect_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_rect_title, "rect 矩形");
+	gt_label_set_space(label_rect_title, 0, 0);
+
+	
+
+	/** label_statusbartitle */
+	/** 用于显示“statusbar状态栏”的标题 Label */
+	label_statusbartitle = gt_label_create(player);
+	gt_obj_set_pos(label_statusbartitle, 15, 1182);
+	gt_obj_set_size(label_statusbartitle, 159, 40);
+	gt_label_set_font_color(label_statusbartitle, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_statusbartitle, gray_black_16);
+	gt_label_set_font_cjk(label_statusbartitle, 0);
+	gt_label_set_font_align(label_statusbartitle, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_statusbartitle, "status_bar 状态栏");
+	gt_label_set_space(label_statusbartitle, 0, 0);
+
+	
+
+	/** label_screen_title */
+	/** 用于显示“screen屏幕”的标题 Label */
+	label_screen_title = gt_label_create(player);
+	gt_obj_set_pos(label_screen_title, 15, 1140);
+	gt_obj_set_size(label_screen_title, 159, 40);
+	gt_label_set_font_color(label_screen_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_screen_title, gray_black_16);
+	gt_label_set_font_cjk(label_screen_title, 0);
+	gt_label_set_font_align(label_screen_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_screen_title, "screen 屏幕");
+	gt_label_set_space(label_screen_title, 0, 0);
 
 	
 
@@ -472,16 +501,17 @@ gt_obj_st * gt_init_player(void)
 
 	
 
-	/** lab31 */
-	lab31 = gt_label_create(player);
-	gt_obj_set_pos(lab31, 240, 14);
-	gt_obj_set_size(lab31, 162, 34);
-	gt_label_set_font_color(lab31, gt_color_hex(0x0080ff));
-	gt_label_set_font_family(lab31, gray_black_24);
-	gt_label_set_font_cjk(lab31, 0);
-	gt_label_set_font_align(lab31, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab31, "幻灯片控件");
-	gt_label_set_space(lab31, 0, 0);
+	/** label_player_category */
+	/** 幻灯片控件板块的标题Label */
+	label_player_category = gt_label_create(player);
+	gt_obj_set_pos(label_player_category, 240, 14);
+	gt_obj_set_size(label_player_category, 162, 34);
+	gt_label_set_font_color(label_player_category, gt_color_hex(0x0080ff));
+	gt_label_set_font_family(label_player_category, gray_black_24);
+	gt_label_set_font_cjk(label_player_category, 0);
+	gt_label_set_font_align(label_player_category, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_player_category, "幻灯片控件");
+	gt_label_set_space(label_player_category, 0, 0);
 
 	
 
