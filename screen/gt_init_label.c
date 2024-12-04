@@ -35,11 +35,11 @@ static gt_obj_st * label_statusbartitle = NULL;
 static gt_obj_st * label_screen_title = NULL;
 static gt_obj_st * rect3 = NULL;
 static gt_obj_st * label_label_category = NULL;
-static gt_obj_st * rect4 = NULL;
-static gt_obj_st * lab32 = NULL;
-static gt_obj_st * lab33 = NULL;
-static gt_obj_st * lab34 = NULL;
-static gt_obj_st * lab35 = NULL;
+static gt_obj_st * rect_wireframe = NULL;
+static gt_obj_st * label_black = NULL;
+static gt_obj_st * label_pink = NULL;
+static gt_obj_st * label_black1 = NULL;
+static gt_obj_st * label_purple = NULL;
 
 static void label_0_cb(gt_event_st * e) {
 	
@@ -522,67 +522,72 @@ gt_obj_st * gt_init_label(void)
 
 	
 
-	/** rect4 */
-	rect4 = gt_rect_create(label);
-	gt_obj_set_pos(rect4, 237, 64);
-	gt_obj_set_size(rect4, 509, 342);
-	gt_rect_set_radius(rect4, 0);
-	gt_rect_set_bg_color(rect4, gt_color_hex(0xffffff));
-	gt_rect_set_color_border(rect4, gt_color_hex(0xc0c0c0));
-	gt_rect_set_fill(rect4, 1);
-	gt_rect_set_border(rect4, 1);
+	/** rect_wireframe */
+	/** 矩形线框 */
+	rect_wireframe = gt_rect_create(label);
+	gt_obj_set_pos(rect_wireframe, 237, 64);
+	gt_obj_set_size(rect_wireframe, 509, 342);
+	gt_rect_set_radius(rect_wireframe, 0);
+	gt_rect_set_bg_color(rect_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect_wireframe, 1);
+	gt_rect_set_border(rect_wireframe, 1);
 
 	
 
-	/** lab32 */
-	lab32 = gt_label_create(label);
-	gt_obj_set_pos(lab32, 258, 80);
-	gt_obj_set_size(lab32, 192, 60);
-	gt_label_set_font_color(lab32, gt_color_hex(0x000000));
-	gt_label_set_font_family(lab32, gray_black_16);
-	gt_label_set_font_cjk(lab32, 0);
-	gt_label_set_font_align(lab32, GT_ALIGN_CENTER_MID);
-	gt_label_set_text(lab32, "label标签");
-	gt_label_set_space(lab32, 10, 0);
+	/** label_black */
+	/** 黑色label标签，间隔10 */
+	label_black = gt_label_create(label);
+	gt_obj_set_pos(label_black, 258, 79);
+	gt_obj_set_size(label_black, 192, 60);
+	gt_label_set_font_color(label_black, gt_color_hex(0x000000));
+	gt_label_set_font_family(label_black, gray_black_16);
+	gt_label_set_font_cjk(label_black, 0);
+	gt_label_set_font_align(label_black, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(label_black, "label标签");
+	gt_label_set_space(label_black, 10, 0);
 
 	
 
-	/** lab33 */
-	lab33 = gt_label_create(label);
-	gt_obj_set_pos(lab33, 285, 135);
-	gt_obj_set_size(lab33, 192, 60);
-	gt_label_set_font_color(lab33, gt_color_hex(0xff0080));
-	gt_label_set_font_family(lab33, gray_black_16);
-	gt_label_set_font_cjk(lab33, 0);
-	gt_label_set_font_align(lab33, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab33, "label标签");
-	gt_label_set_space(lab33, 5, 0);
+	/** label_pink */
+	/** 粉色label标签，间隔5 */
+	label_pink = gt_label_create(label);
+	gt_obj_set_pos(label_pink, 285, 135);
+	gt_obj_set_size(label_pink, 192, 60);
+	gt_label_set_font_color(label_pink, gt_color_hex(0xff0080));
+	gt_label_set_font_family(label_pink, gray_black_16);
+	gt_label_set_font_cjk(label_pink, 0);
+	gt_label_set_font_align(label_pink, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_pink, "label标签");
+	gt_label_set_space(label_pink, 5, 0);
 
 	
 
-	/** lab34 */
-	lab34 = gt_label_create(label);
-	gt_obj_set_pos(lab34, 285, 196);
-	gt_obj_set_size(lab34, 192, 83);
-	gt_label_set_font_color(lab34, gt_color_hex(0x000000));
-	gt_label_set_font_family(lab34, gray_black_16);
-	gt_label_set_font_cjk(lab34, 0);
-	gt_label_set_font_align(lab34, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(lab34, "高通GT-HMI上位机软件，label控件");
-	gt_label_set_space(lab34, 3, 20);
+	/** label_black1 */
+	/** 黑色label标签，间隔3 */
+	label_black1 = gt_label_create(label);
+	gt_obj_set_pos(label_black1, 285, 196);
+	gt_obj_set_size(label_black1, 192, 83);
+	gt_label_set_font_color(label_black1, gt_color_hex(0x000000));
+	gt_label_set_font_family(label_black1, gray_black_16);
+	gt_label_set_font_cjk(label_black1, 0);
+	gt_label_set_font_align(label_black1, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_black1, "高通GT-HMI上位机软件，label控件");
+	gt_label_set_space(label_black1, 3, 20);
 
 	
 
-	/** lab35 */
-	lab35 = gt_label_create(label);
-	gt_obj_set_pos(lab35, 282, 284);
-	gt_obj_set_size(lab35, 222, 83);
-	gt_label_set_font_color(lab35, gt_color_hex(0x8080ff));
-	gt_label_set_font_family(lab35, gray_black_16);
-	gt_label_set_font_cjk(lab35, 0);
-	gt_label_set_font_align(lab35, GT_ALIGN_CENTER_MID);
-	gt_label_set_text(lab35, "高通GT-HMI上位机软件，label控件");
-	gt_label_set_space(lab35, 10, 10);
+	/** label_purple */
+	/** 紫色label标签，间隔10 */
+	label_purple = gt_label_create(label);
+	gt_obj_set_pos(label_purple, 282, 284);
+	gt_obj_set_size(label_purple, 222, 83);
+	gt_label_set_font_color(label_purple, gt_color_hex(0x8080ff));
+	gt_label_set_font_family(label_purple, gray_black_16);
+	gt_label_set_font_cjk(label_purple, 0);
+	gt_label_set_font_align(label_purple, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(label_purple, "高通GT-HMI上位机软件，label控件");
+	gt_label_set_space(label_purple, 10, 10);
 
 
 

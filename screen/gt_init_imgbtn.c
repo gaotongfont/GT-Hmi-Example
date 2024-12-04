@@ -35,9 +35,9 @@ static gt_obj_st * label_statusbartitle = NULL;
 static gt_obj_st * label_screen_title = NULL;
 static gt_obj_st * rect3 = NULL;
 static gt_obj_st * label_imgbtn_category = NULL;
-static gt_obj_st * rect4 = NULL;
-static gt_obj_st * imgbtn1 = NULL;
-static gt_obj_st * imgbtn2 = NULL;
+static gt_obj_st * rect_wireframe = NULL;
+static gt_obj_st * imgbtn_Doubleicon = NULL;
+static gt_obj_st * imgbtn_Threeicons = NULL;
 
 static void lab1_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
@@ -508,31 +508,38 @@ gt_obj_st * gt_init_imgbtn(void)
 
 	
 
-	/** rect4 */
-	rect4 = gt_rect_create(imgbtn);
-	gt_obj_set_pos(rect4, 237, 64);
-	gt_obj_set_size(rect4, 509, 281);
-	gt_rect_set_radius(rect4, 0);
-	gt_rect_set_bg_color(rect4, gt_color_hex(0xffffff));
-	gt_rect_set_color_border(rect4, gt_color_hex(0xc0c0c0));
-	gt_rect_set_fill(rect4, 1);
-	gt_rect_set_border(rect4, 1);
+	/** rect_wireframe */
+	/** 矩形线框 */
+	rect_wireframe = gt_rect_create(imgbtn);
+	gt_obj_set_pos(rect_wireframe, 237, 64);
+	gt_obj_set_size(rect_wireframe, 509, 281);
+	gt_rect_set_radius(rect_wireframe, 0);
+	gt_rect_set_bg_color(rect_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect_wireframe, 1);
+	gt_rect_set_border(rect_wireframe, 1);
 
 	
 
-	/** imgbtn1 */
-	imgbtn1 = gt_imgbtn_create(imgbtn);
-	gt_obj_set_pos(imgbtn1, 262, 83);
-	gt_obj_set_size(imgbtn1, 100, 100);
-	gt_imgbtn_set_src(imgbtn1, "f:img_sunny_100x100.png");
-	gt_imgbtn_set_src_press(imgbtn1, "f:img_sleep5_100x100.png");
+	/** imgbtn_Doubleicon */
+	/** 图片按钮，双图标切换 */
+	imgbtn_Doubleicon = gt_imgbtn_create(imgbtn);
+	gt_obj_set_pos(imgbtn_Doubleicon, 284, 96);
+	gt_obj_set_size(imgbtn_Doubleicon, 70, 70);
+	gt_imgbtn_set_src(imgbtn_Doubleicon, "f:img_sunny_70x70.png");
+	gt_imgbtn_set_src_press(imgbtn_Doubleicon, "f:img_sleep5_70x70.png");
 
 	
 
-	/** imgbtn2 */
-	imgbtn2 = gt_imgbtn_create(imgbtn);
-	gt_obj_set_pos(imgbtn2, 435, 97);
-	gt_obj_set_size(imgbtn2, 71, 72);
+	/** imgbtn_Threeicons */
+	/** 图片按钮，三图标切换 */
+	imgbtn_Threeicons = gt_imgbtn_create(imgbtn);
+	gt_obj_set_pos(imgbtn_Threeicons, 425, 105);
+	gt_obj_set_size(imgbtn_Threeicons, 54, 54);
+	gt_imgbtn_set_src(imgbtn_Threeicons, "f:img_language_54x54.png");
+	gt_imgbtn_add_state_item(imgbtn_Threeicons, "f:img_guide_54x54.png");
+	gt_imgbtn_add_state_item(imgbtn_Threeicons, "f:img_outdoor_walk_54x54.png");
+	gt_imgbtn_add_state_item(imgbtn_Threeicons, "f:img_system_54x54.png");
 
 
 

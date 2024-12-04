@@ -33,14 +33,14 @@ static gt_obj_st * label_graph_title = NULL;
 static gt_obj_st * label_rect_title = NULL;
 static gt_obj_st * label_statusbartitle = NULL;
 static gt_obj_st * label_screen_title = NULL;
-static gt_obj_st * rect1 = NULL;
+static gt_obj_st * rect_wireframe = NULL;
 static gt_obj_st * rect3 = NULL;
 static gt_obj_st * label_image_category = NULL;
-static gt_obj_st * img1 = NULL;
-static gt_obj_st * img2 = NULL;
-static gt_obj_st * img3 = NULL;
-static gt_obj_st * img4 = NULL;
-static gt_obj_st * img5 = NULL;
+static gt_obj_st * img_background = NULL;
+static gt_obj_st * img_circle = NULL;
+static gt_obj_st * img_sleep = NULL;
+static gt_obj_st * img_music = NULL;
+static gt_obj_st * img_sunny = NULL;
 
 static void lab1_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
@@ -497,15 +497,16 @@ gt_obj_st * gt_init_image(void)
 
 	
 
-	/** rect1 */
-	rect1 = gt_rect_create(image);
-	gt_obj_set_pos(rect1, 237, 64);
-	gt_obj_set_size(rect1, 509, 342);
-	gt_rect_set_radius(rect1, 0);
-	gt_rect_set_bg_color(rect1, gt_color_hex(0xffffff));
-	gt_rect_set_color_border(rect1, gt_color_hex(0xc0c0c0));
-	gt_rect_set_fill(rect1, 1);
-	gt_rect_set_border(rect1, 1);
+	/** rect_wireframe */
+	/** 矩形线框 */
+	rect_wireframe = gt_rect_create(image);
+	gt_obj_set_pos(rect_wireframe, 237, 64);
+	gt_obj_set_size(rect_wireframe, 509, 342);
+	gt_rect_set_radius(rect_wireframe, 0);
+	gt_rect_set_bg_color(rect_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect_wireframe, 1);
+	gt_rect_set_border(rect_wireframe, 1);
 
 	
 
@@ -535,44 +536,49 @@ gt_obj_st * gt_init_image(void)
 
 	
 
-	/** img1 */
-	img1 = gt_img_create(image);
-	gt_obj_set_pos(img1, 244, 70);
-	gt_obj_set_size(img1, 313, 174);
-	gt_img_set_src(img1, ".:img_bgImg32_313x174.png");
+	/** img_background */
+	/** 背景图 */
+	img_background = gt_img_create(image);
+	gt_obj_set_pos(img_background, 243, 69);
+	gt_obj_set_size(img_background, 354, 198);
+	gt_img_set_src(img_background, ".:img_bgImg32_354x198.png");
 
 	
 
-	/** img2 */
-	img2 = gt_img_create(image);
-	gt_obj_set_pos(img2, 541, 209);
-	gt_obj_set_size(img2, 200, 200);
-	gt_img_set_src(img2, ".:img_bgImg7_200x200.png");
+	/** img_circle */
+	/** 圆形背景 */
+	img_circle = gt_img_create(image);
+	gt_obj_set_pos(img_circle, 540, 201);
+	gt_obj_set_size(img_circle, 200, 200);
+	gt_img_set_src(img_circle, ".:img_bgImg7_200x200.png");
 
 	
 
-	/** img3 */
-	img3 = gt_img_create(image);
-	gt_obj_set_pos(img3, 254, 305);
-	gt_obj_set_size(img3, 78, 78);
-	gt_img_set_src(img3, ".:img_sleep5_78x78.png");
+	/** img_sleep */
+	/** 睡眠图标 */
+	img_sleep = gt_img_create(image);
+	gt_obj_set_pos(img_sleep, 254, 305);
+	gt_obj_set_size(img_sleep, 78, 78);
+	gt_img_set_src(img_sleep, ".:img_sleep5_78x78.png");
 
 	
 
-	/** img4 */
-	img4 = gt_img_create(image);
-	gt_obj_set_pos(img4, 516, 83);
-	gt_obj_set_size(img4, 78, 78);
-	gt_obj_set_opa(img4, GT_OPA_55);
-	gt_img_set_src(img4, ".:img_music14_78x78.png");
+	/** img_music */
+	/** 音乐图标 */
+	img_music = gt_img_create(image);
+	gt_obj_set_pos(img_music, 573, 88);
+	gt_obj_set_size(img_music, 78, 78);
+	gt_obj_set_opa(img_music, GT_OPA_55);
+	gt_img_set_src(img_music, ".:img_music14_78x78.png");
 
 	
 
-	/** img5 */
-	img5 = gt_img_create(image);
-	gt_obj_set_pos(img5, 351, 305);
-	gt_obj_set_size(img5, 80, 80);
-	gt_img_set_src(img5, ".:img_sunny_80x80.png");
+	/** img_sunny */
+	/** 太阳图标 */
+	img_sunny = gt_img_create(image);
+	gt_obj_set_pos(img_sunny, 351, 305);
+	gt_obj_set_size(img_sunny, 80, 80);
+	gt_img_set_src(img_sunny, ".:img_sunny_80x80.png");
 
 
 

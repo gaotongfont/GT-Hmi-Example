@@ -35,7 +35,7 @@ static gt_obj_st * label_statusbartitle = NULL;
 static gt_obj_st * label_screen_title = NULL;
 static gt_obj_st * rect3 = NULL;
 static gt_obj_st * label_player_category = NULL;
-static gt_obj_st * rect4 = NULL;
+static gt_obj_st * rect_wireframe = NULL;
 static gt_obj_st * player1 = NULL;
 
 static void lab1_0_cb(gt_event_st * e) {
@@ -515,15 +515,16 @@ gt_obj_st * gt_init_player(void)
 
 	
 
-	/** rect4 */
-	rect4 = gt_rect_create(player);
-	gt_obj_set_pos(rect4, 237, 64);
-	gt_obj_set_size(rect4, 509, 270);
-	gt_rect_set_radius(rect4, 0);
-	gt_rect_set_bg_color(rect4, gt_color_hex(0xffffff));
-	gt_rect_set_color_border(rect4, gt_color_hex(0xc0c0c0));
-	gt_rect_set_fill(rect4, 1);
-	gt_rect_set_border(rect4, 1);
+	/** rect_wireframe */
+	/** 矩形线框 */
+	rect_wireframe = gt_rect_create(player);
+	gt_obj_set_pos(rect_wireframe, 237, 64);
+	gt_obj_set_size(rect_wireframe, 509, 270);
+	gt_rect_set_radius(rect_wireframe, 0);
+	gt_rect_set_bg_color(rect_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect_wireframe, 1);
+	gt_rect_set_border(rect_wireframe, 1);
 
 	
 

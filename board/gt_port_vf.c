@@ -6,18 +6,22 @@
 
 
 /* private define -------------------------------------------------------*/
-#define IMG_BGIMG32_313X174_PNG		0x0
-#define IMG_BGIMG7_200X200_PNG		0x1a97c
-#define IMG_CONCEPT_SHARING_0_57_30X30_PNG		0x37e3c
-#define IMG_GLOBE_REGULAR_30X30_PNG		0x388c8
-#define IMG_MUSIC14_78X78_PNG		0x39354
-#define IMG_SLEEP5_100X100_PNG		0x3daa0
-#define IMG_SLEEP5_78X78_PNG		0x44fd0
-#define IMG_SPORTS14_78X78_PNG		0x4971c
-#define IMG_SUNNY_100X100_PNG		0x4de68
-#define IMG_SUNNY_80X80_PNG		0x55398
-#define IMG_TELEGRAM_0_56_30X30_PNG		0x59e98
-#define IMG_TURN_ON_0_52_40X40_PNG		0x5a924
+#define IMG_BGIMG32_354X198_PNG		0x0
+#define IMG_BGIMG7_200X200_PNG		0x22398
+#define IMG_CONCEPT_SHARING_0_57_30X30_PNG		0x3f858
+#define IMG_GLOBE_REGULAR_30X30_PNG		0x402e4
+#define IMG_GUIDE_54X54_PNG		0x40d70
+#define IMG_LANGUAGE_54X54_PNG		0x42f9c
+#define IMG_MUSIC14_78X78_PNG		0x451c8
+#define IMG_OUTDOOR_WALK_54X54_PNG		0x49914
+#define IMG_SLEEP5_70X70_PNG		0x4bb40
+#define IMG_SLEEP5_78X78_PNG		0x4f4ac
+#define IMG_SPORTS14_78X78_PNG		0x53bf8
+#define IMG_SUNNY_70X70_PNG		0x58344
+#define IMG_SUNNY_80X80_PNG		0x5bcb0
+#define IMG_SYSTEM_54X54_PNG		0x607b0
+#define IMG_TELEGRAM_0_56_30X30_PNG		0x629dc
+#define IMG_TURN_ON_0_52_40X40_PNG		0x63468
 
 
 /* private typedef ------------------------------------------------------*/
@@ -27,20 +31,24 @@
 /* static variables -----------------------------------------------------*/
 static const gt_vfs_st virt_file_sys[] ={
 	/* name, w, h, addr, size, is_alpha */
-    {"f:img_bgImg32_313x174.png", 313, 174, IMG_BGIMG32_313X174_PNG, 108924, 0},
+    {"f:img_bgImg32_354x198.png", 354, 198, IMG_BGIMG32_354X198_PNG, 140184, 0},
 	{"f:img_bgImg7_200x200.png", 200, 200, IMG_BGIMG7_200X200_PNG, 120000, 1},
 	{"f:img_concept_sharing_0_57_30x30.png", 30, 30, IMG_CONCEPT_SHARING_0_57_30X30_PNG, 2700, 1},
 	{"f:img_globe_regular_30x30.png", 30, 30, IMG_GLOBE_REGULAR_30X30_PNG, 2700, 1},
+	{"f:img_guide_54x54.png", 54, 54, IMG_GUIDE_54X54_PNG, 8748, 1},
+	{"f:img_language_54x54.png", 54, 54, IMG_LANGUAGE_54X54_PNG, 8748, 1},
 	{"f:img_music14_78x78.png", 78, 78, IMG_MUSIC14_78X78_PNG, 18252, 1},
-	{"f:img_sleep5_100x100.png", 100, 100, IMG_SLEEP5_100X100_PNG, 30000, 1},
+	{"f:img_outdoor_walk_54x54.png", 54, 54, IMG_OUTDOOR_WALK_54X54_PNG, 8748, 1},
+	{"f:img_sleep5_70x70.png", 70, 70, IMG_SLEEP5_70X70_PNG, 14700, 1},
 	{"f:img_sleep5_78x78.png", 78, 78, IMG_SLEEP5_78X78_PNG, 18252, 1},
 	{"f:img_sports14_78x78.png", 78, 78, IMG_SPORTS14_78X78_PNG, 18252, 1},
-	{"f:img_sunny_100x100.png", 100, 100, IMG_SUNNY_100X100_PNG, 30000, 1},
+	{"f:img_sunny_70x70.png", 70, 70, IMG_SUNNY_70X70_PNG, 14700, 1},
 	{"f:img_sunny_80x80.png", 80, 80, IMG_SUNNY_80X80_PNG, 19200, 1},
+	{"f:img_system_54x54.png", 54, 54, IMG_SYSTEM_54X54_PNG, 8748, 1},
 	{"f:img_telegram_0_56_30x30.png", 30, 30, IMG_TELEGRAM_0_56_30X30_PNG, 2700, 1},
 	{"f:img_turn_on_0_52_40x40.png", 40, 40, IMG_TURN_ON_0_52_40X40_PNG, 4800, 1},
     {NULL,0,0,0,0},
-    /* totalSize: 375780 => 366.97KB */
+    /* totalSize: 411432 => 401.79KB */
 };
 
 /* macros ---------------------------------------------------------------*/

@@ -611,7 +611,7 @@ gt_obj_st * gt_init_button(void)
 	/** fuchsia_outlined */
 	/** 粉红色按钮，带边框 */
 	fuchsia_outlined = gt_btn_create(button);
-	gt_obj_set_pos(fuchsia_outlined, 432, 138);
+	gt_obj_set_pos(fuchsia_outlined, 433, 141);
 	gt_obj_set_size(fuchsia_outlined, 120, 50);
 	gt_btn_set_font_color(fuchsia_outlined, gt_color_hex(0xff0080));
 	gt_btn_set_font_family(fuchsia_outlined, gray_black_20);

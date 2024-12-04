@@ -35,9 +35,9 @@ static gt_obj_st * label_statusbartitle = NULL;
 static gt_obj_st * label_screen_title = NULL;
 static gt_obj_st * rect3 = NULL;
 static gt_obj_st * label_input_category = NULL;
-static gt_obj_st * rect4 = NULL;
-static gt_obj_st * input1 = NULL;
-static gt_obj_st * input1Copy = NULL;
+static gt_obj_st * rect_wireframe = NULL;
+static gt_obj_st * input_outlined = NULL;
+static gt_obj_st * input_blue = NULL;
 
 static void lab1_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
@@ -508,45 +508,48 @@ gt_obj_st * gt_init_input(void)
 
 	
 
-	/** rect4 */
-	rect4 = gt_rect_create(input);
-	gt_obj_set_pos(rect4, 237, 64);
-	gt_obj_set_size(rect4, 509, 181);
-	gt_rect_set_radius(rect4, 0);
-	gt_rect_set_bg_color(rect4, gt_color_hex(0xffffff));
-	gt_rect_set_color_border(rect4, gt_color_hex(0xc0c0c0));
-	gt_rect_set_fill(rect4, 1);
-	gt_rect_set_border(rect4, 1);
+	/** rect_wireframe */
+	/** 矩形线框 */
+	rect_wireframe = gt_rect_create(input);
+	gt_obj_set_pos(rect_wireframe, 237, 64);
+	gt_obj_set_size(rect_wireframe, 509, 182);
+	gt_rect_set_radius(rect_wireframe, 0);
+	gt_rect_set_bg_color(rect_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect_wireframe, 1);
+	gt_rect_set_border(rect_wireframe, 1);
 
 	
 
-	/** input1 */
-	input1 = gt_input_create(input);
-	gt_obj_set_pos(input1, 247, 83);
-	gt_obj_set_size(input1, 491, 38);
-	gt_input_set_font_color(input1, gt_color_hex(0x000000));
-	gt_input_set_font_family(input1, gray_black_16);
-	gt_input_set_font_cjk(input1, 0);
-	gt_input_set_font_align(input1, GT_ALIGN_LEFT_MID);
-	gt_input_set_value(input1, "高通GT-HMI国产开源GUI框架，高效代码框架，使用便捷，易移植。");
-	gt_input_set_placeholder(input1, "placeholder");
-	gt_input_set_border_width(input1, 2);
-	gt_input_set_bg_color(input1, gt_color_hex(0xffffff));
+	/** input_outlined */
+	/** 输入框，带边框 */
+	input_outlined = gt_input_create(input);
+	gt_obj_set_pos(input_outlined, 247, 83);
+	gt_obj_set_size(input_outlined, 491, 38);
+	gt_input_set_font_color(input_outlined, gt_color_hex(0x000000));
+	gt_input_set_font_family(input_outlined, gray_black_16);
+	gt_input_set_font_cjk(input_outlined, 0);
+	gt_input_set_font_align(input_outlined, GT_ALIGN_LEFT_MID);
+	gt_input_set_value(input_outlined, "高通GT-HMI国产开源GUI框架，高效代码框架，使用便捷，易移植。");
+	gt_input_set_placeholder(input_outlined, "placeholder");
+	gt_input_set_border_width(input_outlined, 2);
+	gt_input_set_bg_color(input_outlined, gt_color_hex(0xffffff));
 
 	
 
-	/** input1Copy */
-	input1Copy = gt_input_create(input);
-	gt_obj_set_pos(input1Copy, 249, 154);
-	gt_obj_set_size(input1Copy, 488, 48);
-	gt_input_set_font_color(input1Copy, gt_color_hex(0xffffff));
-	gt_input_set_font_family(input1Copy, gray_black_16);
-	gt_input_set_font_cjk(input1Copy, 0);
-	gt_input_set_font_align(input1Copy, GT_ALIGN_LEFT_MID);
-	gt_input_set_value(input1Copy, "高通GT-HMI国产开源GUI框架，高效代码框架，使用便捷，易移植。");
-	gt_input_set_placeholder(input1Copy, "placeholder");
-	gt_input_set_border_width(input1Copy, 0);
-	gt_input_set_bg_color(input1Copy, gt_color_hex(0x8080ff));
+	/** input_blue */
+	/** 输入框，蓝色 */
+	input_blue = gt_input_create(input);
+	gt_obj_set_pos(input_blue, 249, 154);
+	gt_obj_set_size(input_blue, 488, 48);
+	gt_input_set_font_color(input_blue, gt_color_hex(0xffffff));
+	gt_input_set_font_family(input_blue, gray_black_16);
+	gt_input_set_font_cjk(input_blue, 0);
+	gt_input_set_font_align(input_blue, GT_ALIGN_LEFT_MID);
+	gt_input_set_value(input_blue, "高通GT-HMI国产开源GUI框架，高效代码框架，使用便捷，易移植。");
+	gt_input_set_placeholder(input_blue, "placeholder");
+	gt_input_set_border_width(input_blue, 0);
+	gt_input_set_bg_color(input_blue, gt_color_hex(0x8080ff));
 
 
 
