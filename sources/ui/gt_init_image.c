@@ -5,8 +5,6 @@
 /** image */
 gt_obj_st * image = NULL;
 static gt_obj_st * label_button_title = NULL;
-static gt_obj_st * label_image_title = NULL;
-static gt_obj_st * label_label_title = NULL;
 static gt_obj_st * label_txt_title = NULL;
 static gt_obj_st * label_input_title = NULL;
 static gt_obj_st * label_imgbtn_title = NULL;
@@ -33,25 +31,32 @@ static gt_obj_st * label_graph_title = NULL;
 static gt_obj_st * label_rect_title = NULL;
 static gt_obj_st * label_statusbartitle = NULL;
 static gt_obj_st * label_screen_title = NULL;
-static gt_obj_st * rect_wireframe = NULL;
 static gt_obj_st * rect3 = NULL;
 static gt_obj_st * label_image_category = NULL;
-static gt_obj_st * img_background = NULL;
-static gt_obj_st * img_circle = NULL;
-static gt_obj_st * img_sleep = NULL;
-static gt_obj_st * img_music = NULL;
-static gt_obj_st * img_sunny = NULL;
+static gt_obj_st * rect1_wireframe = NULL;
+static gt_obj_st * rect1_blue = NULL;
+static gt_obj_st * label_transparency_title = NULL;
+static gt_obj_st * img_Transparency20 = NULL;
+static gt_obj_st * img_Transparency60 = NULL;
+static gt_obj_st * img_Transparency100 = NULL;
+static gt_obj_st * rect2_wireframe = NULL;
+static gt_obj_st * rect2_blue = NULL;
+static gt_obj_st * label_size_title = NULL;
+static gt_obj_st * img_Small = NULL;
+static gt_obj_st * img_Medium = NULL;
+static gt_obj_st * img_Large = NULL;
+static gt_obj_st * rect3_wireframe = NULL;
+static gt_obj_st * rect3_blue = NULL;
+static gt_obj_st * label_wordart_title = NULL;
+static gt_obj_st * img_Pangmenfont = NULL;
+static gt_obj_st * img1_Pandafont = NULL;
+static gt_obj_st * img2_Pandafont = NULL;
+static gt_obj_st * img_HuXiaobofont = NULL;
+static gt_obj_st * label_image_title = NULL;
+static gt_obj_st * label_label_title = NULL;
 
 static void lab1_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
-}
-
-static void label_image_title_0_cb(gt_event_st * e) {
-	gt_label_set_font_color(label_image_title, gt_color_hex(0xc0c0c0));
-}
-
-static void lab3_0_cb(gt_event_st * e) {
-	gt_disp_stack_load_scr_anim(GT_ID_LABEL, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
 static void label_txt_title_0_cb(gt_event_st * e) {
@@ -82,6 +87,10 @@ static void lab10_0_cb(gt_event_st * e) {
 	
 }
 
+static void label_label_titleCopy_0_cb(gt_event_st * e) {
+	gt_disp_stack_load_scr_anim(GT_ID_LABEL, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
+}
+
 gt_obj_st * gt_init_image(void)
 {
 	image = gt_obj_create(NULL);
@@ -103,34 +112,6 @@ gt_obj_st * gt_init_image(void)
 	gt_label_set_text(label_button_title, "button 按钮");
 	gt_label_set_space(label_button_title, 0, 0);
 	gt_obj_add_event_cb(label_button_title, lab1_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
-	
-
-	/** label_image_title */
-	/** 用于显示“image图片”的标题 Label */
-	label_image_title = gt_label_create(image);
-	gt_obj_set_pos(label_image_title, 15, 51);
-	gt_obj_set_size(label_image_title, 139, 40);
-	gt_label_set_font_color(label_image_title, gt_color_hex(0x0080ff));
-	gt_label_set_font_family(label_image_title, gray_black_16);
-	gt_label_set_font_cjk(label_image_title, 0);
-	gt_label_set_font_align(label_image_title, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(label_image_title, "image 图片");
-	gt_label_set_space(label_image_title, 0, 0);
-	gt_obj_add_event_cb(label_image_title, label_image_title_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
-	
-
-	/** label_label_title */
-	/** 用于显示“label标签”的标题 Label */
-	label_label_title = gt_label_create(image);
-	gt_obj_set_pos(label_label_title, 15, 95);
-	gt_obj_set_size(label_label_title, 139, 40);
-	gt_label_set_font_color(label_label_title, gt_color_hex(0x808080));
-	gt_label_set_font_family(label_label_title, gray_black_16);
-	gt_label_set_font_cjk(label_label_title, 0);
-	gt_label_set_font_align(label_label_title, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(label_label_title, "label 标签");
-	gt_label_set_space(label_label_title, 0, 0);
-	gt_obj_add_event_cb(label_label_title, lab3_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
 	/** label_txt_title */
@@ -497,19 +478,6 @@ gt_obj_st * gt_init_image(void)
 
 	
 
-	/** rect_wireframe */
-	/** 矩形线框 */
-	rect_wireframe = gt_rect_create(image);
-	gt_obj_set_pos(rect_wireframe, 237, 64);
-	gt_obj_set_size(rect_wireframe, 509, 342);
-	gt_rect_set_radius(rect_wireframe, 0);
-	gt_rect_set_bg_color(rect_wireframe, gt_color_hex(0xffffff));
-	gt_rect_set_color_border(rect_wireframe, gt_color_hex(0xc0c0c0));
-	gt_rect_set_fill(rect_wireframe, 1);
-	gt_rect_set_border(rect_wireframe, 1);
-
-	
-
 	/** rect3 */
 	rect3 = gt_rect_create(image);
 	gt_obj_set_pos(rect3, 187, 1);
@@ -526,7 +494,7 @@ gt_obj_st * gt_init_image(void)
 	/** 图片控件板块的标题Label */
 	label_image_category = gt_label_create(image);
 	gt_obj_set_pos(label_image_category, 240, 14);
-	gt_obj_set_size(label_image_category, 162, 34);
+	gt_obj_set_size(label_image_category, 238, 34);
 	gt_label_set_font_color(label_image_category, gt_color_hex(0x0080ff));
 	gt_label_set_font_family(label_image_category, gray_black_24);
 	gt_label_set_font_cjk(label_image_category, 0);
@@ -536,50 +504,244 @@ gt_obj_st * gt_init_image(void)
 
 	
 
-	/** img_background */
-	/** 背景图 */
-	img_background = gt_img_create(image);
-	gt_obj_set_pos(img_background, 243, 69);
-	gt_obj_set_size(img_background, 354, 198);
-	gt_img_set_src(img_background, ".:img_bgImg32_354x198.png");
+	/** rect1_wireframe */
+	/** 矩形线框 */
+	rect1_wireframe = gt_rect_create(image);
+	gt_obj_set_pos(rect1_wireframe, 239, 60);
+	gt_obj_set_size(rect1_wireframe, 509, 180);
+	gt_rect_set_radius(rect1_wireframe, 0);
+	gt_rect_set_bg_color(rect1_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect1_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect1_wireframe, 1);
+	gt_rect_set_border(rect1_wireframe, 1);
 
 	
 
-	/** img_circle */
-	/** 圆形背景 */
-	img_circle = gt_img_create(image);
-	gt_obj_set_pos(img_circle, 540, 201);
-	gt_obj_set_size(img_circle, 200, 200);
-	gt_img_set_src(img_circle, ".:img_bgImg7_200x200.png");
+	/** rect1_blue */
+	/** 蓝色矩形背景 */
+	rect1_blue = gt_rect_create(image);
+	gt_obj_set_pos(rect1_blue, 219, 71);
+	gt_obj_set_size(rect1_blue, 140, 38);
+	gt_rect_set_radius(rect1_blue, 0);
+	gt_rect_set_bg_color(rect1_blue, gt_color_hex(0xe3f1ff));
+	gt_rect_set_color_border(rect1_blue, gt_color_hex(0xffffff));
+	gt_rect_set_fill(rect1_blue, 1);
+	gt_rect_set_border(rect1_blue, 0);
 
 	
 
-	/** img_sleep */
-	/** 睡眠图标 */
-	img_sleep = gt_img_create(image);
-	gt_obj_set_pos(img_sleep, 254, 305);
-	gt_obj_set_size(img_sleep, 78, 78);
-	gt_img_set_src(img_sleep, ".:img_sleep5_78x78.png");
+	/** label_transparency_title */
+	/** 用于显示“透明度”的标题 Label */
+	label_transparency_title = gt_label_create(image);
+	gt_obj_set_pos(label_transparency_title, 236, 73);
+	gt_obj_set_size(label_transparency_title, 119, 34);
+	gt_label_set_font_color(label_transparency_title, gt_color_hex(0x000000));
+	gt_label_set_font_family(label_transparency_title, gray_black_20);
+	gt_label_set_font_cjk(label_transparency_title, 0);
+	gt_label_set_font_align(label_transparency_title, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(label_transparency_title, "透明度");
+	gt_label_set_space(label_transparency_title, 0, 0);
 
 	
 
-	/** img_music */
-	/** 音乐图标 */
-	img_music = gt_img_create(image);
-	gt_obj_set_pos(img_music, 573, 88);
-	gt_obj_set_size(img_music, 78, 78);
-	gt_obj_set_opa(img_music, GT_OPA_55);
-	gt_img_set_src(img_music, ".:img_music14_78x78.png");
+	/** img_Transparency20 */
+	/** 透明度20图片 */
+	img_Transparency20 = gt_img_create(image);
+	gt_obj_set_pos(img_Transparency20, 309, 138);
+	gt_obj_set_size(img_Transparency20, 54, 54);
+	gt_obj_set_opa(img_Transparency20, GT_OPA_20);
+	gt_img_set_src(img_Transparency20, ".:img_guide_54x54.png");
 
 	
 
-	/** img_sunny */
-	/** 太阳图标 */
-	img_sunny = gt_img_create(image);
-	gt_obj_set_pos(img_sunny, 351, 305);
-	gt_obj_set_size(img_sunny, 80, 80);
-	gt_img_set_src(img_sunny, ".:img_sunny_80x80.png");
+	/** img_Transparency60 */
+	/** 透明度60图片 */
+	img_Transparency60 = gt_img_create(image);
+	gt_obj_set_pos(img_Transparency60, 465, 138);
+	gt_obj_set_size(img_Transparency60, 54, 54);
+	gt_obj_set_opa(img_Transparency60, GT_OPA_60);
+	gt_img_set_src(img_Transparency60, ".:img_guide_54x54.png");
 
+	
+
+	/** img_Transparency100 */
+	/** 透明度100图片 */
+	img_Transparency100 = gt_img_create(image);
+	gt_obj_set_pos(img_Transparency100, 613, 138);
+	gt_obj_set_size(img_Transparency100, 54, 54);
+	gt_img_set_src(img_Transparency100, ".:img_guide_54x54.png");
+
+	
+
+	/** rect2_wireframe */
+	/** 矩形线框 */
+	rect2_wireframe = gt_rect_create(image);
+	gt_obj_set_pos(rect2_wireframe, 239, 253);
+	gt_obj_set_size(rect2_wireframe, 509, 220);
+	gt_rect_set_radius(rect2_wireframe, 0);
+	gt_rect_set_bg_color(rect2_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect2_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect2_wireframe, 1);
+	gt_rect_set_border(rect2_wireframe, 1);
+
+	
+
+	/** rect2_blue */
+	/** 蓝色矩形背景 */
+	rect2_blue = gt_rect_create(image);
+	gt_obj_set_pos(rect2_blue, 219, 266);
+	gt_obj_set_size(rect2_blue, 137, 38);
+	gt_rect_set_radius(rect2_blue, 0);
+	gt_rect_set_bg_color(rect2_blue, gt_color_hex(0xe3f1ff));
+	gt_rect_set_color_border(rect2_blue, gt_color_hex(0xffffff));
+	gt_rect_set_fill(rect2_blue, 1);
+	gt_rect_set_border(rect2_blue, 0);
+
+	
+
+	/** label_size_title */
+	/** 用于显示“大小”的标题 Label */
+	label_size_title = gt_label_create(image);
+	gt_obj_set_pos(label_size_title, 245, 269);
+	gt_obj_set_size(label_size_title, 106, 34);
+	gt_label_set_font_color(label_size_title, gt_color_hex(0x000000));
+	gt_label_set_font_family(label_size_title, gray_black_20);
+	gt_label_set_font_cjk(label_size_title, 0);
+	gt_label_set_font_align(label_size_title, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(label_size_title, "大小");
+	gt_label_set_space(label_size_title, 0, 0);
+
+	
+
+	/** img_Small */
+	/** 小号图片 */
+	img_Small = gt_img_create(image);
+	gt_obj_set_pos(img_Small, 315, 358);
+	gt_obj_set_size(img_Small, 40, 40);
+	gt_img_set_src(img_Small, ".:img_music14_40x40.png");
+
+	
+
+	/** img_Medium */
+	/** 中号图片 */
+	img_Medium = gt_img_create(image);
+	gt_obj_set_pos(img_Medium, 461, 348);
+	gt_obj_set_size(img_Medium, 60, 60);
+	gt_img_set_src(img_Medium, ".:img_music14_60x60.png");
+
+	
+
+	/** img_Large */
+	/** 大号图片 */
+	img_Large = gt_img_create(image);
+	gt_obj_set_pos(img_Large, 601, 336);
+	gt_obj_set_size(img_Large, 80, 80);
+	gt_img_set_src(img_Large, ".:img_music14_80x80.png");
+
+	
+
+	/** rect3_wireframe */
+	/** 矩形线框 */
+	rect3_wireframe = gt_rect_create(image);
+	gt_obj_set_pos(rect3_wireframe, 239, 488);
+	gt_obj_set_size(rect3_wireframe, 509, 220);
+	gt_rect_set_radius(rect3_wireframe, 0);
+	gt_rect_set_bg_color(rect3_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect3_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect3_wireframe, 1);
+	gt_rect_set_border(rect3_wireframe, 1);
+
+	
+
+	/** rect3_blue */
+	/** 蓝色矩形背景 */
+	rect3_blue = gt_rect_create(image);
+	gt_obj_set_pos(rect3_blue, 219, 499);
+	gt_obj_set_size(rect3_blue, 142, 38);
+	gt_rect_set_radius(rect3_blue, 0);
+	gt_rect_set_bg_color(rect3_blue, gt_color_hex(0xe3f1ff));
+	gt_rect_set_color_border(rect3_blue, gt_color_hex(0xffffff));
+	gt_rect_set_fill(rect3_blue, 1);
+	gt_rect_set_border(rect3_blue, 0);
+
+	
+
+	/** label_wordart_title */
+	/** 用于显示“艺术字”的标题 Label */
+	label_wordart_title = gt_label_create(image);
+	gt_obj_set_pos(label_wordart_title, 239, 501);
+	gt_obj_set_size(label_wordart_title, 118, 34);
+	gt_label_set_font_color(label_wordart_title, gt_color_hex(0x000000));
+	gt_label_set_font_family(label_wordart_title, gray_black_20);
+	gt_label_set_font_cjk(label_wordart_title, 0);
+	gt_label_set_font_align(label_wordart_title, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(label_wordart_title, "艺术字");
+	gt_label_set_space(label_wordart_title, 0, 0);
+
+	
+
+	/** img_Pangmenfont */
+	/** 庞门字体艺术字图片 */
+	img_Pangmenfont = gt_img_create(image);
+	gt_obj_set_pos(img_Pangmenfont, 303, 584);
+	gt_obj_set_size(img_Pangmenfont, 66, 36);
+	gt_img_set_src(img_Pangmenfont, ".:img_pangmenzhengdaobiaotiti_32_8080ff_gao_tong_66x36.png");
+
+	
+
+	/** img1_Pandafont */
+	/** 熊猫字体图片 */
+	img1_Pandafont = gt_img_create(image);
+	gt_obj_set_pos(img1_Pandafont, 437, 575);
+	gt_obj_set_size(img1_Pandafont, 50, 50);
+	gt_img_set_src(img1_Pandafont, ".:img_yezigongchangxiaoxiongmao_48_ff00ff_gao_9ad8_50x50.png");
+
+	
+
+	/** img2_Pandafont */
+	/** 熊猫字体图片 */
+	img2_Pandafont = gt_img_create(image);
+	gt_obj_set_pos(img2_Pandafont, 480, 575);
+	gt_obj_set_size(img2_Pandafont, 50, 50);
+	gt_img_set_src(img2_Pandafont, ".:img_yezigongchangxiaoxiongmao_48_ff00ff_tong_901a_50x50.png");
+
+	
+
+	/** img_HuXiaobofont */
+	/** 胡晓波字体图片 */
+	img_HuXiaobofont = gt_img_create(image);
+	gt_obj_set_pos(img_HuXiaobofont, 577, 562);
+	gt_obj_set_size(img_HuXiaobofont, 120, 72);
+	gt_img_set_src(img_HuXiaobofont, ".:img_huxiaobonanshenti_60_ff8000_gao_tong_120x72.png");
+
+	
+
+	/** label_image_title */
+	/** 用于显示“image图片”的标题 Label */
+	label_image_title = gt_label_create(image);
+	gt_obj_set_pos(label_image_title, 15, 51);
+	gt_obj_set_size(label_image_title, 139, 40);
+	gt_label_set_font_color(label_image_title, gt_color_hex(0x0080ff));
+	gt_label_set_font_family(label_image_title, gray_black_16);
+	gt_label_set_font_cjk(label_image_title, 0);
+	gt_label_set_font_align(label_image_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_image_title, "image 图片");
+	gt_label_set_space(label_image_title, 0, 0);
+
+	
+
+	/** label_label_title */
+	/** 用于显示“label标签”的标题 Label */
+	label_label_title = gt_label_create(image);
+	gt_obj_set_pos(label_label_title, 15, 95);
+	gt_obj_set_size(label_label_title, 139, 40);
+	gt_label_set_font_color(label_label_title, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_label_title, gray_black_16);
+	gt_label_set_font_cjk(label_label_title, 0);
+	gt_label_set_font_align(label_label_title, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_label_title, "label 标签");
+	gt_label_set_space(label_label_title, 0, 0);
+	gt_obj_add_event_cb(label_label_title, label_label_titleCopy_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 
 
 	return image;

@@ -33,15 +33,15 @@ static gt_obj_st * label_graph_title = NULL;
 static gt_obj_st * label_rect_title = NULL;
 static gt_obj_st * label_statusbartitle = NULL;
 static gt_obj_st * label_screen_title = NULL;
-static gt_obj_st * rect1 = NULL;
-static gt_obj_st * rect2 = NULL;
+static gt_obj_st * rect1_wireframe = NULL;
+static gt_obj_st * rect1_blue = NULL;
 static gt_obj_st * rect3 = NULL;
 static gt_obj_st * blue_button = NULL;
 static gt_obj_st * green_button_outlined = NULL;
 static gt_obj_st * yellow_back_ok_button = NULL;
 static gt_obj_st * fuchsia_outlined = NULL;
-static gt_obj_st * rect4 = NULL;
-static gt_obj_st * rect5 = NULL;
+static gt_obj_st * rect2_wireframe = NULL;
+static gt_obj_st * rect2_blue = NULL;
 static gt_obj_st * label_shape_title = NULL;
 static gt_obj_st * rounded_brown_button = NULL;
 static gt_obj_st * rounded_orange_button = NULL;
@@ -50,8 +50,8 @@ static gt_obj_st * square_fuchsia_button = NULL;
 static gt_obj_st * circle_cyan_button = NULL;
 static gt_obj_st * label_button_category = NULL;
 static gt_obj_st * label_color_title = NULL;
-static gt_obj_st * rect6 = NULL;
-static gt_obj_st * rect7 = NULL;
+static gt_obj_st * rect3_wireframe = NULL;
+static gt_obj_st * rect3_blue = NULL;
 static gt_obj_st * label_icon_title = NULL;
 static gt_obj_st * fuchsia_flat = NULL;
 static gt_obj_st * outlined_orange_button = NULL;
@@ -516,28 +516,29 @@ gt_obj_st * gt_init_button(void)
 
 	
 
-	/** rect1 */
+	/** rect1_wireframe */
 	/** 矩形线框 */
-	rect1 = gt_rect_create(button);
-	gt_obj_set_pos(rect1, 237, 64);
-	gt_obj_set_size(rect1, 509, 270);
-	gt_rect_set_radius(rect1, 0);
-	gt_rect_set_bg_color(rect1, gt_color_hex(0xffffff));
-	gt_rect_set_color_border(rect1, gt_color_hex(0xc0c0c0));
-	gt_rect_set_fill(rect1, 1);
-	gt_rect_set_border(rect1, 1);
+	rect1_wireframe = gt_rect_create(button);
+	gt_obj_set_pos(rect1_wireframe, 237, 64);
+	gt_obj_set_size(rect1_wireframe, 509, 270);
+	gt_rect_set_radius(rect1_wireframe, 0);
+	gt_rect_set_bg_color(rect1_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect1_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect1_wireframe, 1);
+	gt_rect_set_border(rect1_wireframe, 1);
 
 	
 
-	/** rect2 */
-	rect2 = gt_rect_create(button);
-	gt_obj_set_pos(rect2, 216, 73);
-	gt_obj_set_size(rect2, 138, 38);
-	gt_rect_set_radius(rect2, 0);
-	gt_rect_set_bg_color(rect2, gt_color_hex(0xe3f1ff));
-	gt_rect_set_color_border(rect2, gt_color_hex(0xffffff));
-	gt_rect_set_fill(rect2, 1);
-	gt_rect_set_border(rect2, 0);
+	/** rect1_blue */
+	/** 蓝色矩形背景 */
+	rect1_blue = gt_rect_create(button);
+	gt_obj_set_pos(rect1_blue, 216, 73);
+	gt_obj_set_size(rect1_blue, 138, 38);
+	gt_rect_set_radius(rect1_blue, 0);
+	gt_rect_set_bg_color(rect1_blue, gt_color_hex(0xe3f1ff));
+	gt_rect_set_color_border(rect1_blue, gt_color_hex(0xffffff));
+	gt_rect_set_fill(rect1_blue, 1);
+	gt_rect_set_border(rect1_blue, 0);
 
 	
 
@@ -627,27 +628,29 @@ gt_obj_st * gt_init_button(void)
 
 	
 
-	/** rect4 */
-	rect4 = gt_rect_create(button);
-	gt_obj_set_pos(rect4, 237, 354);
-	gt_obj_set_size(rect4, 509, 328);
-	gt_rect_set_radius(rect4, 0);
-	gt_rect_set_bg_color(rect4, gt_color_hex(0xffffff));
-	gt_rect_set_color_border(rect4, gt_color_hex(0xc0c0c0));
-	gt_rect_set_fill(rect4, 1);
-	gt_rect_set_border(rect4, 1);
+	/** rect2_wireframe */
+	/** 矩形线框 */
+	rect2_wireframe = gt_rect_create(button);
+	gt_obj_set_pos(rect2_wireframe, 237, 354);
+	gt_obj_set_size(rect2_wireframe, 509, 328);
+	gt_rect_set_radius(rect2_wireframe, 0);
+	gt_rect_set_bg_color(rect2_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect2_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect2_wireframe, 1);
+	gt_rect_set_border(rect2_wireframe, 1);
 
 	
 
-	/** rect5 */
-	rect5 = gt_rect_create(button);
-	gt_obj_set_pos(rect5, 215, 363);
-	gt_obj_set_size(rect5, 138, 38);
-	gt_rect_set_radius(rect5, 0);
-	gt_rect_set_bg_color(rect5, gt_color_hex(0xe3f1ff));
-	gt_rect_set_color_border(rect5, gt_color_hex(0xffffff));
-	gt_rect_set_fill(rect5, 1);
-	gt_rect_set_border(rect5, 0);
+	/** rect2_blue */
+	/** 蓝色矩形背景 */
+	rect2_blue = gt_rect_create(button);
+	gt_obj_set_pos(rect2_blue, 215, 363);
+	gt_obj_set_size(rect2_blue, 138, 38);
+	gt_rect_set_radius(rect2_blue, 0);
+	gt_rect_set_bg_color(rect2_blue, gt_color_hex(0xe3f1ff));
+	gt_rect_set_color_border(rect2_blue, gt_color_hex(0xffffff));
+	gt_rect_set_fill(rect2_blue, 1);
+	gt_rect_set_border(rect2_blue, 0);
 
 	
 
@@ -778,27 +781,29 @@ gt_obj_st * gt_init_button(void)
 
 	
 
-	/** rect6 */
-	rect6 = gt_rect_create(button);
-	gt_obj_set_pos(rect6, 237, 703);
-	gt_obj_set_size(rect6, 509, 328);
-	gt_rect_set_radius(rect6, 0);
-	gt_rect_set_bg_color(rect6, gt_color_hex(0xffffff));
-	gt_rect_set_color_border(rect6, gt_color_hex(0xc0c0c0));
-	gt_rect_set_fill(rect6, 1);
-	gt_rect_set_border(rect6, 1);
+	/** rect3_wireframe */
+	/** 矩形线框 */
+	rect3_wireframe = gt_rect_create(button);
+	gt_obj_set_pos(rect3_wireframe, 237, 703);
+	gt_obj_set_size(rect3_wireframe, 509, 328);
+	gt_rect_set_radius(rect3_wireframe, 0);
+	gt_rect_set_bg_color(rect3_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect3_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect3_wireframe, 1);
+	gt_rect_set_border(rect3_wireframe, 1);
 
 	
 
-	/** rect7 */
-	rect7 = gt_rect_create(button);
-	gt_obj_set_pos(rect7, 215, 713);
-	gt_obj_set_size(rect7, 138, 38);
-	gt_rect_set_radius(rect7, 0);
-	gt_rect_set_bg_color(rect7, gt_color_hex(0xe3f1ff));
-	gt_rect_set_color_border(rect7, gt_color_hex(0xffffff));
-	gt_rect_set_fill(rect7, 1);
-	gt_rect_set_border(rect7, 0);
+	/** rect3_blue */
+	/** 蓝色矩形背景 */
+	rect3_blue = gt_rect_create(button);
+	gt_obj_set_pos(rect3_blue, 215, 713);
+	gt_obj_set_size(rect3_blue, 138, 38);
+	gt_rect_set_radius(rect3_blue, 0);
+	gt_rect_set_bg_color(rect3_blue, gt_color_hex(0xe3f1ff));
+	gt_rect_set_color_border(rect3_blue, gt_color_hex(0xffffff));
+	gt_rect_set_fill(rect3_blue, 1);
+	gt_rect_set_border(rect3_blue, 0);
 
 	
 
