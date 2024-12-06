@@ -41,8 +41,8 @@ static gt_obj_st * rect5 = NULL;
 static gt_obj_st * lab33 = NULL;
 static gt_obj_st * switch2 = NULL;
 static gt_obj_st * switch3 = NULL;
-static gt_obj_st * switch4 = NULL;
-static gt_obj_st * switch5 = NULL;
+static gt_obj_st * switch1Copy = NULL;
+static gt_obj_st * switch3Copy = NULL;
 
 static void lab1_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
@@ -536,8 +536,8 @@ gt_obj_st * gt_init_switch10(void)
 
 	/** switch1 */
 	switch1 = gt_switch_create(switch10);
-	gt_obj_set_pos(switch1, 417, 133);
-	gt_obj_set_size(switch1, 114, 56);
+	gt_obj_set_pos(switch1, 451, 140);
+	gt_obj_set_size(switch1, 80, 38);
 	gt_switch_set_color_act(switch1, gt_color_hex(0x13ce66));
 	gt_switch_set_color_ina(switch1, gt_color_hex(0xebeef5));
 	gt_switch_set_color_point(switch1, gt_color_hex(0xFFFFFF));
@@ -574,7 +574,7 @@ gt_obj_st * gt_init_switch10(void)
 
 	/** switch2 */
 	switch2 = gt_switch_create(switch10);
-	gt_obj_set_pos(switch2, 271, 154);
+	gt_obj_set_pos(switch2, 267, 134);
 	gt_obj_set_size(switch2, 101, 49);
 	gt_switch_set_color_act(switch2, gt_color_hex(0x13ce66));
 	gt_switch_set_color_ina(switch2, gt_color_hex(0xebeef5));
@@ -586,8 +586,8 @@ gt_obj_st * gt_init_switch10(void)
 
 	/** switch3 */
 	switch3 = gt_switch_create(switch10);
-	gt_obj_set_pos(switch3, 605, 134);
-	gt_obj_set_size(switch3, 98, 52);
+	gt_obj_set_pos(switch3, 621, 141);
+	gt_obj_set_size(switch3, 76, 39);
 	gt_switch_set_color_act(switch3, gt_color_hex(0x13ce66));
 	gt_switch_set_color_ina(switch3, gt_color_hex(0xebeef5));
 	gt_switch_set_color_point(switch3, gt_color_hex(0xFFFFFF));
@@ -597,31 +597,31 @@ gt_obj_st * gt_init_switch10(void)
 
 	
 
-	/** switch4 */
-	switch4 = gt_switch_create(switch10);
-	gt_obj_set_pos(switch4, 411, 225);
-	gt_obj_set_size(switch4, 125, 45);
-	gt_switch_set_color_act(switch4, gt_color_hex(0x13ce66));
-	gt_switch_set_color_ina(switch4, gt_color_hex(0xebeef5));
-	gt_switch_set_color_point(switch4, gt_color_hex(0xFFFFFF));
-	gt_obj_set_state(switch4, 1);
-	gt_switch_set_style(switch4, GT_SWITCH_STYLE_DEFAULT);
-	gt_switch_set_div_line(switch4, true);
-	gt_switch_set_color_divider(switch4, gt_color_hex(0xffffff));
+	/** switch1Copy */
+	switch1Copy = gt_switch_create(switch10);
+	gt_obj_set_pos(switch1Copy, 451, 224);
+	gt_obj_set_size(switch1Copy, 80, 38);
+	gt_switch_set_color_act(switch1Copy, gt_color_hex(0x13ce66));
+	gt_switch_set_color_ina(switch1Copy, gt_color_hex(0xebeef5));
+	gt_switch_set_color_point(switch1Copy, gt_color_hex(0xFFFFFF));
+	gt_obj_set_state(switch1Copy, 1);
+	gt_switch_set_style(switch1Copy, GT_SWITCH_STYLE_DEFAULT);
+	gt_switch_set_div_line(switch1Copy, true);
+	gt_switch_set_color_divider(switch1Copy, gt_color_hex(0xffffff));
 
 	
 
-	/** switch5 */
-	switch5 = gt_switch_create(switch10);
-	gt_obj_set_pos(switch5, 595, 227);
-	gt_obj_set_size(switch5, 122, 45);
-	gt_switch_set_color_act(switch5, gt_color_hex(0x13ce66));
-	gt_switch_set_color_ina(switch5, gt_color_hex(0xebeef5));
-	gt_switch_set_color_point(switch5, gt_color_hex(0xFFFFFF));
-	gt_obj_set_state(switch5, 1);
-	gt_switch_set_style(switch5, GT_SWITCH_STYLE_RECT);
-	gt_switch_set_div_line(switch5, true);
-	gt_switch_set_color_divider(switch5, gt_color_hex(0xffffff));
+	/** switch3Copy */
+	switch3Copy = gt_switch_create(switch10);
+	gt_obj_set_pos(switch3Copy, 622, 222);
+	gt_obj_set_size(switch3Copy, 76, 39);
+	gt_switch_set_color_act(switch3Copy, gt_color_hex(0x13ce66));
+	gt_switch_set_color_ina(switch3Copy, gt_color_hex(0xebeef5));
+	gt_switch_set_color_point(switch3Copy, gt_color_hex(0xFFFFFF));
+	gt_obj_set_state(switch3Copy, 1);
+	gt_switch_set_style(switch3Copy, GT_SWITCH_STYLE_RECT);
+	gt_switch_set_div_line(switch3Copy, true);
+	gt_switch_set_color_divider(switch3Copy, gt_color_hex(0xffffff));
 
 
 
