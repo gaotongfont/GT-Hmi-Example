@@ -36,9 +36,18 @@ static gt_obj_st * label_screen_title = NULL;
 static gt_obj_st * rect3 = NULL;
 static gt_obj_st * label_txt_category = NULL;
 static gt_obj_st * rect_wireframe = NULL;
-static gt_obj_st * txt_black = NULL;
-static gt_obj_st * txt_blue_strikethrough = NULL;
-static gt_obj_st * txt_pink_underline = NULL;
+static gt_obj_st * txt1 = NULL;
+static gt_obj_st * rect1_blueCopy = NULL;
+static gt_obj_st * label_style_title = NULL;
+static gt_obj_st * txt1Copy = NULL;
+static gt_obj_st * txt1CopyCopy = NULL;
+static gt_obj_st * rect_wireframeCopy = NULL;
+static gt_obj_st * rect1_blueCopyCopy = NULL;
+static gt_obj_st * label_colour_title = NULL;
+static gt_obj_st * txt1CopyCopyCopy = NULL;
+static gt_obj_st * txt1CopyCopyCopyCopy = NULL;
+static gt_obj_st * txt1CopyCopyCopyCopyCopy = NULL;
+static gt_obj_st * txt1CopyCopyCopyCopyCopyCopy = NULL;
 
 static void txt_0_cb(gt_event_st * e) {
 	
@@ -525,7 +534,7 @@ gt_obj_st * gt_init_txt(void)
 	/** 矩形线框 */
 	rect_wireframe = gt_rect_create(txt);
 	gt_obj_set_pos(rect_wireframe, 237, 64);
-	gt_obj_set_size(rect_wireframe, 509, 342);
+	gt_obj_set_size(rect_wireframe, 509, 280);
 	gt_rect_set_radius(rect_wireframe, 0);
 	gt_rect_set_bg_color(rect_wireframe, gt_color_hex(0xffffff));
 	gt_rect_set_color_border(rect_wireframe, gt_color_hex(0xc0c0c0));
@@ -534,46 +543,162 @@ gt_obj_st * gt_init_txt(void)
 
 	
 
-	/** txt_black */
-	/** 文本区黑色底 */
-	txt_black = gt_textarea_create(txt);
-	gt_obj_set_pos(txt_black, 271, 89);
-	gt_obj_set_size(txt_black, 200, 90);
-	gt_textarea_set_font_color(txt_black, gt_color_hex(0xffffff));
-	gt_textarea_set_font_family(txt_black, gray_black_16);
-	gt_textarea_set_font_cjk(txt_black, 0);
-	gt_textarea_set_font_align(txt_black, GT_ALIGN_LEFT);
-	gt_textarea_add_str(txt_black, "高通GT-HMI开源上位机软件文本区控件", 0, gt_color_hex(0xffffff));
-	gt_textarea_set_bg_color(txt_black, gt_color_hex(0x000000));
+	/** txt1 */
+	txt1 = gt_textarea_create(txt);
+	gt_obj_set_pos(txt1, 262, 136);
+	gt_obj_set_size(txt1, 218, 67);
+	gt_textarea_set_font_color(txt1, gt_color_hex(0x000000));
+	gt_textarea_set_font_family(txt1, gray_black_20);
+	gt_textarea_set_font_cjk(txt1, 0);
+	gt_textarea_set_font_align(txt1, GT_ALIGN_LEFT);
+	gt_textarea_add_str(txt1, "高通GT-HMI上位机软件", 0, gt_color_hex(0xff00ff));
+	gt_textarea_set_bg_color(txt1, gt_color_hex(0xffffff));
 
 	
 
-	/** txt_blue_strikethrough */
-	/** 文本区蓝色底，带删除线 */
-	txt_blue_strikethrough = gt_textarea_create(txt);
-	gt_obj_set_pos(txt_blue_strikethrough, 513, 89);
-	gt_obj_set_size(txt_blue_strikethrough, 200, 90);
-	gt_textarea_set_font_color(txt_blue_strikethrough, gt_color_hex(0xffffff));
-	gt_textarea_set_font_family(txt_blue_strikethrough, gray_black_20);
-	gt_textarea_set_font_cjk(txt_blue_strikethrough, 0);
-	gt_textarea_set_font_align(txt_blue_strikethrough, GT_ALIGN_LEFT);
-	gt_textarea_add_str(txt_blue_strikethrough, "高通GT-HMI开源上位机软件文本区控件", 2, gt_color_hex(0xffffff));
-	gt_textarea_set_bg_color(txt_blue_strikethrough, gt_color_hex(0x8080ff));
+	/** rect1_blueCopy */
+	/** 蓝色矩形背景 */
+	rect1_blueCopy = gt_rect_create(txt);
+	gt_obj_set_pos(rect1_blueCopy, 214, 75);
+	gt_obj_set_size(rect1_blueCopy, 140, 38);
+	gt_rect_set_radius(rect1_blueCopy, 0);
+	gt_rect_set_bg_color(rect1_blueCopy, gt_color_hex(0xe3f1ff));
+	gt_rect_set_color_border(rect1_blueCopy, gt_color_hex(0xffffff));
+	gt_rect_set_fill(rect1_blueCopy, 1);
+	gt_rect_set_border(rect1_blueCopy, 0);
 
 	
 
-	/** txt_pink_underline */
-	/** 文本区粉色底，带下划线 */
-	txt_pink_underline = gt_textarea_create(txt);
-	gt_obj_set_pos(txt_pink_underline, 271, 217);
-	gt_obj_set_size(txt_pink_underline, 158, 158);
-	gt_textarea_set_font_color(txt_pink_underline, gt_color_hex(0xffffff));
-	gt_textarea_set_font_family(txt_pink_underline, gray_black_24);
-	gt_textarea_set_font_cjk(txt_pink_underline, 0);
-	gt_textarea_set_font_align(txt_pink_underline, GT_ALIGN_LEFT);
-	gt_textarea_add_str(txt_pink_underline, "高通GT-HMI开源上位机软件文本区控件", 1, gt_color_hex(0xffffff));
-	gt_textarea_add_str(txt_pink_underline, "高通GT-HMI开源上位机软件", 0, gt_color_hex(0x000000));
-	gt_textarea_set_bg_color(txt_pink_underline, gt_color_hex(0xff0080));
+	/** label_style_title */
+	/** 用于显示“风格”的标题 Label */
+	label_style_title = gt_label_create(txt);
+	gt_obj_set_pos(label_style_title, 241, 77);
+	gt_obj_set_size(label_style_title, 106, 34);
+	gt_label_set_font_color(label_style_title, gt_color_hex(0x000000));
+	gt_label_set_font_family(label_style_title, gray_black_20);
+	gt_label_set_font_cjk(label_style_title, 0);
+	gt_label_set_font_align(label_style_title, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(label_style_title, "风格");
+	gt_label_set_space(label_style_title, 0, 0);
+
+	
+
+	/** txt1Copy */
+	txt1Copy = gt_textarea_create(txt);
+	gt_obj_set_pos(txt1Copy, 501, 136);
+	gt_obj_set_size(txt1Copy, 218, 67);
+	gt_textarea_set_font_color(txt1Copy, gt_color_hex(0x000000));
+	gt_textarea_set_font_family(txt1Copy, gray_black_20);
+	gt_textarea_set_font_cjk(txt1Copy, 0);
+	gt_textarea_set_font_align(txt1Copy, GT_ALIGN_LEFT);
+	gt_textarea_add_str(txt1Copy, "高通GT-HMI上位机软件", 1, gt_color_hex(0x8080ff));
+	gt_textarea_set_bg_color(txt1Copy, gt_color_hex(0xffffff));
+
+	
+
+	/** txt1CopyCopy */
+	txt1CopyCopy = gt_textarea_create(txt);
+	gt_obj_set_pos(txt1CopyCopy, 264, 236);
+	gt_obj_set_size(txt1CopyCopy, 218, 67);
+	gt_textarea_set_font_color(txt1CopyCopy, gt_color_hex(0x000000));
+	gt_textarea_set_font_family(txt1CopyCopy, gray_black_20);
+	gt_textarea_set_font_cjk(txt1CopyCopy, 0);
+	gt_textarea_set_font_align(txt1CopyCopy, GT_ALIGN_LEFT);
+	gt_textarea_add_str(txt1CopyCopy, "高通GT-HMI上位机软件", 2, gt_color_hex(0x400080));
+	gt_textarea_set_bg_color(txt1CopyCopy, gt_color_hex(0xffffff));
+
+	
+
+	/** rect_wireframeCopy */
+	/** 矩形线框 */
+	rect_wireframeCopy = gt_rect_create(txt);
+	gt_obj_set_pos(rect_wireframeCopy, 237, 360);
+	gt_obj_set_size(rect_wireframeCopy, 509, 280);
+	gt_rect_set_radius(rect_wireframeCopy, 0);
+	gt_rect_set_bg_color(rect_wireframeCopy, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect_wireframeCopy, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect_wireframeCopy, 1);
+	gt_rect_set_border(rect_wireframeCopy, 1);
+
+	
+
+	/** rect1_blueCopyCopy */
+	/** 蓝色矩形背景 */
+	rect1_blueCopyCopy = gt_rect_create(txt);
+	gt_obj_set_pos(rect1_blueCopyCopy, 214, 373);
+	gt_obj_set_size(rect1_blueCopyCopy, 140, 38);
+	gt_rect_set_radius(rect1_blueCopyCopy, 0);
+	gt_rect_set_bg_color(rect1_blueCopyCopy, gt_color_hex(0xe3f1ff));
+	gt_rect_set_color_border(rect1_blueCopyCopy, gt_color_hex(0xffffff));
+	gt_rect_set_fill(rect1_blueCopyCopy, 1);
+	gt_rect_set_border(rect1_blueCopyCopy, 0);
+
+	
+
+	/** label_colour_title */
+	/** 用于显示“颜色”的标题 Label */
+	label_colour_title = gt_label_create(txt);
+	gt_obj_set_pos(label_colour_title, 241, 375);
+	gt_obj_set_size(label_colour_title, 106, 34);
+	gt_label_set_font_color(label_colour_title, gt_color_hex(0x000000));
+	gt_label_set_font_family(label_colour_title, gray_black_20);
+	gt_label_set_font_cjk(label_colour_title, 0);
+	gt_label_set_font_align(label_colour_title, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(label_colour_title, "颜色");
+	gt_label_set_space(label_colour_title, 0, 0);
+
+	
+
+	/** txt1CopyCopyCopy */
+	txt1CopyCopyCopy = gt_textarea_create(txt);
+	gt_obj_set_pos(txt1CopyCopyCopy, 262, 438);
+	gt_obj_set_size(txt1CopyCopyCopy, 218, 67);
+	gt_textarea_set_font_color(txt1CopyCopyCopy, gt_color_hex(0x000000));
+	gt_textarea_set_font_family(txt1CopyCopyCopy, gray_black_20);
+	gt_textarea_set_font_cjk(txt1CopyCopyCopy, 0);
+	gt_textarea_set_font_align(txt1CopyCopyCopy, GT_ALIGN_LEFT);
+	gt_textarea_add_str(txt1CopyCopyCopy, "高通GT-HMI上位机软件", 0, gt_color_hex(0xffffff));
+	gt_textarea_set_bg_color(txt1CopyCopyCopy, gt_color_hex(0x8080ff));
+
+	
+
+	/** txt1CopyCopyCopyCopy */
+	txt1CopyCopyCopyCopy = gt_textarea_create(txt);
+	gt_obj_set_pos(txt1CopyCopyCopyCopy, 501, 438);
+	gt_obj_set_size(txt1CopyCopyCopyCopy, 218, 67);
+	gt_textarea_set_font_color(txt1CopyCopyCopyCopy, gt_color_hex(0x000000));
+	gt_textarea_set_font_family(txt1CopyCopyCopyCopy, gray_black_20);
+	gt_textarea_set_font_cjk(txt1CopyCopyCopyCopy, 0);
+	gt_textarea_set_font_align(txt1CopyCopyCopyCopy, GT_ALIGN_LEFT);
+	gt_textarea_add_str(txt1CopyCopyCopyCopy, "高通GT-HMI上位机软件", 1, gt_color_hex(0xffffff));
+	gt_textarea_set_bg_color(txt1CopyCopyCopyCopy, gt_color_hex(0x000000));
+
+	
+
+	/** txt1CopyCopyCopyCopyCopy */
+	txt1CopyCopyCopyCopyCopy = gt_textarea_create(txt);
+	gt_obj_set_pos(txt1CopyCopyCopyCopyCopy, 262, 536);
+	gt_obj_set_size(txt1CopyCopyCopyCopyCopy, 218, 67);
+	gt_textarea_set_font_color(txt1CopyCopyCopyCopyCopy, gt_color_hex(0x000000));
+	gt_textarea_set_font_family(txt1CopyCopyCopyCopyCopy, gray_black_20);
+	gt_textarea_set_font_cjk(txt1CopyCopyCopyCopyCopy, 0);
+	gt_textarea_set_font_align(txt1CopyCopyCopyCopyCopy, GT_ALIGN_LEFT);
+	gt_textarea_add_str(txt1CopyCopyCopyCopyCopy, "高通GT-HMI上位机软件", 2, gt_color_hex(0xffffff));
+	gt_textarea_set_bg_color(txt1CopyCopyCopyCopyCopy, gt_color_hex(0xff0080));
+
+	
+
+	/** txt1CopyCopyCopyCopyCopyCopy */
+	txt1CopyCopyCopyCopyCopyCopy = gt_textarea_create(txt);
+	gt_obj_set_pos(txt1CopyCopyCopyCopyCopyCopy, 501, 236);
+	gt_obj_set_size(txt1CopyCopyCopyCopyCopyCopy, 218, 67);
+	gt_textarea_set_font_color(txt1CopyCopyCopyCopyCopyCopy, gt_color_hex(0x000000));
+	gt_textarea_set_font_family(txt1CopyCopyCopyCopyCopyCopy, gray_black_20);
+	gt_textarea_set_font_cjk(txt1CopyCopyCopyCopyCopyCopy, 0);
+	gt_textarea_set_font_align(txt1CopyCopyCopyCopyCopyCopy, GT_ALIGN_LEFT);
+	gt_textarea_add_str(txt1CopyCopyCopyCopyCopyCopy, "高通GT-HMI上位机软件", 2, gt_color_hex(0xff8000));
+	gt_textarea_add_str(txt1CopyCopyCopyCopyCopyCopy, "高通GT-HMI上位机软件", 0, gt_color_hex(0x000000));
+	gt_textarea_set_bg_color(txt1CopyCopyCopyCopyCopyCopy, gt_color_hex(0xffffff));
 
 
 

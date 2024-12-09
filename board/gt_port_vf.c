@@ -6,26 +6,35 @@
 
 
 /* private define -------------------------------------------------------*/
-#define IMG_CONCEPT_SHARING_0_57_30X30_PNG		0x0
-#define IMG_GLOBE_REGULAR_30X30_PNG		0xa8c
-#define IMG_GUIDE_54X54_PNG		0x1518
-#define IMG_HUXIAOBONANSHENTI_60_FF8000_GAO_TONG_120X72_PNG		0x3744
-#define IMG_LANGUAGE_54X54_PNG		0x9c84
-#define IMG_MUSIC14_40X40_PNG		0xbeb0
-#define IMG_MUSIC14_60X60_PNG		0xd170
-#define IMG_MUSIC14_78X78_PNG		0xfba0
-#define IMG_MUSIC14_80X80_PNG		0x142ec
-#define IMG_OUTDOOR_WALK_54X54_PNG		0x18dec
-#define IMG_PANGMENZHENGDAOBIAOTITI_32_8080FF_GAO_TONG_66X36_PNG		0x1b018
-#define IMG_SLEEP5_70X70_PNG		0x1cbf0
-#define IMG_SLEEP5_78X78_PNG		0x2055c
-#define IMG_SPORTS14_78X78_PNG		0x24ca8
-#define IMG_SUNNY_70X70_PNG		0x293f4
-#define IMG_SYSTEM_54X54_PNG		0x2cd60
-#define IMG_TELEGRAM_0_56_30X30_PNG		0x2ef8c
-#define IMG_TURN_ON_0_52_40X40_PNG		0x2fa18
-#define IMG_YEZIGONGCHANGXIAOXIONGMAO_48_FF00FF_GAO_9AD8_50X50_PNG		0x30cd8
-#define IMG_YEZIGONGCHANGXIAOXIONGMAO_48_FF00FF_TONG_901A_50X50_PNG		0x32a24
+#define IMG_1_31X26_PNG		0x0
+#define IMG_2_31X26_PNG		0x972
+#define IMG_3_31X26_PNG		0x12e4
+#define IMG_4_31X26_PNG		0x1c56
+#define IMG_5_31X26_PNG		0x25c8
+#define IMG_6_31X26_PNG		0x2f3a
+#define IMG_7_31X26_PNG		0x38ac
+#define IMG_8_31X26_PNG		0x421e
+#define IMG_9_31X26_PNG		0x4b90
+#define IMG_CONCEPT_SHARING_0_57_30X30_PNG		0x5502
+#define IMG_GLOBE_REGULAR_30X30_PNG		0x5f8e
+#define IMG_GUIDE_54X54_PNG		0x6a1a
+#define IMG_HUXIAOBONANSHENTI_60_FF8000_GAO_TONG_120X72_PNG		0x8c46
+#define IMG_LANGUAGE_54X54_PNG		0xf186
+#define IMG_MUSIC14_40X40_PNG		0x113b2
+#define IMG_MUSIC14_60X60_PNG		0x12672
+#define IMG_MUSIC14_78X78_PNG		0x150a2
+#define IMG_MUSIC14_80X80_PNG		0x197ee
+#define IMG_OUTDOOR_WALK_54X54_PNG		0x1e2ee
+#define IMG_PANGMENZHENGDAOBIAOTITI_32_8080FF_GAO_TONG_66X36_PNG		0x2051a
+#define IMG_SLEEP5_70X70_PNG		0x220f2
+#define IMG_SLEEP5_78X78_PNG		0x25a5e
+#define IMG_SPORTS14_78X78_PNG		0x2a1aa
+#define IMG_SUNNY_70X70_PNG		0x2e8f6
+#define IMG_SYSTEM_54X54_PNG		0x32262
+#define IMG_TELEGRAM_0_56_30X30_PNG		0x3448e
+#define IMG_TURN_ON_0_52_40X40_PNG		0x34f1a
+#define IMG_YEZIGONGCHANGXIAOXIONGMAO_48_FF00FF_GAO_9AD8_50X50_PNG		0x361da
+#define IMG_YEZIGONGCHANGXIAOXIONGMAO_48_FF00FF_TONG_901A_50X50_PNG		0x37f26
 
 
 /* private typedef ------------------------------------------------------*/
@@ -35,7 +44,16 @@
 /* static variables -----------------------------------------------------*/
 static const gt_vfs_st virt_file_sys[] ={
 	/* name, w, h, addr, size, is_alpha */
-    {"f:img_concept_sharing_0_57_30x30.png", 30, 30, IMG_CONCEPT_SHARING_0_57_30X30_PNG, 2700, 1},
+    {"f:img_1_31x26.png", 31, 26, IMG_1_31X26_PNG, 2418, 1},
+	{"f:img_2_31x26.png", 31, 26, IMG_2_31X26_PNG, 2418, 1},
+	{"f:img_3_31x26.png", 31, 26, IMG_3_31X26_PNG, 2418, 1},
+	{"f:img_4_31x26.png", 31, 26, IMG_4_31X26_PNG, 2418, 1},
+	{"f:img_5_31x26.png", 31, 26, IMG_5_31X26_PNG, 2418, 1},
+	{"f:img_6_31x26.png", 31, 26, IMG_6_31X26_PNG, 2418, 1},
+	{"f:img_7_31x26.png", 31, 26, IMG_7_31X26_PNG, 2418, 1},
+	{"f:img_8_31x26.png", 31, 26, IMG_8_31X26_PNG, 2418, 1},
+	{"f:img_9_31x26.png", 31, 26, IMG_9_31X26_PNG, 2418, 1},
+	{"f:img_concept_sharing_0_57_30x30.png", 30, 30, IMG_CONCEPT_SHARING_0_57_30X30_PNG, 2700, 1},
 	{"f:img_globe_regular_30x30.png", 30, 30, IMG_GLOBE_REGULAR_30X30_PNG, 2700, 1},
 	{"f:img_guide_54x54.png", 54, 54, IMG_GUIDE_54X54_PNG, 8748, 1},
 	{"f:img_huxiaobonanshenti_60_ff8000_gao_tong_120x72.png", 120, 72, IMG_HUXIAOBONANSHENTI_60_FF8000_GAO_TONG_120X72_PNG, 25920, 1},
@@ -56,7 +74,7 @@ static const gt_vfs_st virt_file_sys[] ={
 	{"f:img_yezigongchangxiaoxiongmao_48_ff00ff_gao_9ad8_50x50.png", 50, 50, IMG_YEZIGONGCHANGXIAOXIONGMAO_48_FF00FF_GAO_9AD8_50X50_PNG, 7500, 1},
 	{"f:img_yezigongchangxiaoxiongmao_48_ff00ff_tong_901a_50x50.png", 50, 50, IMG_YEZIGONGCHANGXIAOXIONGMAO_48_FF00FF_TONG_901A_50X50_PNG, 7500, 1},
     {NULL,0,0,0,0},
-    /* totalSize: 214896 => 209.86KB */
+    /* totalSize: 236658 => 231.11KB */
 };
 
 /* macros ---------------------------------------------------------------*/
