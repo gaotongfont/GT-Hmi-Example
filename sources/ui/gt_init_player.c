@@ -532,8 +532,6 @@ gt_obj_st * gt_init_player(void)
 	player1 = gt_player_create(player);
 	gt_obj_set_pos(player1, 273, 85);
 	gt_obj_set_size(player1, 78, 78);
-	gt_player_add_item(player1, ".:img_sports14_78x78.png", sizeof(".:img_sports14_78x78.png"));
-	gt_player_add_item(player1, ".:img_sleep5_78x78.png", sizeof(".:img_sleep5_78x78.png"));
 	gt_player_add_item(player1, ".:img_music14_78x78.png", sizeof(".:img_music14_78x78.png"));
 	gt_player_set_type(player1, GT_PLAYER_TYPE_IMG);
 	gt_player_set_mode(player1, GT_PLAYER_MODE_ONCE);

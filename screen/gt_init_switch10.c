@@ -35,14 +35,32 @@ static gt_obj_st * label_statusbartitle = NULL;
 static gt_obj_st * label_screen_title = NULL;
 static gt_obj_st * rect3 = NULL;
 static gt_obj_st * label_switch_category = NULL;
-static gt_obj_st * rect_wireframe = NULL;
-static gt_obj_st * switch1 = NULL;
-static gt_obj_st * rect5 = NULL;
-static gt_obj_st * lab33 = NULL;
-static gt_obj_st * switch2 = NULL;
-static gt_obj_st * switch3 = NULL;
-static gt_obj_st * switch1Copy = NULL;
-static gt_obj_st * switch3Copy = NULL;
+static gt_obj_st * rect1_wireframe = NULL;
+static gt_obj_st * switch1_Greenroundedcorner = NULL;
+static gt_obj_st * rect1_blue = NULL;
+static gt_obj_st * label_style_title = NULL;
+static gt_obj_st * switch_Greenroundedsmall = NULL;
+static gt_obj_st * switch_Greenrectangle = NULL;
+static gt_obj_st * switch_Graywithroundedlines = NULL;
+static gt_obj_st * switch_Graystripedrectangle = NULL;
+static gt_obj_st * rect2_wireframe = NULL;
+static gt_obj_st * rect2_blue = NULL;
+static gt_obj_st * label_colour_title = NULL;
+static gt_obj_st * switch_Pinkroundedcorners = NULL;
+static gt_obj_st * switch_Orangerectangle = NULL;
+static gt_obj_st * switch_Smallblueroundedcorner = NULL;
+static gt_obj_st * rect3_wireframe = NULL;
+static gt_obj_st * rect3_blue = NULL;
+static gt_obj_st * label_size_title = NULL;
+static gt_obj_st * switch_Greenroundedcornerwithlineswitch = NULL;
+static gt_obj_st * switch_Greenrectanglewithlines = NULL;
+static gt_obj_st * switch_Greenroundedcornersmallsize = NULL;
+static gt_obj_st * rect4_wireframe = NULL;
+static gt_obj_st * rect4_blue = NULL;
+static gt_obj_st * label_picture_title = NULL;
+static gt_obj_st * imgbtn_redswitch = NULL;
+static gt_obj_st * imgbtn_Blueswitch = NULL;
+static gt_obj_st * imgbtn_Whiteswitch = NULL;
 
 static void lab1_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
@@ -521,107 +539,346 @@ gt_obj_st * gt_init_switch10(void)
 
 	
 
-	/** rect_wireframe */
+	/** rect1_wireframe */
 	/** 矩形线框 */
-	rect_wireframe = gt_rect_create(switch10);
-	gt_obj_set_pos(rect_wireframe, 237, 64);
-	gt_obj_set_size(rect_wireframe, 509, 270);
-	gt_rect_set_radius(rect_wireframe, 0);
-	gt_rect_set_bg_color(rect_wireframe, gt_color_hex(0xffffff));
-	gt_rect_set_color_border(rect_wireframe, gt_color_hex(0xc0c0c0));
-	gt_rect_set_fill(rect_wireframe, 1);
-	gt_rect_set_border(rect_wireframe, 1);
+	rect1_wireframe = gt_rect_create(switch10);
+	gt_obj_set_pos(rect1_wireframe, 237, 64);
+	gt_obj_set_size(rect1_wireframe, 509, 270);
+	gt_rect_set_radius(rect1_wireframe, 0);
+	gt_rect_set_bg_color(rect1_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect1_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect1_wireframe, 1);
+	gt_rect_set_border(rect1_wireframe, 1);
 
 	
 
-	/** switch1 */
-	switch1 = gt_switch_create(switch10);
-	gt_obj_set_pos(switch1, 451, 140);
-	gt_obj_set_size(switch1, 80, 38);
-	gt_switch_set_color_act(switch1, gt_color_hex(0x13ce66));
-	gt_switch_set_color_ina(switch1, gt_color_hex(0xebeef5));
-	gt_switch_set_color_point(switch1, gt_color_hex(0xFFFFFF));
-	gt_obj_set_state(switch1, 1);
-	gt_switch_set_style(switch1, GT_SWITCH_STYLE_DEFAULT);
-	gt_switch_set_div_line(switch1, false);
+	/** switch1_Greenroundedcorner */
+	/** 绿色圆角开关 */
+	switch1_Greenroundedcorner = gt_switch_create(switch10);
+	gt_obj_set_pos(switch1_Greenroundedcorner, 282, 147);
+	gt_obj_set_size(switch1_Greenroundedcorner, 80, 38);
+	gt_switch_set_color_act(switch1_Greenroundedcorner, gt_color_hex(0x13ce66));
+	gt_switch_set_color_ina(switch1_Greenroundedcorner, gt_color_hex(0xebeef5));
+	gt_switch_set_color_point(switch1_Greenroundedcorner, gt_color_hex(0xFFFFFF));
+	gt_obj_set_state(switch1_Greenroundedcorner, 1);
+	gt_switch_set_style(switch1_Greenroundedcorner, GT_SWITCH_STYLE_DEFAULT);
+	gt_switch_set_div_line(switch1_Greenroundedcorner, false);
 
 	
 
-	/** rect5 */
-	rect5 = gt_rect_create(switch10);
-	gt_obj_set_pos(rect5, 216, 73);
-	gt_obj_set_size(rect5, 138, 38);
-	gt_rect_set_radius(rect5, 0);
-	gt_rect_set_bg_color(rect5, gt_color_hex(0xe3f1ff));
-	gt_rect_set_color_border(rect5, gt_color_hex(0xffffff));
-	gt_rect_set_fill(rect5, 1);
-	gt_rect_set_border(rect5, 0);
+	/** rect1_blue */
+	/** 蓝色矩形背景 */
+	rect1_blue = gt_rect_create(switch10);
+	gt_obj_set_pos(rect1_blue, 216, 73);
+	gt_obj_set_size(rect1_blue, 138, 38);
+	gt_rect_set_radius(rect1_blue, 0);
+	gt_rect_set_bg_color(rect1_blue, gt_color_hex(0xe3f1ff));
+	gt_rect_set_color_border(rect1_blue, gt_color_hex(0xffffff));
+	gt_rect_set_fill(rect1_blue, 1);
+	gt_rect_set_border(rect1_blue, 0);
 
 	
 
-	/** lab33 */
-	lab33 = gt_label_create(switch10);
-	gt_obj_set_pos(lab33, 260, 75);
-	gt_obj_set_size(lab33, 66, 34);
-	gt_label_set_font_color(lab33, gt_color_hex(0x000000));
-	gt_label_set_font_family(lab33, gray_black_20);
-	gt_label_set_font_cjk(lab33, 0);
-	gt_label_set_font_align(lab33, GT_ALIGN_CENTER_MID);
-	gt_label_set_text(lab33, "风格");
-	gt_label_set_space(lab33, 0, 0);
+	/** label_style_title */
+	/** 用于显示“风格”的标题 Label */
+	label_style_title = gt_label_create(switch10);
+	gt_obj_set_pos(label_style_title, 260, 75);
+	gt_obj_set_size(label_style_title, 66, 34);
+	gt_label_set_font_color(label_style_title, gt_color_hex(0x000000));
+	gt_label_set_font_family(label_style_title, gray_black_20);
+	gt_label_set_font_cjk(label_style_title, 0);
+	gt_label_set_font_align(label_style_title, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(label_style_title, "风格");
+	gt_label_set_space(label_style_title, 0, 0);
 
 	
 
-	/** switch2 */
-	switch2 = gt_switch_create(switch10);
-	gt_obj_set_pos(switch2, 267, 134);
-	gt_obj_set_size(switch2, 101, 49);
-	gt_switch_set_color_act(switch2, gt_color_hex(0x13ce66));
-	gt_switch_set_color_ina(switch2, gt_color_hex(0xebeef5));
-	gt_switch_set_color_point(switch2, gt_color_hex(0xc0c0c0));
-	gt_obj_set_state(switch2, 1);
-	gt_switch_set_style(switch2, GT_SWITCH_STYLE_AXIS);
+	/** switch_Greenroundedsmall */
+	/** 绿色圆角小型开关 */
+	switch_Greenroundedsmall = gt_switch_create(switch10);
+	gt_obj_set_pos(switch_Greenroundedsmall, 588, 140);
+	gt_obj_set_size(switch_Greenroundedsmall, 101, 49);
+	gt_switch_set_color_act(switch_Greenroundedsmall, gt_color_hex(0x13ce66));
+	gt_switch_set_color_ina(switch_Greenroundedsmall, gt_color_hex(0xebeef5));
+	gt_switch_set_color_point(switch_Greenroundedsmall, gt_color_hex(0xc0c0c0));
+	gt_obj_set_state(switch_Greenroundedsmall, 1);
+	gt_switch_set_style(switch_Greenroundedsmall, GT_SWITCH_STYLE_AXIS);
 
 	
 
-	/** switch3 */
-	switch3 = gt_switch_create(switch10);
-	gt_obj_set_pos(switch3, 621, 141);
-	gt_obj_set_size(switch3, 76, 39);
-	gt_switch_set_color_act(switch3, gt_color_hex(0x13ce66));
-	gt_switch_set_color_ina(switch3, gt_color_hex(0xebeef5));
-	gt_switch_set_color_point(switch3, gt_color_hex(0xFFFFFF));
-	gt_obj_set_state(switch3, 1);
-	gt_switch_set_style(switch3, GT_SWITCH_STYLE_RECT);
-	gt_switch_set_div_line(switch3, false);
+	/** switch_Greenrectangle */
+	/** 绿色矩形开关 */
+	switch_Greenrectangle = gt_switch_create(switch10);
+	gt_obj_set_pos(switch_Greenrectangle, 453, 147);
+	gt_obj_set_size(switch_Greenrectangle, 76, 39);
+	gt_switch_set_color_act(switch_Greenrectangle, gt_color_hex(0x13ce66));
+	gt_switch_set_color_ina(switch_Greenrectangle, gt_color_hex(0xebeef5));
+	gt_switch_set_color_point(switch_Greenrectangle, gt_color_hex(0xFFFFFF));
+	gt_obj_set_state(switch_Greenrectangle, 1);
+	gt_switch_set_style(switch_Greenrectangle, GT_SWITCH_STYLE_RECT);
+	gt_switch_set_div_line(switch_Greenrectangle, false);
 
 	
 
-	/** switch1Copy */
-	switch1Copy = gt_switch_create(switch10);
-	gt_obj_set_pos(switch1Copy, 451, 224);
-	gt_obj_set_size(switch1Copy, 80, 38);
-	gt_switch_set_color_act(switch1Copy, gt_color_hex(0x13ce66));
-	gt_switch_set_color_ina(switch1Copy, gt_color_hex(0xebeef5));
-	gt_switch_set_color_point(switch1Copy, gt_color_hex(0xFFFFFF));
-	gt_obj_set_state(switch1Copy, 1);
-	gt_switch_set_style(switch1Copy, GT_SWITCH_STYLE_DEFAULT);
-	gt_switch_set_div_line(switch1Copy, true);
-	gt_switch_set_color_divider(switch1Copy, gt_color_hex(0xffffff));
+	/** switch_Graywithroundedlines */
+	/** 灰色带线条圆角开关 */
+	switch_Graywithroundedlines = gt_switch_create(switch10);
+	gt_obj_set_pos(switch_Graywithroundedlines, 282, 235);
+	gt_obj_set_size(switch_Graywithroundedlines, 80, 38);
+	gt_switch_set_color_act(switch_Graywithroundedlines, gt_color_hex(0x13ce66));
+	gt_switch_set_color_ina(switch_Graywithroundedlines, gt_color_hex(0xc0c0c0));
+	gt_switch_set_color_point(switch_Graywithroundedlines, gt_color_hex(0xFFFFFF));
+	gt_switch_set_style(switch_Graywithroundedlines, GT_SWITCH_STYLE_DEFAULT);
+	gt_switch_set_div_line(switch_Graywithroundedlines, true);
+	gt_switch_set_color_divider(switch_Graywithroundedlines, gt_color_hex(0xffffff));
 
 	
 
-	/** switch3Copy */
-	switch3Copy = gt_switch_create(switch10);
-	gt_obj_set_pos(switch3Copy, 622, 222);
-	gt_obj_set_size(switch3Copy, 76, 39);
-	gt_switch_set_color_act(switch3Copy, gt_color_hex(0x13ce66));
-	gt_switch_set_color_ina(switch3Copy, gt_color_hex(0xebeef5));
-	gt_switch_set_color_point(switch3Copy, gt_color_hex(0xFFFFFF));
-	gt_obj_set_state(switch3Copy, 1);
-	gt_switch_set_style(switch3Copy, GT_SWITCH_STYLE_RECT);
-	gt_switch_set_div_line(switch3Copy, true);
-	gt_switch_set_color_divider(switch3Copy, gt_color_hex(0xffffff));
+	/** switch_Graystripedrectangle */
+	/** 灰色带线条矩形开关 */
+	switch_Graystripedrectangle = gt_switch_create(switch10);
+	gt_obj_set_pos(switch_Graystripedrectangle, 453, 235);
+	gt_obj_set_size(switch_Graystripedrectangle, 76, 39);
+	gt_switch_set_color_act(switch_Graystripedrectangle, gt_color_hex(0x13ce66));
+	gt_switch_set_color_ina(switch_Graystripedrectangle, gt_color_hex(0xc0c0c0));
+	gt_switch_set_color_point(switch_Graystripedrectangle, gt_color_hex(0xFFFFFF));
+	gt_switch_set_style(switch_Graystripedrectangle, GT_SWITCH_STYLE_RECT);
+	gt_switch_set_div_line(switch_Graystripedrectangle, true);
+	gt_switch_set_color_divider(switch_Graystripedrectangle, gt_color_hex(0xffffff));
+
+	
+
+	/** rect2_wireframe */
+	/** 矩形线框 */
+	rect2_wireframe = gt_rect_create(switch10);
+	gt_obj_set_pos(rect2_wireframe, 237, 348);
+	gt_obj_set_size(rect2_wireframe, 509, 198);
+	gt_rect_set_radius(rect2_wireframe, 0);
+	gt_rect_set_bg_color(rect2_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect2_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect2_wireframe, 1);
+	gt_rect_set_border(rect2_wireframe, 1);
+
+	
+
+	/** rect2_blue */
+	/** 蓝色矩形背景 */
+	rect2_blue = gt_rect_create(switch10);
+	gt_obj_set_pos(rect2_blue, 216, 357);
+	gt_obj_set_size(rect2_blue, 138, 38);
+	gt_rect_set_radius(rect2_blue, 0);
+	gt_rect_set_bg_color(rect2_blue, gt_color_hex(0xe3f1ff));
+	gt_rect_set_color_border(rect2_blue, gt_color_hex(0xffffff));
+	gt_rect_set_fill(rect2_blue, 1);
+	gt_rect_set_border(rect2_blue, 0);
+
+	
+
+	/** label_colour_title */
+	/** 用于显示“颜色”的标题 Label */
+	label_colour_title = gt_label_create(switch10);
+	gt_obj_set_pos(label_colour_title, 260, 359);
+	gt_obj_set_size(label_colour_title, 66, 34);
+	gt_label_set_font_color(label_colour_title, gt_color_hex(0x000000));
+	gt_label_set_font_family(label_colour_title, gray_black_20);
+	gt_label_set_font_cjk(label_colour_title, 0);
+	gt_label_set_font_align(label_colour_title, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(label_colour_title, "颜色");
+	gt_label_set_space(label_colour_title, 0, 0);
+
+	
+
+	/** switch_Pinkroundedcorners */
+	/** 粉色圆角开关 */
+	switch_Pinkroundedcorners = gt_switch_create(switch10);
+	gt_obj_set_pos(switch_Pinkroundedcorners, 282, 438);
+	gt_obj_set_size(switch_Pinkroundedcorners, 80, 38);
+	gt_switch_set_color_act(switch_Pinkroundedcorners, gt_color_hex(0xff80ff));
+	gt_switch_set_color_ina(switch_Pinkroundedcorners, gt_color_hex(0xc0c0c0));
+	gt_switch_set_color_point(switch_Pinkroundedcorners, gt_color_hex(0xffffff));
+	gt_obj_set_state(switch_Pinkroundedcorners, 1);
+	gt_switch_set_style(switch_Pinkroundedcorners, GT_SWITCH_STYLE_DEFAULT);
+	gt_switch_set_div_line(switch_Pinkroundedcorners, false);
+
+	
+
+	/** switch_Orangerectangle */
+	/** 橙色矩形开关 */
+	switch_Orangerectangle = gt_switch_create(switch10);
+	gt_obj_set_pos(switch_Orangerectangle, 453, 438);
+	gt_obj_set_size(switch_Orangerectangle, 76, 39);
+	gt_switch_set_color_act(switch_Orangerectangle, gt_color_hex(0xfec000));
+	gt_switch_set_color_ina(switch_Orangerectangle, gt_color_hex(0x808080));
+	gt_switch_set_color_point(switch_Orangerectangle, gt_color_hex(0xffffff));
+	gt_obj_set_state(switch_Orangerectangle, 1);
+	gt_switch_set_style(switch_Orangerectangle, GT_SWITCH_STYLE_RECT);
+	gt_switch_set_div_line(switch_Orangerectangle, false);
+
+	
+
+	/** switch_Smallblueroundedcorner */
+	/** 蓝色圆角小型开关 */
+	switch_Smallblueroundedcorner = gt_switch_create(switch10);
+	gt_obj_set_pos(switch_Smallblueroundedcorner, 588, 433);
+	gt_obj_set_size(switch_Smallblueroundedcorner, 101, 49);
+	gt_switch_set_color_act(switch_Smallblueroundedcorner, gt_color_hex(0x228ccc));
+	gt_switch_set_color_ina(switch_Smallblueroundedcorner, gt_color_hex(0xc0c0c0));
+	gt_switch_set_color_point(switch_Smallblueroundedcorner, gt_color_hex(0x555555));
+	gt_obj_set_state(switch_Smallblueroundedcorner, 1);
+	gt_switch_set_style(switch_Smallblueroundedcorner, GT_SWITCH_STYLE_AXIS);
+
+	
+
+	/** rect3_wireframe */
+	/** 矩形线框 */
+	rect3_wireframe = gt_rect_create(switch10);
+	gt_obj_set_pos(rect3_wireframe, 237, 560);
+	gt_obj_set_size(rect3_wireframe, 509, 210);
+	gt_rect_set_radius(rect3_wireframe, 0);
+	gt_rect_set_bg_color(rect3_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect3_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect3_wireframe, 1);
+	gt_rect_set_border(rect3_wireframe, 1);
+
+	
+
+	/** rect3_blue */
+	/** 蓝色矩形背景 */
+	rect3_blue = gt_rect_create(switch10);
+	gt_obj_set_pos(rect3_blue, 216, 569);
+	gt_obj_set_size(rect3_blue, 138, 38);
+	gt_rect_set_radius(rect3_blue, 0);
+	gt_rect_set_bg_color(rect3_blue, gt_color_hex(0xe3f1ff));
+	gt_rect_set_color_border(rect3_blue, gt_color_hex(0xffffff));
+	gt_rect_set_fill(rect3_blue, 1);
+	gt_rect_set_border(rect3_blue, 0);
+
+	
+
+	/** label_size_title */
+	/** 用于显示“大小”的标题 Label */
+	label_size_title = gt_label_create(switch10);
+	gt_obj_set_pos(label_size_title, 260, 571);
+	gt_obj_set_size(label_size_title, 66, 34);
+	gt_label_set_font_color(label_size_title, gt_color_hex(0x000000));
+	gt_label_set_font_family(label_size_title, gray_black_20);
+	gt_label_set_font_cjk(label_size_title, 0);
+	gt_label_set_font_align(label_size_title, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(label_size_title, "大小");
+	gt_label_set_space(label_size_title, 0, 0);
+
+	
+
+	/** switch_Greenroundedcornerwithlineswitch */
+	/** 绿色圆角带线条开关 */
+	switch_Greenroundedcornerwithlineswitch = gt_switch_create(switch10);
+	gt_obj_set_pos(switch_Greenroundedcornerwithlineswitch, 420, 658);
+	gt_obj_set_size(switch_Greenroundedcornerwithlineswitch, 87, 37);
+	gt_switch_set_color_act(switch_Greenroundedcornerwithlineswitch, gt_color_hex(0x13ce66));
+	gt_switch_set_color_ina(switch_Greenroundedcornerwithlineswitch, gt_color_hex(0xebeef5));
+	gt_switch_set_color_point(switch_Greenroundedcornerwithlineswitch, gt_color_hex(0xFFFFFF));
+	gt_obj_set_state(switch_Greenroundedcornerwithlineswitch, 1);
+	gt_switch_set_style(switch_Greenroundedcornerwithlineswitch, GT_SWITCH_STYLE_DEFAULT);
+	gt_switch_set_div_line(switch_Greenroundedcornerwithlineswitch, true);
+	gt_switch_set_color_divider(switch_Greenroundedcornerwithlineswitch, gt_color_hex(0xffffff));
+
+	
+
+	/** switch_Greenrectanglewithlines */
+	/** 绿色带线条矩形开关 */
+	switch_Greenrectanglewithlines = gt_switch_create(switch10);
+	gt_obj_set_pos(switch_Greenrectanglewithlines, 569, 646);
+	gt_obj_set_size(switch_Greenrectanglewithlines, 141, 59);
+	gt_switch_set_color_act(switch_Greenrectanglewithlines, gt_color_hex(0x13ce66));
+	gt_switch_set_color_ina(switch_Greenrectanglewithlines, gt_color_hex(0xebeef5));
+	gt_switch_set_color_point(switch_Greenrectanglewithlines, gt_color_hex(0xFFFFFF));
+	gt_obj_set_state(switch_Greenrectanglewithlines, 1);
+	gt_switch_set_style(switch_Greenrectanglewithlines, GT_SWITCH_STYLE_RECT);
+	gt_switch_set_div_line(switch_Greenrectanglewithlines, true);
+	gt_switch_set_color_divider(switch_Greenrectanglewithlines, gt_color_hex(0xffffff));
+
+	
+
+	/** switch_Greenroundedcornersmallsize */
+	/** 绿色圆角小号开关 */
+	switch_Greenroundedcornersmallsize = gt_switch_create(switch10);
+	gt_obj_set_pos(switch_Greenroundedcornersmallsize, 288, 661);
+	gt_obj_set_size(switch_Greenroundedcornersmallsize, 65, 30);
+	gt_switch_set_color_act(switch_Greenroundedcornersmallsize, gt_color_hex(0x13ce66));
+	gt_switch_set_color_ina(switch_Greenroundedcornersmallsize, gt_color_hex(0xebeef5));
+	gt_switch_set_color_point(switch_Greenroundedcornersmallsize, gt_color_hex(0xc0c0c0));
+	gt_obj_set_state(switch_Greenroundedcornersmallsize, 1);
+	gt_switch_set_style(switch_Greenroundedcornersmallsize, GT_SWITCH_STYLE_AXIS);
+
+	
+
+	/** rect4_wireframe */
+	/** 矩形线框 */
+	rect4_wireframe = gt_rect_create(switch10);
+	gt_obj_set_pos(rect4_wireframe, 237, 783);
+	gt_obj_set_size(rect4_wireframe, 509, 236);
+	gt_rect_set_radius(rect4_wireframe, 0);
+	gt_rect_set_bg_color(rect4_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect4_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect4_wireframe, 1);
+	gt_rect_set_border(rect4_wireframe, 1);
+
+	
+
+	/** rect4_blue */
+	/** 蓝色矩形背景 */
+	rect4_blue = gt_rect_create(switch10);
+	gt_obj_set_pos(rect4_blue, 216, 795);
+	gt_obj_set_size(rect4_blue, 138, 38);
+	gt_rect_set_radius(rect4_blue, 0);
+	gt_rect_set_bg_color(rect4_blue, gt_color_hex(0xe3f1ff));
+	gt_rect_set_color_border(rect4_blue, gt_color_hex(0xffffff));
+	gt_rect_set_fill(rect4_blue, 1);
+	gt_rect_set_border(rect4_blue, 0);
+
+	
+
+	/** label_picture_title */
+	/** 用于显示“图片”的标题 Label */
+	label_picture_title = gt_label_create(switch10);
+	gt_obj_set_pos(label_picture_title, 260, 797);
+	gt_obj_set_size(label_picture_title, 66, 34);
+	gt_label_set_font_color(label_picture_title, gt_color_hex(0x000000));
+	gt_label_set_font_family(label_picture_title, gray_black_20);
+	gt_label_set_font_cjk(label_picture_title, 0);
+	gt_label_set_font_align(label_picture_title, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(label_picture_title, "图片");
+	gt_label_set_space(label_picture_title, 0, 0);
+
+	
+
+	/** imgbtn_redswitch */
+	/** 红色开关 */
+	imgbtn_redswitch = gt_imgbtn_create(switch10);
+	gt_obj_set_pos(imgbtn_redswitch, 617, 890);
+	gt_obj_set_size(imgbtn_redswitch, 80, 48);
+	gt_imgbtn_set_src(imgbtn_redswitch, "f:img_off1_80x48.png");
+	gt_imgbtn_add_state_item(imgbtn_redswitch, "f:img_on1_80x48.png");
+
+	
+
+	/** imgbtn_Blueswitch */
+	/** 蓝色开关 */
+	imgbtn_Blueswitch = gt_imgbtn_create(switch10);
+	gt_obj_set_pos(imgbtn_Blueswitch, 436, 894);
+	gt_obj_set_size(imgbtn_Blueswitch, 120, 41);
+	gt_imgbtn_set_src(imgbtn_Blueswitch, "f:img_on2_120x41.png");
+	gt_imgbtn_add_state_item(imgbtn_Blueswitch, "f:img_off2_120x41.png");
+
+	
+
+	/** imgbtn_Whiteswitch */
+	/** 白色开关 */
+	imgbtn_Whiteswitch = gt_imgbtn_create(switch10);
+	gt_obj_set_pos(imgbtn_Whiteswitch, 273, 884);
+	gt_obj_set_size(imgbtn_Whiteswitch, 118, 64);
+	gt_imgbtn_set_src(imgbtn_Whiteswitch, "f:img_on3_118x64.png");
+	gt_imgbtn_add_state_item(imgbtn_Whiteswitch, "f:img_off3_118x64.png");
 
 
 

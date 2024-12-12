@@ -672,7 +672,7 @@ gt_obj_st * gt_init_label(void)
 	
 
 	/** label_Borderlessstylewithbackground */
-	/** 无边款有背景label标签 */
+	/** 无边框有背景label标签 */
 	label_Borderlessstylewithbackground = gt_label_create(label);
 	gt_obj_set_pos(label_Borderlessstylewithbackground, 439, 165);
 	gt_obj_set_size(label_Borderlessstylewithbackground, 109, 20);
@@ -680,7 +680,7 @@ gt_obj_st * gt_init_label(void)
 	gt_label_set_font_family(label_Borderlessstylewithbackground, gray_black_16);
 	gt_label_set_font_cjk(label_Borderlessstylewithbackground, 0);
 	gt_label_set_font_align(label_Borderlessstylewithbackground, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(label_Borderlessstylewithbackground, "无边款有背景");
+	gt_label_set_text(label_Borderlessstylewithbackground, "无边框有背景");
 	gt_label_set_space(label_Borderlessstylewithbackground, 0, 20);
 
 	
@@ -693,7 +693,7 @@ gt_obj_st * gt_init_label(void)
 	gt_rect_set_radius(rect_Orangeborder, 0);
 	gt_rect_set_bg_color(rect_Orangeborder, gt_color_hex(0xffffff));
 	gt_rect_set_color_border(rect_Orangeborder, gt_color_hex(0xff8040));
-	gt_rect_set_fill(rect_Orangeborder, 1);
+	gt_rect_set_fill(rect_Orangeborder, 0);
 	gt_rect_set_border(rect_Orangeborder, 3);
 
 	
@@ -733,7 +733,7 @@ gt_obj_st * gt_init_label(void)
 	/** 橙色间隔10label标签 */
 	lab_Orangeinterval10 = gt_label_create(label);
 	gt_obj_set_pos(lab_Orangeinterval10, 290, 430);
-	gt_obj_set_size(lab_Orangeinterval10, 145, 37);
+	gt_obj_set_size(lab_Orangeinterval10, 216, 37);
 	gt_label_set_font_color(lab_Orangeinterval10, gt_color_hex(0xff8000));
 	gt_label_set_font_family(lab_Orangeinterval10, gray_black_16);
 	gt_label_set_font_cjk(lab_Orangeinterval10, 0);
@@ -746,8 +746,8 @@ gt_obj_st * gt_init_label(void)
 	/** lab_Blueinterval20 */
 	/** 蓝色间隔20label标签 */
 	lab_Blueinterval20 = gt_label_create(label);
-	gt_obj_set_pos(lab_Blueinterval20, 291, 480);
-	gt_obj_set_size(lab_Blueinterval20, 225, 37);
+	gt_obj_set_pos(lab_Blueinterval20, 290, 480);
+	gt_obj_set_size(lab_Blueinterval20, 281, 37);
 	gt_label_set_font_color(lab_Blueinterval20, gt_color_hex(0x0000ff));
 	gt_label_set_font_family(lab_Blueinterval20, gray_black_16);
 	gt_label_set_font_cjk(lab_Blueinterval20, 0);
@@ -859,7 +859,7 @@ gt_obj_st * gt_init_label(void)
 	/** 顶部左对齐label标签 */
 	lab_Topleftalignment = gt_label_create(label);
 	gt_obj_set_pos(lab_Topleftalignment, 286, 697);
-	gt_obj_set_size(lab_Topleftalignment, 100, 33);
+	gt_obj_set_size(lab_Topleftalignment, 119, 43);
 	gt_label_set_font_color(lab_Topleftalignment, gt_color_hex(0x000000));
 	gt_label_set_font_family(lab_Topleftalignment, gray_black_16);
 	gt_label_set_font_cjk(lab_Topleftalignment, 0);

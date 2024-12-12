@@ -36,8 +36,15 @@ static gt_obj_st * label_screen_title = NULL;
 static gt_obj_st * rect3 = NULL;
 static gt_obj_st * label_imgbtn_category = NULL;
 static gt_obj_st * rect_wireframe = NULL;
-static gt_obj_st * imgbtn_Doubleicon = NULL;
-static gt_obj_st * imgbtn_Threeicons = NULL;
+static gt_obj_st * img_Playerbackground = NULL;
+static gt_obj_st * imgbtn_CycleMode = NULL;
+static gt_obj_st * imgbtn_Playing = NULL;
+static gt_obj_st * imgbtn_Previoussong = NULL;
+static gt_obj_st * imgbtn_Nextsong = NULL;
+static gt_obj_st * imgbtn_collect = NULL;
+static gt_obj_st * lab_songname = NULL;
+static gt_obj_st * imgbtn1 = NULL;
+static gt_obj_st * imgbtn2 = NULL;
 
 static void lab1_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
@@ -65,6 +72,14 @@ static void lab7_0_cb(gt_event_st * e) {
 
 static void lab8_0_cb(gt_event_st * e) {
 	
+}
+
+static void imgbtn_Previoussong_0_cb(gt_event_st * e) {
+	gt_label_set_text(lab_songname, "Don't Watch Me Cry");
+}
+
+static void imgbtn_Nextsong_0_cb(gt_event_st * e) {
+	gt_label_set_text(lab_songname, "Haven't Met You Yet");
 }
 
 gt_obj_st * gt_init_imgbtn(void)
@@ -511,8 +526,8 @@ gt_obj_st * gt_init_imgbtn(void)
 	/** rect_wireframe */
 	/** 矩形线框 */
 	rect_wireframe = gt_rect_create(imgbtn);
-	gt_obj_set_pos(rect_wireframe, 237, 64);
-	gt_obj_set_size(rect_wireframe, 509, 281);
+	gt_obj_set_pos(rect_wireframe, 238, 65);
+	gt_obj_set_size(rect_wireframe, 509, 370);
 	gt_rect_set_radius(rect_wireframe, 0);
 	gt_rect_set_bg_color(rect_wireframe, gt_color_hex(0xffffff));
 	gt_rect_set_color_border(rect_wireframe, gt_color_hex(0xc0c0c0));
@@ -521,25 +536,101 @@ gt_obj_st * gt_init_imgbtn(void)
 
 	
 
-	/** imgbtn_Doubleicon */
-	/** 图片按钮，双图标切换 */
-	imgbtn_Doubleicon = gt_imgbtn_create(imgbtn);
-	gt_obj_set_pos(imgbtn_Doubleicon, 284, 96);
-	gt_obj_set_size(imgbtn_Doubleicon, 70, 70);
-	gt_imgbtn_set_src(imgbtn_Doubleicon, "f:img_sunny_70x70.png");
-	gt_imgbtn_set_src_press(imgbtn_Doubleicon, "f:img_sleep5_70x70.png");
+	/** img_Playerbackground */
+	/** 播放器背景图片 */
+	img_Playerbackground = gt_img_create(imgbtn);
+	gt_obj_set_pos(img_Playerbackground, 295, 102);
+	gt_obj_set_size(img_Playerbackground, 400, 290);
+	gt_img_set_src(img_Playerbackground, "f:img_bj_400x290.png");
 
 	
 
-	/** imgbtn_Threeicons */
-	/** 图片按钮，三图标切换 */
-	imgbtn_Threeicons = gt_imgbtn_create(imgbtn);
-	gt_obj_set_pos(imgbtn_Threeicons, 425, 105);
-	gt_obj_set_size(imgbtn_Threeicons, 54, 54);
-	gt_imgbtn_set_src(imgbtn_Threeicons, "f:img_language_54x54.png");
-	gt_imgbtn_add_state_item(imgbtn_Threeicons, "f:img_guide_54x54.png");
-	gt_imgbtn_add_state_item(imgbtn_Threeicons, "f:img_outdoor_walk_54x54.png");
-	gt_imgbtn_add_state_item(imgbtn_Threeicons, "f:img_system_54x54.png");
+	/** imgbtn_CycleMode */
+	/** 循环模式 */
+	imgbtn_CycleMode = gt_imgbtn_create(imgbtn);
+	gt_obj_set_pos(imgbtn_CycleMode, 338, 324);
+	gt_obj_set_size(imgbtn_CycleMode, 42, 42);
+	gt_imgbtn_set_src(imgbtn_CycleMode, "f:img_random_42x42.png");
+	gt_imgbtn_add_state_item(imgbtn_CycleMode, "f:img_order_42x42.png");
+	gt_imgbtn_add_state_item(imgbtn_CycleMode, "f:img_cycle_42x42.png");
+
+	
+
+	/** imgbtn_Playing */
+	/** 播放状态 */
+	imgbtn_Playing = gt_imgbtn_create(imgbtn);
+	gt_obj_set_pos(imgbtn_Playing, 469, 322);
+	gt_obj_set_size(imgbtn_Playing, 50, 50);
+	gt_imgbtn_set_src(imgbtn_Playing, "f:img_pause_50x50.png");
+	gt_imgbtn_add_state_item(imgbtn_Playing, "f:img_play_50x50.png");
+
+	
+
+	/** imgbtn_Previoussong */
+	/** 上一曲 */
+	imgbtn_Previoussong = gt_imgbtn_create(imgbtn);
+	gt_obj_set_pos(imgbtn_Previoussong, 405, 324);
+	gt_obj_set_size(imgbtn_Previoussong, 42, 42);
+	gt_imgbtn_set_src(imgbtn_Previoussong, "f:img_Previous_42x42.png");
+	gt_imgbtn_set_src_press(imgbtn_Previoussong, "f:img_Previous1_42x42.png");
+	gt_obj_add_event_cb(imgbtn_Previoussong, imgbtn_Previoussong_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	
+
+	/** imgbtn_Nextsong */
+	/** 下一曲 */
+	imgbtn_Nextsong = gt_imgbtn_create(imgbtn);
+	gt_obj_set_pos(imgbtn_Nextsong, 543, 324);
+	gt_obj_set_size(imgbtn_Nextsong, 42, 42);
+	gt_imgbtn_set_src(imgbtn_Nextsong, "f:img_next_42x42.png");
+	gt_imgbtn_set_src_press(imgbtn_Nextsong, "f:img_next1_42x42.png");
+	gt_obj_add_event_cb(imgbtn_Nextsong, imgbtn_Nextsong_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	
+
+	/** imgbtn_collect */
+	/** 收藏 */
+	imgbtn_collect = gt_imgbtn_create(imgbtn);
+	gt_obj_set_pos(imgbtn_collect, 609, 324);
+	gt_obj_set_size(imgbtn_collect, 42, 42);
+	gt_imgbtn_set_src(imgbtn_collect, "f:img_collect1_42x42.png");
+	gt_imgbtn_add_state_item(imgbtn_collect, "f:img_collect2_42x42.png");
+
+	
+
+	/** lab_songname */
+	/** 歌曲名称lab控件 */
+	lab_songname = gt_label_create(imgbtn);
+	gt_obj_set_pos(lab_songname, 405, 108);
+	gt_obj_set_size(lab_songname, 174, 28);
+	gt_label_set_font_color(lab_songname, gt_color_hex(0x000000));
+	gt_label_set_font_family(lab_songname, gray_black_16);
+	gt_label_set_font_cjk(lab_songname, 0);
+	gt_label_set_font_align(lab_songname, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(lab_songname, "Over The Rainbow");
+	gt_label_set_space(lab_songname, 0, 0);
+
+	
+
+	/** imgbtn1 */
+	imgbtn1 = gt_imgbtn_create(imgbtn);
+	gt_obj_set_pos(imgbtn1, 336, 220);
+	gt_obj_set_size(imgbtn1, 31, 26);
+	gt_imgbtn_set_src(imgbtn1, "f:img_1_31x26.png");
+	gt_imgbtn_add_state_item(imgbtn1, "f:img_2_31x26.png");
+	gt_imgbtn_add_state_item(imgbtn1, "f:img_3_31x26.png");
+	gt_imgbtn_add_state_item(imgbtn1, "f:img_4_31x26.png");
+	gt_imgbtn_add_state_item(imgbtn1, "f:img_5_31x26.png");
+	gt_imgbtn_add_state_item(imgbtn1, "f:img_6_31x26.png");
+	gt_imgbtn_add_state_item(imgbtn1, "f:img_7_31x26.png");
+	gt_imgbtn_add_state_item(imgbtn1, "f:img_8_31x26.png");
+
+	
+
+	/** imgbtn2 */
+	imgbtn2 = gt_imgbtn_create(imgbtn);
+	gt_obj_set_pos(imgbtn2, 323, 118);
+	gt_obj_set_size(imgbtn2, 78, 78);
+	gt_imgbtn_set_src(imgbtn2, "f:img_music14_78x78.png");
+	gt_imgbtn_set_src_press(imgbtn2, "f:img_yezigongchangxiaoxiongmao_48_ff00ff_tong_901a_78x78.png");
 
 
 

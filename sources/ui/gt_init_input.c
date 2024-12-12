@@ -525,7 +525,7 @@ gt_obj_st * gt_init_input(void)
 	/** 输入框，带边框 */
 	input_outlined = gt_input_create(input);
 	gt_obj_set_pos(input_outlined, 247, 83);
-	gt_obj_set_size(input_outlined, 491, 38);
+	gt_obj_set_size(input_outlined, 489, 38);
 	gt_input_set_font_color(input_outlined, gt_color_hex(0x000000));
 	gt_input_set_font_family(input_outlined, gray_black_16);
 	gt_input_set_font_cjk(input_outlined, 0);

@@ -526,7 +526,7 @@ gt_obj_st * gt_init_keyboard(void)
 
 	/** keyboard1 */
 	keyboard1 = gt_keypad_create(keyboard);
-	gt_obj_set_pos(keyboard1, 345, 106);
+	gt_obj_set_pos(keyboard1, 347, 134);
 	gt_obj_set_size(keyboard1, 300, 170);
 	gt_keypad_set_font_color(keyboard1, gt_color_hex(0x000000));
 	gt_keypad_set_color_background(keyboard1, gt_color_hex(0x242424));
