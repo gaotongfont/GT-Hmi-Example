@@ -4,89 +4,101 @@
 
 /** txt */
 gt_obj_st * txt = NULL;
-static gt_obj_st * label_button_title = NULL;
-static gt_obj_st * label_image_title = NULL;
-static gt_obj_st * label_label_title = NULL;
-static gt_obj_st * label_txt_title = NULL;
-static gt_obj_st * label_input_title = NULL;
-static gt_obj_st * label_imgbtn_title = NULL;
-static gt_obj_st * label_keyboard_title = NULL;
-static gt_obj_st * label_switch10_title = NULL;
-static gt_obj_st * label_player_title = NULL;
-static gt_obj_st * label_inputNum_title = NULL;
-static gt_obj_st * label_clock_title = NULL;
-static gt_obj_st * label_barcode_title = NULL;
-static gt_obj_st * label_qrcode_title = NULL;
-static gt_obj_st * label_viewPager_title = NULL;
-static gt_obj_st * label_diglog_title = NULL;
-static gt_obj_st * label_gif_title = NULL;
-static gt_obj_st * label_layout_title = NULL;
-static gt_obj_st * label_mediaplayer_title = NULL;
-static gt_obj_st * label_group_title = NULL;
-static gt_obj_st * label_slider_title = NULL;
-static gt_obj_st * label_bar_title = NULL;
-static gt_obj_st * label_radio_title = NULL;
-static gt_obj_st * label_checkbox_title = NULL;
-static gt_obj_st * label_listv_title = NULL;
-static gt_obj_st * label_roller_title = NULL;
-static gt_obj_st * label_graph_title = NULL;
-static gt_obj_st * label_rect_title = NULL;
-static gt_obj_st * label_statusbartitle = NULL;
-static gt_obj_st * label_screen_title = NULL;
-static gt_obj_st * rect3 = NULL;
-static gt_obj_st * label_txt_category = NULL;
-static gt_obj_st * rect_wireframe = NULL;
-static gt_obj_st * txt1 = NULL;
-static gt_obj_st * rect1_blueCopy = NULL;
-static gt_obj_st * label_style_title = NULL;
-static gt_obj_st * txt1Copy = NULL;
-static gt_obj_st * txt1CopyCopy = NULL;
-static gt_obj_st * rect_wireframeCopy = NULL;
-static gt_obj_st * rect1_blueCopyCopy = NULL;
-static gt_obj_st * label_colour_title = NULL;
-static gt_obj_st * txt1CopyCopyCopy = NULL;
-static gt_obj_st * txt1CopyCopyCopyCopy = NULL;
-static gt_obj_st * txt1CopyCopyCopyCopyCopy = NULL;
-static gt_obj_st * txt1CopyCopyCopyCopyCopyCopy = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_button_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_image_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_label_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_txt_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_input_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_imgbtn_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_keyboard_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_switch10_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_player_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_inputNum_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_clock_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_barcode_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_qrcode_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_viewPager_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_diglog_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_gif_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_layout_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_mediaplayer_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_group_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_slider_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_bar_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_radio_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_checkbox_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_listv_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_roller_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_graph_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_rect_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_statusbartitle = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_screen_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect3 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_txt_category = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect_wireframe = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect1_blueCopy = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_Styleandcolor_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * txt_grey = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * txt_blue = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * txt_orange = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * txt_purple = NULL;
 
-static void txt_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void txt_0_cb(gt_event_st * e) {
 	
 }
 
-static void label_button_title_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void label_button_title_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab2_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab2_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_IMAGE, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void label_label_title_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void label_label_title_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_LABEL, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab5_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab5_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_INPUT, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab6_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab6_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_IMGBTN, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab7_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab7_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_KEYBOARD, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab8_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab8_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_SWITCH10, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab9_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab9_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_PLAYER, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab10_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab10_0_cb(gt_event_st * e) {
 	
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void txt__0_cb(gt_event_st * e) {
+	bool status = gt_obj_get_visible(txt_grey);
+	gt_obj_set_visible(txt_grey, !status);
+
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void txt_blue_0_cb(gt_event_st * e) {
+	gt_textarea_set_bg_color(txt_blue, gt_color_hex(0x000000));
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void txt_orange_0_cb(gt_event_st * e) {
+	gt_obj_set_x_anim(txt_orange, 10);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void txt_purple_0_cb(gt_event_st * e) {
+	gt_obj_set_size_anim(txt_purple, 30, 30);
 }
 
 gt_obj_st * gt_init_txt(void)
@@ -534,7 +546,7 @@ gt_obj_st * gt_init_txt(void)
 	/** 矩形线框 */
 	rect_wireframe = gt_rect_create(txt);
 	gt_obj_set_pos(rect_wireframe, 237, 64);
-	gt_obj_set_size(rect_wireframe, 509, 280);
+	gt_obj_set_size(rect_wireframe, 509, 480);
 	gt_rect_set_radius(rect_wireframe, 0);
 	gt_rect_set_bg_color(rect_wireframe, gt_color_hex(0xffffff));
 	gt_rect_set_color_border(rect_wireframe, gt_color_hex(0xc0c0c0));
@@ -543,24 +555,11 @@ gt_obj_st * gt_init_txt(void)
 
 	
 
-	/** txt1 */
-	txt1 = gt_textarea_create(txt);
-	gt_obj_set_pos(txt1, 262, 136);
-	gt_obj_set_size(txt1, 218, 67);
-	gt_textarea_set_font_color(txt1, gt_color_hex(0x000000));
-	gt_textarea_set_font_family(txt1, gray_black_16);
-	gt_textarea_set_font_cjk(txt1, 0);
-	gt_textarea_set_font_align(txt1, GT_ALIGN_LEFT);
-	gt_textarea_add_str(txt1, "默认无效果文字", 0, gt_color_hex(0x000000));
-	gt_textarea_set_bg_color(txt1, gt_color_hex(0xffffff));
-
-	
-
 	/** rect1_blueCopy */
 	/** 蓝色矩形背景 */
 	rect1_blueCopy = gt_rect_create(txt);
 	gt_obj_set_pos(rect1_blueCopy, 214, 75);
-	gt_obj_set_size(rect1_blueCopy, 140, 38);
+	gt_obj_set_size(rect1_blueCopy, 153, 38);
 	gt_rect_set_radius(rect1_blueCopy, 0);
 	gt_rect_set_bg_color(rect1_blueCopy, gt_color_hex(0xe3f1ff));
 	gt_rect_set_color_border(rect1_blueCopy, gt_color_hex(0xffffff));
@@ -569,139 +568,75 @@ gt_obj_st * gt_init_txt(void)
 
 	
 
-	/** label_style_title */
-	/** 用于显示“风格”的标题 Label */
-	label_style_title = gt_label_create(txt);
-	gt_obj_set_pos(label_style_title, 241, 77);
-	gt_obj_set_size(label_style_title, 106, 34);
-	gt_label_set_font_color(label_style_title, gt_color_hex(0x000000));
-	gt_label_set_font_family(label_style_title, gray_black_20);
-	gt_label_set_font_cjk(label_style_title, 0);
-	gt_label_set_font_align(label_style_title, GT_ALIGN_CENTER_MID);
-	gt_label_set_text(label_style_title, "风格");
-	gt_label_set_space(label_style_title, 0, 0);
+	/** label_Styleandcolor_title */
+	/** 用于显示“风格和颜色”的标题 Label */
+	label_Styleandcolor_title = gt_label_create(txt);
+	gt_obj_set_pos(label_Styleandcolor_title, 232, 77);
+	gt_obj_set_size(label_Styleandcolor_title, 141, 34);
+	gt_label_set_font_color(label_Styleandcolor_title, gt_color_hex(0x000000));
+	gt_label_set_font_family(label_Styleandcolor_title, gray_black_20);
+	gt_label_set_font_cjk(label_Styleandcolor_title, 0);
+	gt_label_set_font_align(label_Styleandcolor_title, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(label_Styleandcolor_title, "风格&颜色");
+	gt_label_set_space(label_Styleandcolor_title, 0, 0);
 
 	
 
-	/** txt1Copy */
-	txt1Copy = gt_textarea_create(txt);
-	gt_obj_set_pos(txt1Copy, 501, 136);
-	gt_obj_set_size(txt1Copy, 218, 67);
-	gt_textarea_set_font_color(txt1Copy, gt_color_hex(0x000000));
-	gt_textarea_set_font_family(txt1Copy, gray_black_20);
-	gt_textarea_set_font_cjk(txt1Copy, 0);
-	gt_textarea_set_font_align(txt1Copy, GT_ALIGN_LEFT);
-	gt_textarea_add_str(txt1Copy, "紫色带下划线文字", 1, gt_color_hex(0x8080ff));
-	gt_textarea_set_bg_color(txt1Copy, gt_color_hex(0xffffff));
-
+	/** txt_grey */
+	/** 灰色背景txt文本区 */
+	txt_grey = gt_textarea_create(txt);
+	gt_obj_set_pos(txt_grey, 262, 139);
+	gt_obj_set_size(txt_grey, 452, 67);
+	gt_textarea_set_font_color(txt_grey, gt_color_hex(0x000000));
+	gt_textarea_set_font_family(txt_grey, gray_black_20);
+	gt_textarea_set_font_cjk(txt_grey, 0);
+	gt_textarea_set_font_align(txt_grey, GT_ALIGN_LEFT);
+	gt_textarea_add_str(txt_grey, "灰色背景，蓝色文字默认", 0, gt_color_hex(0x0000ff));
+	gt_textarea_set_bg_color(txt_grey, gt_color_hex(0xeeeeee));
+	gt_obj_add_event_cb(txt_grey, txt__0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
-	/** txt1CopyCopy */
-	txt1CopyCopy = gt_textarea_create(txt);
-	gt_obj_set_pos(txt1CopyCopy, 262, 236);
-	gt_obj_set_size(txt1CopyCopy, 218, 67);
-	gt_textarea_set_font_color(txt1CopyCopy, gt_color_hex(0x000000));
-	gt_textarea_set_font_family(txt1CopyCopy, gray_black_20);
-	gt_textarea_set_font_cjk(txt1CopyCopy, 0);
-	gt_textarea_set_font_align(txt1CopyCopy, GT_ALIGN_LEFT);
-	gt_textarea_add_str(txt1CopyCopy, "粉色带删除线文字", 2, gt_color_hex(0xff00ff));
-	gt_textarea_set_bg_color(txt1CopyCopy, gt_color_hex(0xffffff));
-
+	/** txt_blue */
+	/** 蓝色背景txt文本区 */
+	txt_blue = gt_textarea_create(txt);
+	gt_obj_set_pos(txt_blue, 262, 233);
+	gt_obj_set_size(txt_blue, 454, 67);
+	gt_textarea_set_font_color(txt_blue, gt_color_hex(0x000000));
+	gt_textarea_set_font_family(txt_blue, gray_black_20);
+	gt_textarea_set_font_cjk(txt_blue, 0);
+	gt_textarea_set_font_align(txt_blue, GT_ALIGN_LEFT);
+	gt_textarea_add_str(txt_blue, "蓝色背景，白色粗体加斜体加下划线", 1 | 4 | 8, gt_color_hex(0xffffff));
+	gt_textarea_set_bg_color(txt_blue, gt_color_hex(0x5886fe));
+	gt_obj_add_event_cb(txt_blue, txt_blue_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
-	/** rect_wireframeCopy */
-	/** 矩形线框 */
-	rect_wireframeCopy = gt_rect_create(txt);
-	gt_obj_set_pos(rect_wireframeCopy, 237, 360);
-	gt_obj_set_size(rect_wireframeCopy, 509, 280);
-	gt_rect_set_radius(rect_wireframeCopy, 0);
-	gt_rect_set_bg_color(rect_wireframeCopy, gt_color_hex(0x000000));
-	gt_rect_set_color_border(rect_wireframeCopy, gt_color_hex(0xc0c0c0));
-	gt_rect_set_fill(rect_wireframeCopy, 1);
-	gt_rect_set_border(rect_wireframeCopy, 1);
-
+	/** txt_orange */
+	/** 橙色背景txt文本区 */
+	txt_orange = gt_textarea_create(txt);
+	gt_obj_set_pos(txt_orange, 262, 329);
+	gt_obj_set_size(txt_orange, 452, 67);
+	gt_textarea_set_font_color(txt_orange, gt_color_hex(0x000000));
+	gt_textarea_set_font_family(txt_orange, gray_black_20);
+	gt_textarea_set_font_cjk(txt_orange, 0);
+	gt_textarea_set_font_align(txt_orange, GT_ALIGN_LEFT);
+	gt_textarea_add_str(txt_orange, "橙色背景，黑色文字带删除线", 2, gt_color_hex(0x000000));
+	gt_textarea_set_bg_color(txt_orange, gt_color_hex(0xff8000));
+	gt_obj_add_event_cb(txt_orange, txt_orange_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
-	/** rect1_blueCopyCopy */
-	/** 蓝色矩形背景 */
-	rect1_blueCopyCopy = gt_rect_create(txt);
-	gt_obj_set_pos(rect1_blueCopyCopy, 214, 373);
-	gt_obj_set_size(rect1_blueCopyCopy, 140, 38);
-	gt_rect_set_radius(rect1_blueCopyCopy, 0);
-	gt_rect_set_bg_color(rect1_blueCopyCopy, gt_color_hex(0xe3f1ff));
-	gt_rect_set_color_border(rect1_blueCopyCopy, gt_color_hex(0xffffff));
-	gt_rect_set_fill(rect1_blueCopyCopy, 1);
-	gt_rect_set_border(rect1_blueCopyCopy, 0);
-
-	
-
-	/** label_colour_title */
-	/** 用于显示“颜色”的标题 Label */
-	label_colour_title = gt_label_create(txt);
-	gt_obj_set_pos(label_colour_title, 241, 375);
-	gt_obj_set_size(label_colour_title, 106, 34);
-	gt_label_set_font_color(label_colour_title, gt_color_hex(0x000000));
-	gt_label_set_font_family(label_colour_title, gray_black_20);
-	gt_label_set_font_cjk(label_colour_title, 0);
-	gt_label_set_font_align(label_colour_title, GT_ALIGN_CENTER_MID);
-	gt_label_set_text(label_colour_title, "颜色");
-	gt_label_set_space(label_colour_title, 0, 0);
-
-	
-
-	/** txt1CopyCopyCopy */
-	txt1CopyCopyCopy = gt_textarea_create(txt);
-	gt_obj_set_pos(txt1CopyCopyCopy, 262, 438);
-	gt_obj_set_size(txt1CopyCopyCopy, 218, 67);
-	gt_textarea_set_font_color(txt1CopyCopyCopy, gt_color_hex(0x000000));
-	gt_textarea_set_font_family(txt1CopyCopyCopy, gray_black_20);
-	gt_textarea_set_font_cjk(txt1CopyCopyCopy, 0);
-	gt_textarea_set_font_align(txt1CopyCopyCopy, GT_ALIGN_LEFT);
-	gt_textarea_add_str(txt1CopyCopyCopy, "紫色背景", 0, gt_color_hex(0xffffff));
-	gt_textarea_set_bg_color(txt1CopyCopyCopy, gt_color_hex(0x8080ff));
-	gt_textarea_set_bg_opa(txt1CopyCopyCopy, GT_OPA_55);
-
-	
-
-	/** txt1CopyCopyCopyCopy */
-	txt1CopyCopyCopyCopy = gt_textarea_create(txt);
-	gt_obj_set_pos(txt1CopyCopyCopyCopy, 501, 438);
-	gt_obj_set_size(txt1CopyCopyCopyCopy, 218, 67);
-	gt_textarea_set_font_color(txt1CopyCopyCopyCopy, gt_color_hex(0x000000));
-	gt_textarea_set_font_family(txt1CopyCopyCopyCopy, gray_black_20);
-	gt_textarea_set_font_cjk(txt1CopyCopyCopyCopy, 0);
-	gt_textarea_set_font_align(txt1CopyCopyCopyCopy, GT_ALIGN_LEFT);
-	gt_textarea_add_str(txt1CopyCopyCopyCopy, "黑色背景带下划线", 1, gt_color_hex(0x00ffff));
-	gt_textarea_set_bg_color(txt1CopyCopyCopyCopy, gt_color_hex(0x000000));
-
-	
-
-	/** txt1CopyCopyCopyCopyCopy */
-	txt1CopyCopyCopyCopyCopy = gt_textarea_create(txt);
-	gt_obj_set_pos(txt1CopyCopyCopyCopyCopy, 262, 536);
-	gt_obj_set_size(txt1CopyCopyCopyCopyCopy, 218, 67);
-	gt_textarea_set_font_color(txt1CopyCopyCopyCopyCopy, gt_color_hex(0x000000));
-	gt_textarea_set_font_family(txt1CopyCopyCopyCopyCopy, gray_black_20);
-	gt_textarea_set_font_cjk(txt1CopyCopyCopyCopyCopy, 0);
-	gt_textarea_set_font_align(txt1CopyCopyCopyCopyCopy, GT_ALIGN_LEFT);
-	gt_textarea_add_str(txt1CopyCopyCopyCopyCopy, "粉色背景带删除线", 2, gt_color_hex(0x000040));
-	gt_textarea_set_bg_color(txt1CopyCopyCopyCopyCopy, gt_color_hex(0xff0080));
-
-	
-
-	/** txt1CopyCopyCopyCopyCopyCopy */
-	txt1CopyCopyCopyCopyCopyCopy = gt_textarea_create(txt);
-	gt_obj_set_pos(txt1CopyCopyCopyCopyCopyCopy, 501, 236);
-	gt_obj_set_size(txt1CopyCopyCopyCopyCopyCopy, 218, 67);
-	gt_textarea_set_font_color(txt1CopyCopyCopyCopyCopyCopy, gt_color_hex(0x000000));
-	gt_textarea_set_font_family(txt1CopyCopyCopyCopyCopyCopy, gray_black_16);
-	gt_textarea_set_font_cjk(txt1CopyCopyCopyCopyCopyCopy, 0);
-	gt_textarea_set_font_align(txt1CopyCopyCopyCopyCopyCopy, GT_ALIGN_LEFT);
-	gt_textarea_add_str(txt1CopyCopyCopyCopyCopyCopy, "橙色带删除线文字", 2, gt_color_hex(0xff8000));
-	gt_textarea_add_str(txt1CopyCopyCopyCopyCopyCopy, "黑色默认无效果文字", 0, gt_color_hex(0x000000));
-	gt_textarea_add_str(txt1CopyCopyCopyCopyCopyCopy, "蓝色带下划线文字", 1, gt_color_hex(0x0080ff));
-	gt_textarea_set_bg_color(txt1CopyCopyCopyCopyCopyCopy, gt_color_hex(0xffffff));
-
+	/** txt_purple */
+	/** 紫色背景txt文本区 */
+	txt_purple = gt_textarea_create(txt);
+	gt_obj_set_pos(txt_purple, 262, 426);
+	gt_obj_set_size(txt_purple, 452, 67);
+	gt_obj_set_opa(txt_purple, GT_OPA_60);
+	gt_textarea_set_font_color(txt_purple, gt_color_hex(0x000000));
+	gt_textarea_set_font_family(txt_purple, gray_black_20);
+	gt_textarea_set_font_cjk(txt_purple, 0);
+	gt_textarea_set_font_align(txt_purple, GT_ALIGN_LEFT);
+	gt_textarea_add_str(txt_purple, "紫色背景，灰色文字粗体加斜体加下划线加删除线", 2 | 1 | 4 | 8, gt_color_hex(0xc0c0c0));
+	gt_textarea_set_bg_color(txt_purple, gt_color_hex(0x6a018d));
+	gt_obj_add_event_cb(txt_purple, txt_purple_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 
 
 	return txt;

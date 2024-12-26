@@ -4,81 +4,79 @@
 
 /** imgbtn */
 gt_obj_st * imgbtn = NULL;
-static gt_obj_st * label_button_title = NULL;
-static gt_obj_st * label_image_title = NULL;
-static gt_obj_st * label_label_title = NULL;
-static gt_obj_st * label_txt_title = NULL;
-static gt_obj_st * label_input_title = NULL;
-static gt_obj_st * label_imgbtn_title = NULL;
-static gt_obj_st * label_keyboard_title = NULL;
-static gt_obj_st * label_switch10_title = NULL;
-static gt_obj_st * label_player_title = NULL;
-static gt_obj_st * label_inputNum_title = NULL;
-static gt_obj_st * label_clock_title = NULL;
-static gt_obj_st * label_barcode_title = NULL;
-static gt_obj_st * label_qrcode_title = NULL;
-static gt_obj_st * label_viewPager_title = NULL;
-static gt_obj_st * label_diglog_title = NULL;
-static gt_obj_st * label_gif_title = NULL;
-static gt_obj_st * label_layout_title = NULL;
-static gt_obj_st * label_mediaplayer_title = NULL;
-static gt_obj_st * label_group_title = NULL;
-static gt_obj_st * label_slider_title = NULL;
-static gt_obj_st * label_bar_title = NULL;
-static gt_obj_st * label_radio_title = NULL;
-static gt_obj_st * label_checkbox_title = NULL;
-static gt_obj_st * label_listv_title = NULL;
-static gt_obj_st * label_roller_title = NULL;
-static gt_obj_st * label_graph_title = NULL;
-static gt_obj_st * label_rect_title = NULL;
-static gt_obj_st * label_statusbartitle = NULL;
-static gt_obj_st * label_screen_title = NULL;
-static gt_obj_st * rect3 = NULL;
-static gt_obj_st * label_imgbtn_category = NULL;
-static gt_obj_st * rect_wireframe = NULL;
-static gt_obj_st * img_Playerbackground = NULL;
-static gt_obj_st * imgbtn_CycleMode = NULL;
-static gt_obj_st * imgbtn_Playing = NULL;
-static gt_obj_st * imgbtn_Previoussong = NULL;
-static gt_obj_st * imgbtn_Nextsong = NULL;
-static gt_obj_st * imgbtn_collect = NULL;
-static gt_obj_st * lab_songname = NULL;
-static gt_obj_st * imgbtn1 = NULL;
-static gt_obj_st * imgbtn2 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_button_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_image_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_label_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_txt_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_input_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_imgbtn_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_keyboard_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_switch10_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_player_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_inputNum_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_clock_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_barcode_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_qrcode_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_viewPager_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_diglog_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_gif_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_layout_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_mediaplayer_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_group_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_slider_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_bar_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_radio_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_checkbox_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_listv_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_roller_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_graph_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_rect_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_statusbartitle = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_screen_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect3 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_imgbtn_category = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect_wireframe = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Playerbackground = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * imgbtn_CycleMode = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * imgbtn_Playing = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * imgbtn_Previoussong = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * imgbtn_Nextsong = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * imgbtn_collect = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * lab_songname = NULL;
 
-static void lab1_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab1_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab2_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab2_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_IMAGE, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void label_label_title_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void label_label_title_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_LABEL, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab4_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab4_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_TXT, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab5_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab5_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_INPUT, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab7_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab7_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_KEYBOARD, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab8_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab8_0_cb(gt_event_st * e) {
 	
 }
 
-static void imgbtn_Previoussong_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void imgbtn_Previoussong_0_cb(gt_event_st * e) {
 	gt_label_set_text(lab_songname, "Don't Watch Me Cry");
 }
 
-static void imgbtn_Nextsong_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void imgbtn_Nextsong_0_cb(gt_event_st * e) {
 	gt_label_set_text(lab_songname, "Haven't Met You Yet");
 }
 
@@ -607,30 +605,6 @@ gt_obj_st * gt_init_imgbtn(void)
 	gt_label_set_font_align(lab_songname, GT_ALIGN_CENTER_MID);
 	gt_label_set_text(lab_songname, "Over The Rainbow");
 	gt_label_set_space(lab_songname, 0, 0);
-
-	
-
-	/** imgbtn1 */
-	imgbtn1 = gt_imgbtn_create(imgbtn);
-	gt_obj_set_pos(imgbtn1, 336, 220);
-	gt_obj_set_size(imgbtn1, 31, 26);
-	gt_imgbtn_set_src(imgbtn1, ".:img_1_31x26.png");
-	gt_imgbtn_add_state_item(imgbtn1, ".:img_2_31x26.png");
-	gt_imgbtn_add_state_item(imgbtn1, ".:img_3_31x26.png");
-	gt_imgbtn_add_state_item(imgbtn1, ".:img_4_31x26.png");
-	gt_imgbtn_add_state_item(imgbtn1, ".:img_5_31x26.png");
-	gt_imgbtn_add_state_item(imgbtn1, ".:img_6_31x26.png");
-	gt_imgbtn_add_state_item(imgbtn1, ".:img_7_31x26.png");
-	gt_imgbtn_add_state_item(imgbtn1, ".:img_8_31x26.png");
-
-	
-
-	/** imgbtn2 */
-	imgbtn2 = gt_imgbtn_create(imgbtn);
-	gt_obj_set_pos(imgbtn2, 323, 118);
-	gt_obj_set_size(imgbtn2, 78, 78);
-	gt_imgbtn_set_src(imgbtn2, ".:img_music14_78x78.png");
-	gt_imgbtn_set_src_press(imgbtn2, ".:img_yezigongchangxiaoxiongmao_48_ff00ff_tong_901a_78x78.png");
 
 
 

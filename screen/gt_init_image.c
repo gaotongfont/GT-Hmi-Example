@@ -4,90 +4,90 @@
 
 /** image */
 gt_obj_st * image = NULL;
-static gt_obj_st * label_button_title = NULL;
-static gt_obj_st * label_txt_title = NULL;
-static gt_obj_st * label_input_title = NULL;
-static gt_obj_st * label_imgbtn_title = NULL;
-static gt_obj_st * label_keyboard_title = NULL;
-static gt_obj_st * label_switch10_title = NULL;
-static gt_obj_st * label_player_title = NULL;
-static gt_obj_st * label_inputNum_title = NULL;
-static gt_obj_st * label_clock_title = NULL;
-static gt_obj_st * label_barcode_title = NULL;
-static gt_obj_st * label_qrcode_title = NULL;
-static gt_obj_st * label_viewPager_title = NULL;
-static gt_obj_st * label_diglog_title = NULL;
-static gt_obj_st * label_gif_title = NULL;
-static gt_obj_st * label_layout_title = NULL;
-static gt_obj_st * label_mediaplayer_title = NULL;
-static gt_obj_st * label_group_title = NULL;
-static gt_obj_st * label_slider_title = NULL;
-static gt_obj_st * label_bar_title = NULL;
-static gt_obj_st * label_radio_title = NULL;
-static gt_obj_st * label_checkbox_title = NULL;
-static gt_obj_st * label_listv_title = NULL;
-static gt_obj_st * label_roller_title = NULL;
-static gt_obj_st * label_graph_title = NULL;
-static gt_obj_st * label_rect_title = NULL;
-static gt_obj_st * label_statusbartitle = NULL;
-static gt_obj_st * label_screen_title = NULL;
-static gt_obj_st * rect3 = NULL;
-static gt_obj_st * label_image_category = NULL;
-static gt_obj_st * rect1_wireframe = NULL;
-static gt_obj_st * rect1_blue = NULL;
-static gt_obj_st * label_transparency_title = NULL;
-static gt_obj_st * img_Transparency20 = NULL;
-static gt_obj_st * img_Transparency60 = NULL;
-static gt_obj_st * img_Transparency100 = NULL;
-static gt_obj_st * rect2_wireframe = NULL;
-static gt_obj_st * rect2_blue = NULL;
-static gt_obj_st * label_size_title = NULL;
-static gt_obj_st * img_Small = NULL;
-static gt_obj_st * img_Medium = NULL;
-static gt_obj_st * img_Large = NULL;
-static gt_obj_st * rect3_wireframe = NULL;
-static gt_obj_st * rect3_blue = NULL;
-static gt_obj_st * label_wordart_title = NULL;
-static gt_obj_st * img_Pangmenfont = NULL;
-static gt_obj_st * img1_Pandafont = NULL;
-static gt_obj_st * img2_Pandafont = NULL;
-static gt_obj_st * img_HuXiaobofont = NULL;
-static gt_obj_st * label_image_title = NULL;
-static gt_obj_st * label_label_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_button_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_txt_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_input_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_imgbtn_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_keyboard_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_switch10_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_player_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_inputNum_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_clock_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_barcode_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_qrcode_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_viewPager_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_diglog_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_gif_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_layout_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_mediaplayer_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_group_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_slider_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_bar_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_radio_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_checkbox_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_listv_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_roller_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_graph_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_rect_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_statusbartitle = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_screen_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect3 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_image_category = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect1_wireframe = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect1_blue = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_transparency_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Transparency20 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Transparency60 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Transparency100 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect2_wireframe = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect2_blue = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_size_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Small = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Medium = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Large = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect3_wireframe = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect3_blue = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_wordart_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Pangmenfont = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img1_Pandafont = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img2_Pandafont = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_HuXiaobofont = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_image_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_label_title = NULL;
 
-static void lab1_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab1_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void label_txt_title_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void label_txt_title_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_TXT, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void label_input_title_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void label_input_title_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_INPUT, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab6_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab6_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_IMGBTN, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab7_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab7_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_KEYBOARD, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab8_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab8_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_SWITCH10, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab9_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab9_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_PLAYER, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab10_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab10_0_cb(gt_event_st * e) {
 	
 }
 
-static void label_label_titleCopy_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void label_label_titleCopy_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_LABEL, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 

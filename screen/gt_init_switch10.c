@@ -4,97 +4,107 @@
 
 /** switch10 */
 gt_obj_st * switch10 = NULL;
-static gt_obj_st * label_button_title = NULL;
-static gt_obj_st * label_image_title = NULL;
-static gt_obj_st * label_label_title = NULL;
-static gt_obj_st * label_txt_title = NULL;
-static gt_obj_st * label_input_title = NULL;
-static gt_obj_st * label_imgbtn_title = NULL;
-static gt_obj_st * label_keyboard_title = NULL;
-static gt_obj_st * label_switch_title = NULL;
-static gt_obj_st * label_player_title = NULL;
-static gt_obj_st * label_inputNum_title = NULL;
-static gt_obj_st * label_clock_title = NULL;
-static gt_obj_st * label_barcode_title = NULL;
-static gt_obj_st * label_qrcode_title = NULL;
-static gt_obj_st * label_viewPager_title = NULL;
-static gt_obj_st * label_diglog_title = NULL;
-static gt_obj_st * label_gif_title = NULL;
-static gt_obj_st * label_layout_title = NULL;
-static gt_obj_st * label_mediaplayer_title = NULL;
-static gt_obj_st * label_group_title = NULL;
-static gt_obj_st * label_slider_title = NULL;
-static gt_obj_st * label_bar_title = NULL;
-static gt_obj_st * label_radio_title = NULL;
-static gt_obj_st * label_checkbox_title = NULL;
-static gt_obj_st * label_listv_title = NULL;
-static gt_obj_st * label_roller_title = NULL;
-static gt_obj_st * label_graph_title = NULL;
-static gt_obj_st * label_rect_title = NULL;
-static gt_obj_st * label_statusbartitle = NULL;
-static gt_obj_st * label_screen_title = NULL;
-static gt_obj_st * rect3 = NULL;
-static gt_obj_st * label_switch_category = NULL;
-static gt_obj_st * rect1_wireframe = NULL;
-static gt_obj_st * switch1_Greenroundedcorner = NULL;
-static gt_obj_st * rect1_blue = NULL;
-static gt_obj_st * label_style_title = NULL;
-static gt_obj_st * switch_Greenroundedsmall = NULL;
-static gt_obj_st * switch_Greenrectangle = NULL;
-static gt_obj_st * switch_Graywithroundedlines = NULL;
-static gt_obj_st * switch_Graystripedrectangle = NULL;
-static gt_obj_st * rect2_wireframe = NULL;
-static gt_obj_st * rect2_blue = NULL;
-static gt_obj_st * label_colour_title = NULL;
-static gt_obj_st * switch_Pinkroundedcorners = NULL;
-static gt_obj_st * switch_Orangerectangle = NULL;
-static gt_obj_st * switch_Smallblueroundedcorner = NULL;
-static gt_obj_st * rect3_wireframe = NULL;
-static gt_obj_st * rect3_blue = NULL;
-static gt_obj_st * label_size_title = NULL;
-static gt_obj_st * switch_Greenroundedcornerwithlineswitch = NULL;
-static gt_obj_st * switch_Greenrectanglewithlines = NULL;
-static gt_obj_st * switch_Greenroundedcornersmallsize = NULL;
-static gt_obj_st * rect4_wireframe = NULL;
-static gt_obj_st * rect4_blue = NULL;
-static gt_obj_st * label_picture_title = NULL;
-static gt_obj_st * imgbtn_redswitch = NULL;
-static gt_obj_st * imgbtn_Blueswitch = NULL;
-static gt_obj_st * imgbtn_Whiteswitch = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_button_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_image_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_label_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_txt_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_input_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_imgbtn_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_keyboard_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_switch_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_player_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_inputNum_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_clock_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_barcode_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_qrcode_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_viewPager_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_diglog_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_gif_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_layout_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_mediaplayer_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_group_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_slider_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_bar_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_radio_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_checkbox_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_listv_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_roller_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_graph_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_rect_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_statusbartitle = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_screen_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect3 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_switch_category = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect1_wireframe = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * switch1_Greenroundedcorner = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect1_blue = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_style_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * switch_Greenroundedsmall = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * switch_Greenrectangle = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * switch_Graywithroundedlines = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * switch_Graystripedrectangle = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect2_wireframe = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect2_blue = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_colour_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * switch_Pinkroundedcorners = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * switch_Orangerectangle = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * switch_Smallblueroundedcorner = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect3_wireframe = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect3_blue = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_size_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * switch_Greenroundedcornerwithlineswitch = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * switch_Greenrectanglewithlines = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * switch_Greenroundedcornersmallsize = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect4_wireframe = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect4_blue = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_picture_title = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * imgbtn_redswitch = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * imgbtn_Blueswitch = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * imgbtn_Whiteswitch = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * switch1 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * imgbtn1 = NULL;
 
-static void lab1_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab1_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab2_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab2_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_IMAGE, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void label_label_title_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void label_label_title_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_LABEL, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab4_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab4_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_TXT, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab5_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab5_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_INPUT, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab6_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab6_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_IMGBTN, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab7_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab7_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_KEYBOARD, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab9_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab9_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_PLAYER, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static void lab10_0_cb(gt_event_st * e) {
+static GT_ATTRIBUTE_RAM_TEXT void lab10_0_cb(gt_event_st * e) {
+	
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void switch_Greenroundedsmall_0_cb(gt_event_st * e) {
+	
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void switch_Greenrectanglewithlines_0_cb(gt_event_st * e) {
 	
 }
 
@@ -603,7 +613,7 @@ gt_obj_st * gt_init_switch10(void)
 	gt_switch_set_color_point(switch_Greenroundedsmall, gt_color_hex(0xc0c0c0));
 	gt_obj_set_state(switch_Greenroundedsmall, 1);
 	gt_switch_set_style(switch_Greenroundedsmall, GT_SWITCH_STYLE_AXIS);
-
+	gt_obj_add_event_cb(switch_Greenroundedsmall, switch_Greenroundedsmall_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
 	/** switch_Greenrectangle */
@@ -693,8 +703,8 @@ gt_obj_st * gt_init_switch10(void)
 	switch_Pinkroundedcorners = gt_switch_create(switch10);
 	gt_obj_set_pos(switch_Pinkroundedcorners, 282, 438);
 	gt_obj_set_size(switch_Pinkroundedcorners, 80, 38);
-	gt_switch_set_color_act(switch_Pinkroundedcorners, gt_color_hex(0xff80ff));
-	gt_switch_set_color_ina(switch_Pinkroundedcorners, gt_color_hex(0xc0c0c0));
+	gt_switch_set_color_act(switch_Pinkroundedcorners, gt_color_hex(0x8080ff));
+	gt_switch_set_color_ina(switch_Pinkroundedcorners, gt_color_hex(0x000000));
 	gt_switch_set_color_point(switch_Pinkroundedcorners, gt_color_hex(0xffffff));
 	gt_obj_set_state(switch_Pinkroundedcorners, 1);
 	gt_switch_set_style(switch_Pinkroundedcorners, GT_SWITCH_STYLE_DEFAULT);
@@ -788,7 +798,7 @@ gt_obj_st * gt_init_switch10(void)
 	/** 绿色带线条矩形开关 */
 	switch_Greenrectanglewithlines = gt_switch_create(switch10);
 	gt_obj_set_pos(switch_Greenrectanglewithlines, 569, 646);
-	gt_obj_set_size(switch_Greenrectanglewithlines, 141, 59);
+	gt_obj_set_size(switch_Greenrectanglewithlines, 154, 57);
 	gt_switch_set_color_act(switch_Greenrectanglewithlines, gt_color_hex(0x13ce66));
 	gt_switch_set_color_ina(switch_Greenrectanglewithlines, gt_color_hex(0xebeef5));
 	gt_switch_set_color_point(switch_Greenrectanglewithlines, gt_color_hex(0xFFFFFF));
@@ -879,6 +889,28 @@ gt_obj_st * gt_init_switch10(void)
 	gt_obj_set_size(imgbtn_Whiteswitch, 118, 64);
 	gt_imgbtn_set_src(imgbtn_Whiteswitch, "f:img_on3_118x64.png");
 	gt_imgbtn_add_state_item(imgbtn_Whiteswitch, "f:img_off3_118x64.png");
+
+	
+
+	/** switch1 */
+	switch1 = gt_switch_create(switch10);
+	gt_obj_set_pos(switch1, 409, 76);
+	gt_obj_set_size(switch1, 118, 44);
+	gt_switch_set_color_act(switch1, gt_color_hex(0x13ce66));
+	gt_switch_set_color_ina(switch1, gt_color_hex(0xc0c0c0));
+	gt_switch_set_color_point(switch1, gt_color_hex(0xFFFFFF));
+	gt_switch_set_style(switch1, GT_SWITCH_STYLE_RECT);
+	gt_switch_set_div_line(switch1, true);
+	gt_switch_set_color_divider(switch1, gt_color_hex(0xffffff));
+
+	
+
+	/** imgbtn1 */
+	imgbtn1 = gt_imgbtn_create(switch10);
+	gt_obj_set_pos(imgbtn1, 280, 1040);
+	gt_obj_set_size(imgbtn1, 118, 64);
+	gt_imgbtn_set_src(imgbtn1, "f:img_off3_118x64.png");
+	gt_imgbtn_add_state_item(imgbtn1, "f:img_on3_118x64.png");
 
 
 
