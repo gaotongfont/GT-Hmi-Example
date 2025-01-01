@@ -8,9 +8,7 @@ static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_button_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_image_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_label_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_txt_title = NULL;
-static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_input_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_imgbtn_title = NULL;
-static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_keyboard_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_switch10_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_player_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_inputNum_title = NULL;
@@ -42,6 +40,7 @@ static GT_ATTRIBUTE_RAM_DATA gt_obj_st * txt_grey = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * txt_blue = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * txt_orange = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * txt_purple = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_input_titleCopy = NULL;
 
 static GT_ATTRIBUTE_RAM_TEXT void txt_0_cb(gt_event_st * e) {
 	
@@ -59,16 +58,8 @@ static GT_ATTRIBUTE_RAM_TEXT void label_label_title_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_LABEL, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static GT_ATTRIBUTE_RAM_TEXT void lab5_0_cb(gt_event_st * e) {
-	gt_disp_stack_load_scr_anim(GT_ID_INPUT, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
-}
-
 static GT_ATTRIBUTE_RAM_TEXT void lab6_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_IMGBTN, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
-}
-
-static GT_ATTRIBUTE_RAM_TEXT void lab7_0_cb(gt_event_st * e) {
-	gt_disp_stack_load_scr_anim(GT_ID_KEYBOARD, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
 static GT_ATTRIBUTE_RAM_TEXT void lab8_0_cb(gt_event_st * e) {
@@ -98,7 +89,11 @@ static GT_ATTRIBUTE_RAM_TEXT void txt_orange_0_cb(gt_event_st * e) {
 }
 
 static GT_ATTRIBUTE_RAM_TEXT void txt_purple_0_cb(gt_event_st * e) {
-	gt_obj_set_size_anim(txt_purple, 30, 30);
+	gt_obj_set_size_anim(txt_purple, 40, 40);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void label_input_titleCopy_0_cb(gt_event_st * e) {
+	gt_disp_stack_load_scr_anim(GT_ID_INPUT_KEYBOARD, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
 gt_obj_st * gt_init_txt(void)
@@ -141,7 +136,7 @@ gt_obj_st * gt_init_txt(void)
 	/** label_label_title */
 	/** 用于显示“label标签”的标题 Label */
 	label_label_title = gt_label_create(txt);
-	gt_obj_set_pos(label_label_title, 15, 95);
+	gt_obj_set_pos(label_label_title, 15, 96);
 	gt_obj_set_size(label_label_title, 139, 40);
 	gt_label_set_font_color(label_label_title, gt_color_hex(0x808080));
 	gt_label_set_font_family(label_label_title, gray_black_16);
@@ -155,7 +150,7 @@ gt_obj_st * gt_init_txt(void)
 	/** label_txt_title */
 	/** 用于显示“txt文本区”的标题 Label */
 	label_txt_title = gt_label_create(txt);
-	gt_obj_set_pos(label_txt_title, 15, 138);
+	gt_obj_set_pos(label_txt_title, 15, 143);
 	gt_obj_set_size(label_txt_title, 139, 40);
 	gt_label_set_font_color(label_txt_title, gt_color_hex(0x0080ff));
 	gt_label_set_font_family(label_txt_title, gray_black_16);
@@ -166,24 +161,10 @@ gt_obj_st * gt_init_txt(void)
 
 	
 
-	/** label_input_title */
-	/** 用于显示“input输入框”的标题 Label */
-	label_input_title = gt_label_create(txt);
-	gt_obj_set_pos(label_input_title, 15, 179);
-	gt_obj_set_size(label_input_title, 139, 40);
-	gt_label_set_font_color(label_input_title, gt_color_hex(0x808080));
-	gt_label_set_font_family(label_input_title, gray_black_16);
-	gt_label_set_font_cjk(label_input_title, 0);
-	gt_label_set_font_align(label_input_title, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(label_input_title, "input 输入框");
-	gt_label_set_space(label_input_title, 0, 0);
-	gt_obj_add_event_cb(label_input_title, lab5_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
-	
-
 	/** label_imgbtn_title */
 	/** 用于显示“imgbtn图片按钮”的标题 Label */
 	label_imgbtn_title = gt_label_create(txt);
-	gt_obj_set_pos(label_imgbtn_title, 15, 222);
+	gt_obj_set_pos(label_imgbtn_title, 15, 252);
 	gt_obj_set_size(label_imgbtn_title, 159, 40);
 	gt_label_set_font_color(label_imgbtn_title, gt_color_hex(0x808080));
 	gt_label_set_font_family(label_imgbtn_title, gray_black_16);
@@ -194,24 +175,10 @@ gt_obj_st * gt_init_txt(void)
 	gt_obj_add_event_cb(label_imgbtn_title, lab6_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
-	/** label_keyboard_title */
-	/** 用于显示“keyboard键盘”的标题 Label */
-	label_keyboard_title = gt_label_create(txt);
-	gt_obj_set_pos(label_keyboard_title, 15, 267);
-	gt_obj_set_size(label_keyboard_title, 159, 40);
-	gt_label_set_font_color(label_keyboard_title, gt_color_hex(0x808080));
-	gt_label_set_font_family(label_keyboard_title, gray_black_16);
-	gt_label_set_font_cjk(label_keyboard_title, 0);
-	gt_label_set_font_align(label_keyboard_title, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(label_keyboard_title, "keyboard 键盘");
-	gt_label_set_space(label_keyboard_title, 0, 0);
-	gt_obj_add_event_cb(label_keyboard_title, lab7_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
-	
-
 	/** label_switch10_title */
 	/** 用于显示“switch开关”的标题 Label */
 	label_switch10_title = gt_label_create(txt);
-	gt_obj_set_pos(label_switch10_title, 15, 309);
+	gt_obj_set_pos(label_switch10_title, 15, 301);
 	gt_obj_set_size(label_switch10_title, 159, 40);
 	gt_label_set_font_color(label_switch10_title, gt_color_hex(0x808080));
 	gt_label_set_font_family(label_switch10_title, gray_black_16);
@@ -225,7 +192,7 @@ gt_obj_st * gt_init_txt(void)
 	/** label_player_title */
 	/** 用于显示“player幻灯片”的标题 Label */
 	label_player_title = gt_label_create(txt);
-	gt_obj_set_pos(label_player_title, 15, 351);
+	gt_obj_set_pos(label_player_title, 15, 350);
 	gt_obj_set_size(label_player_title, 159, 40);
 	gt_label_set_font_color(label_player_title, gt_color_hex(0x808080));
 	gt_label_set_font_family(label_player_title, gray_black_16);
@@ -571,8 +538,8 @@ gt_obj_st * gt_init_txt(void)
 	/** label_Styleandcolor_title */
 	/** 用于显示“风格和颜色”的标题 Label */
 	label_Styleandcolor_title = gt_label_create(txt);
-	gt_obj_set_pos(label_Styleandcolor_title, 232, 77);
-	gt_obj_set_size(label_Styleandcolor_title, 141, 34);
+	gt_obj_set_pos(label_Styleandcolor_title, 219, 76);
+	gt_obj_set_size(label_Styleandcolor_title, 163, 34);
 	gt_label_set_font_color(label_Styleandcolor_title, gt_color_hex(0x000000));
 	gt_label_set_font_family(label_Styleandcolor_title, gray_black_20);
 	gt_label_set_font_cjk(label_Styleandcolor_title, 0);
@@ -585,13 +552,13 @@ gt_obj_st * gt_init_txt(void)
 	/** txt_grey */
 	/** 灰色背景txt文本区 */
 	txt_grey = gt_textarea_create(txt);
-	gt_obj_set_pos(txt_grey, 262, 139);
+	gt_obj_set_pos(txt_grey, 262, 135);
 	gt_obj_set_size(txt_grey, 452, 67);
 	gt_textarea_set_font_color(txt_grey, gt_color_hex(0x000000));
 	gt_textarea_set_font_family(txt_grey, gray_black_20);
 	gt_textarea_set_font_cjk(txt_grey, 0);
 	gt_textarea_set_font_align(txt_grey, GT_ALIGN_LEFT);
-	gt_textarea_add_str(txt_grey, "灰色背景，蓝色文字默认", 0, gt_color_hex(0x0000ff));
+	gt_textarea_add_str(txt_grey, "灰色背景，蓝色文字默认，\n点击隐藏", 0, gt_color_hex(0x0000ff));
 	gt_textarea_set_bg_color(txt_grey, gt_color_hex(0xeeeeee));
 	gt_obj_add_event_cb(txt_grey, txt__0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
@@ -599,13 +566,13 @@ gt_obj_st * gt_init_txt(void)
 	/** txt_blue */
 	/** 蓝色背景txt文本区 */
 	txt_blue = gt_textarea_create(txt);
-	gt_obj_set_pos(txt_blue, 262, 233);
+	gt_obj_set_pos(txt_blue, 262, 225);
 	gt_obj_set_size(txt_blue, 454, 67);
 	gt_textarea_set_font_color(txt_blue, gt_color_hex(0x000000));
 	gt_textarea_set_font_family(txt_blue, gray_black_20);
 	gt_textarea_set_font_cjk(txt_blue, 0);
 	gt_textarea_set_font_align(txt_blue, GT_ALIGN_LEFT);
-	gt_textarea_add_str(txt_blue, "蓝色背景，白色粗体加斜体加下划线", 1 | 4 | 8, gt_color_hex(0xffffff));
+	gt_textarea_add_str(txt_blue, "蓝色背景，白色粗体加斜体加下划线，\n点击更换背景色", 1 | 4 | 8, gt_color_hex(0xffffff));
 	gt_textarea_set_bg_color(txt_blue, gt_color_hex(0x5886fe));
 	gt_obj_add_event_cb(txt_blue, txt_blue_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
@@ -613,13 +580,13 @@ gt_obj_st * gt_init_txt(void)
 	/** txt_orange */
 	/** 橙色背景txt文本区 */
 	txt_orange = gt_textarea_create(txt);
-	gt_obj_set_pos(txt_orange, 262, 329);
+	gt_obj_set_pos(txt_orange, 262, 320);
 	gt_obj_set_size(txt_orange, 452, 67);
 	gt_textarea_set_font_color(txt_orange, gt_color_hex(0x000000));
 	gt_textarea_set_font_family(txt_orange, gray_black_20);
 	gt_textarea_set_font_cjk(txt_orange, 0);
 	gt_textarea_set_font_align(txt_orange, GT_ALIGN_LEFT);
-	gt_textarea_add_str(txt_orange, "橙色背景，黑色文字带删除线", 2, gt_color_hex(0x000000));
+	gt_textarea_add_str(txt_orange, "橙色背景，黑色文字带删除线，\n点击左滑", 2, gt_color_hex(0x000000));
 	gt_textarea_set_bg_color(txt_orange, gt_color_hex(0xff8000));
 	gt_obj_add_event_cb(txt_orange, txt_orange_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
@@ -627,16 +594,30 @@ gt_obj_st * gt_init_txt(void)
 	/** txt_purple */
 	/** 紫色背景txt文本区 */
 	txt_purple = gt_textarea_create(txt);
-	gt_obj_set_pos(txt_purple, 262, 426);
-	gt_obj_set_size(txt_purple, 452, 67);
+	gt_obj_set_pos(txt_purple, 262, 413);
+	gt_obj_set_size(txt_purple, 452, 80);
 	gt_obj_set_opa(txt_purple, GT_OPA_60);
 	gt_textarea_set_font_color(txt_purple, gt_color_hex(0x000000));
 	gt_textarea_set_font_family(txt_purple, gray_black_20);
 	gt_textarea_set_font_cjk(txt_purple, 0);
 	gt_textarea_set_font_align(txt_purple, GT_ALIGN_LEFT);
-	gt_textarea_add_str(txt_purple, "紫色背景，灰色文字粗体加斜体加下划线加删除线", 2 | 1 | 4 | 8, gt_color_hex(0xc0c0c0));
+	gt_textarea_add_str(txt_purple, "紫色背景，灰色文字粗体加斜体加下划线加删除线，\n点击缩小", 2 | 1 | 4 | 8, gt_color_hex(0xc0c0c0));
 	gt_textarea_set_bg_color(txt_purple, gt_color_hex(0x6a018d));
 	gt_obj_add_event_cb(txt_purple, txt_purple_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	
+
+	/** label_input_titleCopy */
+	/** 用于显示“input输入框”的标题 Label */
+	label_input_titleCopy = gt_label_create(txt);
+	gt_obj_set_pos(label_input_titleCopy, 15, 192);
+	gt_obj_set_size(label_input_titleCopy, 132, 49);
+	gt_label_set_font_color(label_input_titleCopy, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_input_titleCopy, gray_black_16);
+	gt_label_set_font_cjk(label_input_titleCopy, 0);
+	gt_label_set_font_align(label_input_titleCopy, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_input_titleCopy, "input &keyboard  输入框与键盘");
+	gt_label_set_space(label_input_titleCopy, 0, 0);
+	gt_obj_add_event_cb(label_input_titleCopy, label_input_titleCopy_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 
 
 	return txt;

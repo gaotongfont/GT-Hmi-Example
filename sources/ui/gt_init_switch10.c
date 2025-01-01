@@ -8,9 +8,7 @@ static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_button_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_image_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_label_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_txt_title = NULL;
-static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_input_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_imgbtn_title = NULL;
-static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_keyboard_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_switch_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_player_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_inputNum_title = NULL;
@@ -61,8 +59,7 @@ static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_picture_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * imgbtn_redswitch = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * imgbtn_Blueswitch = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * imgbtn_Whiteswitch = NULL;
-static GT_ATTRIBUTE_RAM_DATA gt_obj_st * switch1 = NULL;
-static GT_ATTRIBUTE_RAM_DATA gt_obj_st * imgbtn1 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_input_titleCopy = NULL;
 
 static GT_ATTRIBUTE_RAM_TEXT void lab1_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
@@ -80,16 +77,8 @@ static GT_ATTRIBUTE_RAM_TEXT void lab4_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_TXT, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
-static GT_ATTRIBUTE_RAM_TEXT void lab5_0_cb(gt_event_st * e) {
-	gt_disp_stack_load_scr_anim(GT_ID_INPUT, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
-}
-
 static GT_ATTRIBUTE_RAM_TEXT void lab6_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_IMGBTN, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
-}
-
-static GT_ATTRIBUTE_RAM_TEXT void lab7_0_cb(gt_event_st * e) {
-	gt_disp_stack_load_scr_anim(GT_ID_KEYBOARD, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
 static GT_ATTRIBUTE_RAM_TEXT void lab9_0_cb(gt_event_st * e) {
@@ -106,6 +95,10 @@ static GT_ATTRIBUTE_RAM_TEXT void switch_Greenroundedsmall_0_cb(gt_event_st * e)
 
 static GT_ATTRIBUTE_RAM_TEXT void switch_Greenrectanglewithlines_0_cb(gt_event_st * e) {
 	
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void label_input_titleCopy_0_cb(gt_event_st * e) {
+	gt_disp_stack_load_scr_anim(GT_ID_INPUT_KEYBOARD, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
 gt_obj_st * gt_init_switch10(void)
@@ -148,7 +141,7 @@ gt_obj_st * gt_init_switch10(void)
 	/** label_label_title */
 	/** 用于显示“label标签”的标题 Label */
 	label_label_title = gt_label_create(switch10);
-	gt_obj_set_pos(label_label_title, 15, 95);
+	gt_obj_set_pos(label_label_title, 15, 96);
 	gt_obj_set_size(label_label_title, 139, 40);
 	gt_label_set_font_color(label_label_title, gt_color_hex(0x808080));
 	gt_label_set_font_family(label_label_title, gray_black_16);
@@ -162,7 +155,7 @@ gt_obj_st * gt_init_switch10(void)
 	/** label_txt_title */
 	/** 用于显示“txt文本区”的标题 Label */
 	label_txt_title = gt_label_create(switch10);
-	gt_obj_set_pos(label_txt_title, 15, 138);
+	gt_obj_set_pos(label_txt_title, 15, 143);
 	gt_obj_set_size(label_txt_title, 139, 40);
 	gt_label_set_font_color(label_txt_title, gt_color_hex(0x808080));
 	gt_label_set_font_family(label_txt_title, gray_black_16);
@@ -173,24 +166,10 @@ gt_obj_st * gt_init_switch10(void)
 	gt_obj_add_event_cb(label_txt_title, lab4_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
-	/** label_input_title */
-	/** 用于显示“input输入框”的标题 Label */
-	label_input_title = gt_label_create(switch10);
-	gt_obj_set_pos(label_input_title, 15, 179);
-	gt_obj_set_size(label_input_title, 139, 40);
-	gt_label_set_font_color(label_input_title, gt_color_hex(0x808080));
-	gt_label_set_font_family(label_input_title, gray_black_16);
-	gt_label_set_font_cjk(label_input_title, 0);
-	gt_label_set_font_align(label_input_title, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(label_input_title, "input 输入框");
-	gt_label_set_space(label_input_title, 0, 0);
-	gt_obj_add_event_cb(label_input_title, lab5_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
-	
-
 	/** label_imgbtn_title */
 	/** 用于显示“imgbtn图片按钮”的标题 Label */
 	label_imgbtn_title = gt_label_create(switch10);
-	gt_obj_set_pos(label_imgbtn_title, 15, 222);
+	gt_obj_set_pos(label_imgbtn_title, 15, 252);
 	gt_obj_set_size(label_imgbtn_title, 159, 40);
 	gt_label_set_font_color(label_imgbtn_title, gt_color_hex(0x808080));
 	gt_label_set_font_family(label_imgbtn_title, gray_black_16);
@@ -201,24 +180,10 @@ gt_obj_st * gt_init_switch10(void)
 	gt_obj_add_event_cb(label_imgbtn_title, lab6_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
-	/** label_keyboard_title */
-	/** 用于显示“keyboard键盘”的标题 Label */
-	label_keyboard_title = gt_label_create(switch10);
-	gt_obj_set_pos(label_keyboard_title, 15, 267);
-	gt_obj_set_size(label_keyboard_title, 159, 40);
-	gt_label_set_font_color(label_keyboard_title, gt_color_hex(0x808080));
-	gt_label_set_font_family(label_keyboard_title, gray_black_16);
-	gt_label_set_font_cjk(label_keyboard_title, 0);
-	gt_label_set_font_align(label_keyboard_title, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(label_keyboard_title, "keyboard 键盘");
-	gt_label_set_space(label_keyboard_title, 0, 0);
-	gt_obj_add_event_cb(label_keyboard_title, lab7_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
-	
-
 	/** label_switch_title */
 	/** 用于显示“switch开关”的标题 Label */
 	label_switch_title = gt_label_create(switch10);
-	gt_obj_set_pos(label_switch_title, 15, 309);
+	gt_obj_set_pos(label_switch_title, 15, 301);
 	gt_obj_set_size(label_switch_title, 159, 40);
 	gt_label_set_font_color(label_switch_title, gt_color_hex(0x0080ff));
 	gt_label_set_font_family(label_switch_title, gray_black_16);
@@ -232,7 +197,7 @@ gt_obj_st * gt_init_switch10(void)
 	/** label_player_title */
 	/** 用于显示“player幻灯片”的标题 Label */
 	label_player_title = gt_label_create(switch10);
-	gt_obj_set_pos(label_player_title, 15, 351);
+	gt_obj_set_pos(label_player_title, 15, 350);
 	gt_obj_set_size(label_player_title, 159, 40);
 	gt_label_set_font_color(label_player_title, gt_color_hex(0x808080));
 	gt_label_set_font_family(label_player_title, gray_black_16);
@@ -892,26 +857,18 @@ gt_obj_st * gt_init_switch10(void)
 
 	
 
-	/** switch1 */
-	switch1 = gt_switch_create(switch10);
-	gt_obj_set_pos(switch1, 409, 76);
-	gt_obj_set_size(switch1, 118, 44);
-	gt_switch_set_color_act(switch1, gt_color_hex(0x13ce66));
-	gt_switch_set_color_ina(switch1, gt_color_hex(0xc0c0c0));
-	gt_switch_set_color_point(switch1, gt_color_hex(0xFFFFFF));
-	gt_switch_set_style(switch1, GT_SWITCH_STYLE_RECT);
-	gt_switch_set_div_line(switch1, true);
-	gt_switch_set_color_divider(switch1, gt_color_hex(0xffffff));
-
-	
-
-	/** imgbtn1 */
-	imgbtn1 = gt_imgbtn_create(switch10);
-	gt_obj_set_pos(imgbtn1, 280, 1040);
-	gt_obj_set_size(imgbtn1, 118, 64);
-	gt_imgbtn_set_src(imgbtn1, ".:img_off3_118x64.png");
-	gt_imgbtn_add_state_item(imgbtn1, ".:img_on3_118x64.png");
-
+	/** label_input_titleCopy */
+	/** 用于显示“input输入框”的标题 Label */
+	label_input_titleCopy = gt_label_create(switch10);
+	gt_obj_set_pos(label_input_titleCopy, 15, 192);
+	gt_obj_set_size(label_input_titleCopy, 132, 49);
+	gt_label_set_font_color(label_input_titleCopy, gt_color_hex(0x808080));
+	gt_label_set_font_family(label_input_titleCopy, gray_black_16);
+	gt_label_set_font_cjk(label_input_titleCopy, 0);
+	gt_label_set_font_align(label_input_titleCopy, GT_ALIGN_LEFT_MID);
+	gt_label_set_text(label_input_titleCopy, "input &keyboard  输入框与键盘");
+	gt_label_set_space(label_input_titleCopy, 0, 0);
+	gt_obj_add_event_cb(label_input_titleCopy, label_input_titleCopy_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 
 
 	return switch10;

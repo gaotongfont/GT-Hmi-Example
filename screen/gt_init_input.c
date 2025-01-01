@@ -36,8 +36,7 @@ static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_screen_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect3 = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_input_category = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect_wireframe = NULL;
-static GT_ATTRIBUTE_RAM_DATA gt_obj_st * input_outlined = NULL;
-static GT_ATTRIBUTE_RAM_DATA gt_obj_st * input_blue = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * input1 = NULL;
 
 static GT_ATTRIBUTE_RAM_TEXT void lab1_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
@@ -65,6 +64,10 @@ static GT_ATTRIBUTE_RAM_TEXT void lab7_0_cb(gt_event_st * e) {
 
 static GT_ATTRIBUTE_RAM_TEXT void lab8_0_cb(gt_event_st * e) {
 	
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void input1_0_cb(gt_event_st * e) {
+	gt_input_set_value(input1, "输入框控件，文字带下划线效果");
 }
 
 gt_obj_st * gt_init_input(void)
@@ -498,12 +501,12 @@ gt_obj_st * gt_init_input(void)
 	/** 输入框控件板块的标题Label */
 	label_input_category = gt_label_create(input);
 	gt_obj_set_pos(label_input_category, 240, 14);
-	gt_obj_set_size(label_input_category, 162, 34);
+	gt_obj_set_size(label_input_category, 215, 34);
 	gt_label_set_font_color(label_input_category, gt_color_hex(0x0080ff));
 	gt_label_set_font_family(label_input_category, gray_black_24);
 	gt_label_set_font_cjk(label_input_category, 0);
 	gt_label_set_font_align(label_input_category, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(label_input_category, "输入框控件");
+	gt_label_set_text(label_input_category, "输入框与键盘控件");
 	gt_label_set_space(label_input_category, 0, 0);
 
 	
@@ -512,7 +515,7 @@ gt_obj_st * gt_init_input(void)
 	/** 矩形线框 */
 	rect_wireframe = gt_rect_create(input);
 	gt_obj_set_pos(rect_wireframe, 237, 64);
-	gt_obj_set_size(rect_wireframe, 509, 182);
+	gt_obj_set_size(rect_wireframe, 509, 436);
 	gt_rect_set_radius(rect_wireframe, 0);
 	gt_rect_set_bg_color(rect_wireframe, gt_color_hex(0xffffff));
 	gt_rect_set_color_border(rect_wireframe, gt_color_hex(0xc0c0c0));
@@ -521,38 +524,22 @@ gt_obj_st * gt_init_input(void)
 
 	
 
-	/** input_outlined */
-	/** 输入框，带边框 */
-	input_outlined = gt_input_create(input);
-	gt_obj_set_pos(input_outlined, 247, 83);
-	gt_obj_set_size(input_outlined, 489, 38);
-	gt_input_set_font_color(input_outlined, gt_color_hex(0x000000));
-	gt_input_set_font_family(input_outlined, gray_black_16);
-	gt_input_set_font_cjk(input_outlined, 0);
-	gt_input_set_font_align(input_outlined, GT_ALIGN_LEFT_MID);
-	gt_input_set_value(input_outlined, "高通GT-HMI国产开源GUI框架，高效代码框架，使用便捷，易移植。");
-	gt_input_set_placeholder(input_outlined, "placeholder");
-	gt_input_set_border_width(input_outlined, 2);
-	gt_input_set_bg_color(input_outlined, gt_color_hex(0xffffff));
-	gt_input_hide_value(input_outlined, false);
-
-	
-
-	/** input_blue */
-	/** 输入框，蓝色 */
-	input_blue = gt_input_create(input);
-	gt_obj_set_pos(input_blue, 249, 154);
-	gt_obj_set_size(input_blue, 488, 48);
-	gt_input_set_font_color(input_blue, gt_color_hex(0xffffff));
-	gt_input_set_font_family(input_blue, gray_black_16);
-	gt_input_set_font_cjk(input_blue, 0);
-	gt_input_set_font_align(input_blue, GT_ALIGN_LEFT_MID);
-	gt_input_set_value(input_blue, "高通GT-HMI国产开源GUI框架，高效代码框架，使用便捷，易移植。");
-	gt_input_set_placeholder(input_blue, "placeholder");
-	gt_input_set_border_width(input_blue, 0);
-	gt_input_set_bg_color(input_blue, gt_color_hex(0x8080ff));
-	gt_input_hide_value(input_blue, false);
-
+	/** input1 */
+	input1 = gt_input_create(input);
+	gt_obj_set_pos(input1, 283, 97);
+	gt_obj_set_size(input1, 428, 45);
+	gt_input_set_font_color(input1, gt_color_hex(0x000000));
+	gt_input_set_font_family(input1, gray_black_16);
+	gt_input_set_font_cjk(input1, 0);
+	gt_input_set_font_style(input1, 1);
+	gt_input_set_font_align(input1, GT_ALIGN_CENTER_MID);
+	gt_input_set_value(input1, "黑框黑字，居中对齐，带下划线，文本变化");
+	gt_input_set_placeholder(input1, "placeholder");
+	gt_input_set_border_width(input1, 2);
+	gt_input_set_bg_color(input1, gt_color_hex(0xffffff));
+	gt_input_set_border_color(input1, gt_color_hex(0x000000));
+	gt_input_hide_value(input1, false);
+	gt_obj_add_event_cb(input1, input1_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 
 
 	return input;

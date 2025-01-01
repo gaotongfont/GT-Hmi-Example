@@ -6,9 +6,8 @@ static GT_ATTRIBUTE_RAM_DATA const gt_scr_list_st gt_scr_list[] = {
 	{GT_ID_IMAGE, gt_init_image},
 	{GT_ID_LABEL, gt_init_label},
 	{GT_ID_TXT, gt_init_txt},
-	{GT_ID_INPUT, gt_init_input},
+	{GT_ID_INPUT_KEYBOARD, gt_init_input_keyboard},
 	{GT_ID_IMGBTN, gt_init_imgbtn},
-	{GT_ID_KEYBOARD, gt_init_keyboard},
 	{GT_ID_SWITCH10, gt_init_switch10},
 	{GT_ID_PLAYER, gt_init_player},
 };

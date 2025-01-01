@@ -10,7 +10,6 @@ static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_label_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_txt_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_input_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_imgbtn_title = NULL;
-static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_keyboard_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_switch10_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_player_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_inputNum_title = NULL;
@@ -36,7 +35,10 @@ static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_screen_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect3 = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_keyboard_category = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect_wireframe = NULL;
-static GT_ATTRIBUTE_RAM_DATA gt_obj_st * keyboard1 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect1_blueCopyCopy = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * lab1 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * input1 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * keyboard4 = NULL;
 
 static GT_ATTRIBUTE_RAM_TEXT void lab1_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
@@ -68,6 +70,18 @@ static GT_ATTRIBUTE_RAM_TEXT void lab9_0_cb(gt_event_st * e) {
 
 static GT_ATTRIBUTE_RAM_TEXT void lab10_0_cb(gt_event_st * e) {
 	
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void input1_0_cb(gt_event_st * e) {
+	bool status = gt_obj_get_visible(keyboard4);
+	gt_obj_set_visible(keyboard4, !status);
+
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void keyboard4_0_cb(gt_event_st * e) {
+	bool status = gt_obj_get_visible(input1);
+	gt_obj_set_visible(input1, !status);
+
 }
 
 gt_obj_st * gt_init_keyboard(void)
@@ -110,7 +124,7 @@ gt_obj_st * gt_init_keyboard(void)
 	/** label_label_title */
 	/** 用于显示“label标签”的标题 Label */
 	label_label_title = gt_label_create(keyboard);
-	gt_obj_set_pos(label_label_title, 15, 95);
+	gt_obj_set_pos(label_label_title, 15, 96);
 	gt_obj_set_size(label_label_title, 139, 40);
 	gt_label_set_font_color(label_label_title, gt_color_hex(0x808080));
 	gt_label_set_font_family(label_label_title, gray_black_16);
@@ -124,7 +138,7 @@ gt_obj_st * gt_init_keyboard(void)
 	/** label_txt_title */
 	/** 用于显示“txt文本区”的标题 Label */
 	label_txt_title = gt_label_create(keyboard);
-	gt_obj_set_pos(label_txt_title, 15, 138);
+	gt_obj_set_pos(label_txt_title, 15, 143);
 	gt_obj_set_size(label_txt_title, 139, 40);
 	gt_label_set_font_color(label_txt_title, gt_color_hex(0x808080));
 	gt_label_set_font_family(label_txt_title, gray_black_16);
@@ -138,13 +152,13 @@ gt_obj_st * gt_init_keyboard(void)
 	/** label_input_title */
 	/** 用于显示“input输入框”的标题 Label */
 	label_input_title = gt_label_create(keyboard);
-	gt_obj_set_pos(label_input_title, 15, 179);
-	gt_obj_set_size(label_input_title, 139, 40);
+	gt_obj_set_pos(label_input_title, 15, 192);
+	gt_obj_set_size(label_input_title, 132, 49);
 	gt_label_set_font_color(label_input_title, gt_color_hex(0x808080));
 	gt_label_set_font_family(label_input_title, gray_black_16);
 	gt_label_set_font_cjk(label_input_title, 0);
 	gt_label_set_font_align(label_input_title, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(label_input_title, "input 输入框");
+	gt_label_set_text(label_input_title, "input &keyboard  输入框与键盘");
 	gt_label_set_space(label_input_title, 0, 0);
 	gt_obj_add_event_cb(label_input_title, lab5_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
@@ -152,7 +166,7 @@ gt_obj_st * gt_init_keyboard(void)
 	/** label_imgbtn_title */
 	/** 用于显示“imgbtn图片按钮”的标题 Label */
 	label_imgbtn_title = gt_label_create(keyboard);
-	gt_obj_set_pos(label_imgbtn_title, 15, 222);
+	gt_obj_set_pos(label_imgbtn_title, 15, 252);
 	gt_obj_set_size(label_imgbtn_title, 159, 40);
 	gt_label_set_font_color(label_imgbtn_title, gt_color_hex(0x808080));
 	gt_label_set_font_family(label_imgbtn_title, gray_black_16);
@@ -163,24 +177,10 @@ gt_obj_st * gt_init_keyboard(void)
 
 	
 
-	/** label_keyboard_title */
-	/** 用于显示“keyboard键盘”的标题 Label */
-	label_keyboard_title = gt_label_create(keyboard);
-	gt_obj_set_pos(label_keyboard_title, 15, 267);
-	gt_obj_set_size(label_keyboard_title, 159, 40);
-	gt_label_set_font_color(label_keyboard_title, gt_color_hex(0x0080ff));
-	gt_label_set_font_family(label_keyboard_title, gray_black_16);
-	gt_label_set_font_cjk(label_keyboard_title, 0);
-	gt_label_set_font_align(label_keyboard_title, GT_ALIGN_LEFT_MID);
-	gt_label_set_text(label_keyboard_title, "keyboard 键盘");
-	gt_label_set_space(label_keyboard_title, 0, 0);
-
-	
-
 	/** label_switch10_title */
 	/** 用于显示“switch开关”的标题 Label */
 	label_switch10_title = gt_label_create(keyboard);
-	gt_obj_set_pos(label_switch10_title, 15, 309);
+	gt_obj_set_pos(label_switch10_title, 15, 301);
 	gt_obj_set_size(label_switch10_title, 159, 40);
 	gt_label_set_font_color(label_switch10_title, gt_color_hex(0x808080));
 	gt_label_set_font_family(label_switch10_title, gray_black_16);
@@ -194,7 +194,7 @@ gt_obj_st * gt_init_keyboard(void)
 	/** label_player_title */
 	/** 用于显示“player幻灯片”的标题 Label */
 	label_player_title = gt_label_create(keyboard);
-	gt_obj_set_pos(label_player_title, 15, 351);
+	gt_obj_set_pos(label_player_title, 15, 349);
 	gt_obj_set_size(label_player_title, 159, 40);
 	gt_label_set_font_color(label_player_title, gt_color_hex(0x808080));
 	gt_label_set_font_family(label_player_title, gray_black_16);
@@ -515,7 +515,7 @@ gt_obj_st * gt_init_keyboard(void)
 	/** 矩形线框 */
 	rect_wireframe = gt_rect_create(keyboard);
 	gt_obj_set_pos(rect_wireframe, 237, 64);
-	gt_obj_set_size(rect_wireframe, 509, 281);
+	gt_obj_set_size(rect_wireframe, 509, 480);
 	gt_rect_set_radius(rect_wireframe, 0);
 	gt_rect_set_bg_color(rect_wireframe, gt_color_hex(0xffffff));
 	gt_rect_set_color_border(rect_wireframe, gt_color_hex(0xc0c0c0));
@@ -524,18 +524,59 @@ gt_obj_st * gt_init_keyboard(void)
 
 	
 
-	/** keyboard1 */
-	keyboard1 = gt_keypad_create(keyboard);
-	gt_obj_set_pos(keyboard1, 347, 134);
-	gt_obj_set_size(keyboard1, 300, 170);
-	gt_keypad_set_font_color(keyboard1, gt_color_hex(0x000000));
-	gt_keypad_set_default_style(keyboard1, GT_KEYPAD_STYLE_26_KEY);
-	gt_keypad_set_color_background(keyboard1, gt_color_hex(0x242424));
-	gt_keypad_set_key_color_background(keyboard1, gt_color_hex(0x646464));
-	gt_keypad_set_ctrl_key_color_background(keyboard1, gt_color_hex(0x3E3E3E));
-	gt_keypad_set_radius(keyboard1, 6);
-	gt_keypad_set_auto_hide(keyboard1, false);
+	/** rect1_blueCopyCopy */
+	/** 蓝色矩形背景 */
+	rect1_blueCopyCopy = gt_rect_create(keyboard);
+	gt_obj_set_pos(rect1_blueCopyCopy, 214, 75);
+	gt_obj_set_size(rect1_blueCopyCopy, 153, 38);
+	gt_rect_set_radius(rect1_blueCopyCopy, 0);
+	gt_rect_set_bg_color(rect1_blueCopyCopy, gt_color_hex(0xe3f1ff));
+	gt_rect_set_color_border(rect1_blueCopyCopy, gt_color_hex(0xffffff));
+	gt_rect_set_fill(rect1_blueCopyCopy, 1);
+	gt_rect_set_border(rect1_blueCopyCopy, 0);
 
+	
+
+	/** lab1 */
+	lab1 = gt_label_create(keyboard);
+	gt_obj_set_pos(lab1, 245, 78);
+	gt_obj_set_size(lab1, 116, 33);
+	gt_label_set_font_color(lab1, gt_color_hex(0x000000));
+	gt_label_set_font_family(lab1, gray_black_20);
+	gt_label_set_font_cjk(lab1, 0);
+	gt_label_set_font_align(lab1, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(lab1, "默认样式");
+	gt_label_set_space(lab1, 0, 0);
+
+	
+
+	/** input1 */
+	input1 = gt_input_create(keyboard);
+	gt_obj_set_pos(input1, 341, 149);
+	gt_obj_set_size(input1, 295, 37);
+	gt_input_set_font_color(input1, gt_color_hex(0x000000));
+	gt_input_set_font_align(input1, GT_ALIGN_LEFT_MID);
+	gt_input_set_placeholder(input1, "placeholder");
+	gt_input_set_border_width(input1, 2);
+	gt_input_set_bg_color(input1, gt_color_hex(0xffffff));
+	gt_input_set_border_color(input1, gt_color_hex(0x000000));
+	gt_input_hide_value(input1, true);
+	gt_obj_add_event_cb(input1, input1_0_cb, GT_EVENT_TYPE_INPUT_PRESSED, NULL);
+	
+
+	/** keyboard4 */
+	keyboard4 = gt_keypad_create(keyboard);
+	gt_obj_set_pos(keyboard4, 340, 207);
+	gt_obj_set_size(keyboard4, 300, 170);
+	gt_keypad_set_font_color(keyboard4, gt_color_hex(0x000000));
+	gt_keypad_set_default_style(keyboard4, GT_KEYPAD_STYLE_26_KEY);
+	gt_keypad_set_color_background(keyboard4, gt_color_hex(0x242424));
+	gt_keypad_set_key_color_background(keyboard4, gt_color_hex(0x646464));
+	gt_keypad_set_ctrl_key_color_background(keyboard4, gt_color_hex(0x3E3E3E));
+	gt_keypad_set_radius(keyboard4, 6);
+	gt_keypad_set_target(keyboard4, input1);
+	gt_keypad_set_auto_hide(keyboard4, false);
+	gt_obj_add_event_cb(keyboard4, keyboard4_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 
 
 	return keyboard;
