@@ -35,7 +35,13 @@ static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect3 = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_player_category = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect_wireframe = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_input_titleCopyCopy = NULL;
-static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img1 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_background = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * lab1 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * lab2 = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * imgbtn_reduce = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * imgbtn_increase = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * player_temperature = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * player_Gearposition = NULL;
 
 static GT_ATTRIBUTE_RAM_TEXT void lab1_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_BUTTON, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
@@ -54,7 +60,7 @@ static GT_ATTRIBUTE_RAM_TEXT void lab4_0_cb(gt_event_st * e) {
 }
 
 static GT_ATTRIBUTE_RAM_TEXT void lab6_0_cb(gt_event_st * e) {
-	gt_disp_stack_load_scr_anim(GT_ID_IMGBTN, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
+	
 }
 
 static GT_ATTRIBUTE_RAM_TEXT void lab8_0_cb(gt_event_st * e) {
@@ -67,6 +73,22 @@ static GT_ATTRIBUTE_RAM_TEXT void lab10_0_cb(gt_event_st * e) {
 
 static GT_ATTRIBUTE_RAM_TEXT void label_input_titleCopyCopy_input_titleCopy_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_INPUT_KEYBOARD, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void imgbtn_reduce_0_cb(gt_event_st * e) {
+	gt_player_turn_prev(player_temperature);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void imgbtn_reduce_1_cb(gt_event_st * e) {
+	gt_player_turn_prev(player_Gearposition);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void imgbtn__0_cb(gt_event_st * e) {
+	gt_player_turn_next(player_Gearposition);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void imgbtn_increase_1_cb(gt_event_st * e) {
+	gt_player_turn_next(player_temperature);
 }
 
 gt_obj_st * gt_init_player(void)
@@ -145,7 +167,7 @@ gt_obj_st * gt_init_player(void)
 	gt_label_set_font_align(label_imgbtn_title, GT_ALIGN_LEFT_MID);
 	gt_label_set_text(label_imgbtn_title, "imgbtn 图片按钮");
 	gt_label_set_space(label_imgbtn_title, 0, 0);
-	gt_obj_add_event_cb(label_imgbtn_title, lab6_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+
 	
 
 	/** label_switch10_title */
@@ -509,11 +531,114 @@ gt_obj_st * gt_init_player(void)
 	gt_obj_add_event_cb(label_input_titleCopyCopy, label_input_titleCopyCopy_input_titleCopy_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
-	/** img1 */
-	img1 = gt_img_create(player);
-	gt_obj_set_pos(img1, 270, 109);
-	gt_obj_set_size(img1, 441, 309);
-	gt_img_set_src(img1, "f:img_bj_441x309.png");
+	/** img_background */
+	/** 背景图 */
+	img_background = gt_img_create(player);
+	gt_obj_set_pos(img_background, 270, 82);
+	gt_obj_set_size(img_background, 441, 324);
+	gt_img_set_src(img_background, "f:img_bj1_441x324.png");
+
+	
+
+	/** lab1 */
+	lab1 = gt_label_create(player);
+	gt_obj_set_pos(lab1, 432, 109);
+	gt_obj_set_size(lab1, 118, 32);
+	gt_label_set_font_color(lab1, gt_color_hex(0xffffff));
+	gt_label_set_font_family(lab1, gray_black_20);
+	gt_label_set_font_cjk(lab1, 0);
+	gt_label_set_font_align(lab1, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(lab1, "制冷模式");
+	gt_label_set_space(lab1, 0, 0);
+
+	
+
+	/** lab2 */
+	lab2 = gt_label_create(player);
+	gt_obj_set_pos(lab2, 426, 366);
+	gt_obj_set_size(lab2, 137, 24);
+	gt_label_set_font_color(lab2, gt_color_hex(0x2894ff));
+	gt_label_set_font_family(lab2, gray_black_16);
+	gt_label_set_font_cjk(lab2, 0);
+	gt_label_set_font_align(lab2, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(lab2, "当前温度 16℃");
+	gt_label_set_space(lab2, 0, 0);
+
+	
+
+	/** imgbtn_reduce */
+	/** 减少 */
+	imgbtn_reduce = gt_imgbtn_create(player);
+	gt_obj_set_pos(imgbtn_reduce, 340, 321);
+	gt_obj_set_size(imgbtn_reduce, 40, 40);
+	gt_imgbtn_set_src(imgbtn_reduce, "f:img_jian1_40x40.png");
+	gt_imgbtn_set_src_press(imgbtn_reduce, "f:img_jian2_40x40.png");
+	gt_obj_add_event_cb(imgbtn_reduce, imgbtn_reduce_0_cb, GT_EVENT_TYPE_INPUT_PRESSED, NULL);
+	gt_obj_add_event_cb(imgbtn_reduce, imgbtn_reduce_1_cb, GT_EVENT_TYPE_INPUT_PRESSED, NULL);
+	
+
+	/** imgbtn_increase */
+	/** 添加 */
+	imgbtn_increase = gt_imgbtn_create(player);
+	gt_obj_set_pos(imgbtn_increase, 604, 321);
+	gt_obj_set_size(imgbtn_increase, 40, 40);
+	gt_imgbtn_set_src(imgbtn_increase, "f:img_jia1_40x40.png");
+	gt_imgbtn_set_src_press(imgbtn_increase, "f:img_jia2_40x40.png");
+	gt_obj_add_event_cb(imgbtn_increase, imgbtn__0_cb, GT_EVENT_TYPE_INPUT_PRESSED, NULL);
+	gt_obj_add_event_cb(imgbtn_increase, imgbtn_increase_1_cb, GT_EVENT_TYPE_INPUT_PRESSED, NULL);
+	
+
+	/** player_temperature */
+	/** 温度显示 */
+	player_temperature = gt_player_create(player);
+	gt_obj_set_pos(player_temperature, 424, 259);
+	gt_obj_set_size(player_temperature, 136, 98);
+	gt_player_add_item(player_temperature, "f:img_016_136x98.png", sizeof("f:img_016_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_017_136x98.png", sizeof("f:img_017_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_018_136x98.png", sizeof("f:img_018_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_019_136x98.png", sizeof("f:img_019_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_020_136x98.png", sizeof("f:img_020_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_021_136x98.png", sizeof("f:img_021_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_022_136x98.png", sizeof("f:img_022_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_023_136x98.png", sizeof("f:img_023_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_024_136x98.png", sizeof("f:img_024_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_025_136x98.png", sizeof("f:img_025_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_026_136x98.png", sizeof("f:img_026_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_027_136x98.png", sizeof("f:img_027_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_028_136x98.png", sizeof("f:img_028_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_029_136x98.png", sizeof("f:img_029_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_030_136x98.png", sizeof("f:img_030_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_031_136x98.png", sizeof("f:img_031_136x98.png"));
+	gt_player_add_item(player_temperature, "f:img_032_136x98.png", sizeof("f:img_032_136x98.png"));
+	gt_player_set_type(player_temperature, GT_PLAYER_TYPE_IMG);
+	gt_player_set_mode(player_temperature, GT_PLAYER_MODE_ONCE);
+
+	
+
+	/** player_Gearposition */
+	/** 档位 */
+	player_Gearposition = gt_player_create(player);
+	gt_obj_set_pos(player_Gearposition, 366, 183);
+	gt_obj_set_size(player_Gearposition, 253, 49);
+	gt_player_add_item(player_Gearposition, "f:img_033_253x49.png", sizeof("f:img_033_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_034_253x49.png", sizeof("f:img_034_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_035_253x49.png", sizeof("f:img_035_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_036_253x49.png", sizeof("f:img_036_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_037_253x49.png", sizeof("f:img_037_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_038_253x49.png", sizeof("f:img_038_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_039_253x49.png", sizeof("f:img_039_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_040_253x49.png", sizeof("f:img_040_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_041_253x49.png", sizeof("f:img_041_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_042_253x49.png", sizeof("f:img_042_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_043_253x49.png", sizeof("f:img_043_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_044_253x49.png", sizeof("f:img_044_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_045_253x49.png", sizeof("f:img_045_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_046_253x49.png", sizeof("f:img_046_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_047_253x49.png", sizeof("f:img_047_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_048_253x49.png", sizeof("f:img_048_253x49.png"));
+	gt_player_add_item(player_Gearposition, "f:img_049_253x49.png", sizeof("f:img_049_253x49.png"));
+	gt_player_set_type(player_Gearposition, GT_PLAYER_TYPE_IMG);
+	gt_player_set_mode(player_Gearposition, GT_PLAYER_MODE_ONCE);
 
 
 

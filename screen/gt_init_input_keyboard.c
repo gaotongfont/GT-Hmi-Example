@@ -86,7 +86,11 @@ static GT_ATTRIBUTE_RAM_TEXT void lab6_0_cb(gt_event_st * e) {
 }
 
 static GT_ATTRIBUTE_RAM_TEXT void lab8_0_cb(gt_event_st * e) {
-	
+	gt_disp_stack_load_scr_anim(GT_ID_SWITCH10, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void label_player_title_0_cb(gt_event_st * e) {
+	gt_disp_stack_load_scr_anim(GT_ID_PLAYER, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
 static GT_ATTRIBUTE_RAM_TEXT void input_0_cb(gt_event_st * e) {
@@ -233,7 +237,7 @@ gt_obj_st * gt_init_input_keyboard(void)
 	gt_label_set_font_align(label_switch10_title, GT_ALIGN_LEFT_MID);
 	gt_label_set_text(label_switch10_title, "switch 开关");
 	gt_label_set_space(label_switch10_title, 0, 0);
-
+	gt_obj_add_event_cb(label_switch10_title, lab8_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
 	/** label_player_title */
@@ -247,7 +251,7 @@ gt_obj_st * gt_init_input_keyboard(void)
 	gt_label_set_font_align(label_player_title, GT_ALIGN_LEFT_MID);
 	gt_label_set_text(label_player_title, "player 幻灯片");
 	gt_label_set_space(label_player_title, 0, 0);
-
+	gt_obj_add_event_cb(label_player_title, label_player_title_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
 	/** label_inputNum_title */
@@ -609,6 +613,7 @@ gt_obj_st * gt_init_input_keyboard(void)
 	keyboard_default = gt_keypad_create(input_keyboard);
 	gt_obj_set_pos(keyboard_default, 285, 241);
 	gt_obj_set_size(keyboard_default, 418, 246);
+	gt_obj_set_visible(keyboard_default, GT_INVISIBLE);
 	gt_keypad_set_font_color(keyboard_default, gt_color_hex(0x000000));
 	gt_keypad_set_font_family(keyboard_default, gray_black_16);
 	gt_keypad_set_font_cjk(keyboard_default, 0);
@@ -655,7 +660,7 @@ gt_obj_st * gt_init_input_keyboard(void)
 	/** keyboard_default1 */
 	/** 默认键盘1 */
 	keyboard_default1 = gt_keypad_create(input_keyboard);
-	gt_obj_set_pos(keyboard_default1, 285, 186);
+	gt_obj_set_pos(keyboard_default1, 285, 241);
 	gt_obj_set_size(keyboard_default1, 418, 246);
 	gt_obj_set_visible(keyboard_default1, GT_INVISIBLE);
 	gt_keypad_set_font_color(keyboard_default1, gt_color_hex(0x000000));
@@ -801,7 +806,7 @@ gt_obj_st * gt_init_input_keyboard(void)
 	/** img_OK */
 	/** 确认图标 */
 	img_OK = gt_img_create(input_keyboard);
-	gt_obj_set_pos(img_OK, 558, 675);
+	gt_obj_set_pos(img_OK, 558, 674);
 	gt_obj_set_size(img_OK, 44, 44);
 	gt_img_set_src(img_OK, "f:img_2949_44x44.png");
 
@@ -810,7 +815,7 @@ gt_obj_st * gt_init_input_keyboard(void)
 	/** img_delete */
 	/** 删除图标 */
 	img_delete = gt_img_create(input_keyboard);
-	gt_obj_set_pos(img_delete, 558, 722);
+	gt_obj_set_pos(img_delete, 558, 721);
 	gt_obj_set_size(img_delete, 44, 44);
 	gt_img_set_src(img_delete, "f:img_2951_44x44.png");
 
@@ -819,7 +824,7 @@ gt_obj_st * gt_init_input_keyboard(void)
 	/** img_case */
 	/** 大小写切换图标 */
 	img_case = gt_img_create(input_keyboard);
-	gt_obj_set_pos(img_case, 558, 769);
+	gt_obj_set_pos(img_case, 558, 768);
 	gt_obj_set_size(img_case, 44, 44);
 	gt_img_set_src(img_case, "f:img_3126_44x44.png");
 	gt_obj_add_event_cb(img_case, img3_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
@@ -828,7 +833,7 @@ gt_obj_st * gt_init_input_keyboard(void)
 	/** img_number */
 	/** 数字切换图标 */
 	img_number = gt_img_create(input_keyboard);
-	gt_obj_set_pos(img_number, 558, 816);
+	gt_obj_set_pos(img_number, 558, 815);
 	gt_obj_set_size(img_number, 44, 44);
 	gt_img_set_src(img_number, "f:img_3127_44x44.png");
 	gt_obj_add_event_cb(img_number, img4_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
@@ -837,7 +842,7 @@ gt_obj_st * gt_init_input_keyboard(void)
 	/** img_space */
 	/** 空格图标 */
 	img_space = gt_img_create(input_keyboard);
-	gt_obj_set_pos(img_space, 558, 863);
+	gt_obj_set_pos(img_space, 558, 862);
 	gt_obj_set_size(img_space, 44, 44);
 	gt_img_set_src(img_space, "f:img_3128_44x44.png");
 
@@ -855,7 +860,7 @@ gt_obj_st * gt_init_input_keyboard(void)
 	/** img_CapsLock */
 	/** 大小写切换 */
 	img_CapsLock = gt_img_create(input_keyboard);
-	gt_obj_set_pos(img_CapsLock, 243, 1108);
+	gt_obj_set_pos(img_CapsLock, 243, 1110);
 	gt_obj_set_size(img_CapsLock, 30, 47);
 	gt_img_set_src(img_CapsLock, "f:img_2366_30x47.png");
 	gt_obj_add_event_cb(img_CapsLock, img5_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);

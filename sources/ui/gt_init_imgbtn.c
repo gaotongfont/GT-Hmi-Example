@@ -60,7 +60,11 @@ static GT_ATTRIBUTE_RAM_TEXT void lab4_0_cb(gt_event_st * e) {
 }
 
 static GT_ATTRIBUTE_RAM_TEXT void lab8_0_cb(gt_event_st * e) {
-	
+	gt_disp_stack_load_scr_anim(GT_ID_SWITCH10, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void label_player_title_0_cb(gt_event_st * e) {
+	gt_disp_stack_load_scr_anim(GT_ID_PLAYER, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
 static GT_ATTRIBUTE_RAM_TEXT void imgbtn_Previoussong_0_cb(gt_event_st * e) {
@@ -165,7 +169,7 @@ gt_obj_st * gt_init_imgbtn(void)
 	gt_label_set_font_align(label_switch10_title, GT_ALIGN_LEFT_MID);
 	gt_label_set_text(label_switch10_title, "switch 开关");
 	gt_label_set_space(label_switch10_title, 0, 0);
-
+	gt_obj_add_event_cb(label_switch10_title, lab8_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
 	/** label_player_title */
@@ -179,7 +183,7 @@ gt_obj_st * gt_init_imgbtn(void)
 	gt_label_set_font_align(label_player_title, GT_ALIGN_LEFT_MID);
 	gt_label_set_text(label_player_title, "player 幻灯片");
 	gt_label_set_space(label_player_title, 0, 0);
-
+	gt_obj_add_event_cb(label_player_title, label_player_title_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
 	/** label_inputNum_title */

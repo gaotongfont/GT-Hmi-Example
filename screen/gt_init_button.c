@@ -85,7 +85,7 @@ static GT_ATTRIBUTE_RAM_TEXT void lab8_0_cb(gt_event_st * e) {
 }
 
 static GT_ATTRIBUTE_RAM_TEXT void lab9_0_cb(gt_event_st * e) {
-	
+	gt_disp_stack_load_scr_anim(GT_ID_PLAYER, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
 static GT_ATTRIBUTE_RAM_TEXT void lab10_0_cb(gt_event_st * e) {

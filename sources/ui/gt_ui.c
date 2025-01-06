@@ -10,6 +10,7 @@ static GT_ATTRIBUTE_RAM_DATA const gt_scr_list_st gt_scr_list[] = {
 	{GT_ID_IMGBTN, gt_init_imgbtn},
 	{GT_ID_SWITCH10, gt_init_switch10},
 	{GT_ID_PLAYER, gt_init_player},
+	{GT_ID_INPUTNUM, gt_init_inputNum},
 };
 
 void gt_ui_init(void) {

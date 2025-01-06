@@ -13,6 +13,7 @@ extern gt_obj_st * input_keyboard;
 extern gt_obj_st * imgbtn;
 extern gt_obj_st * switch10;
 extern gt_obj_st * player;
+extern gt_obj_st * inputNum;
 
 
 void gt_ui_init(void);
@@ -26,6 +27,7 @@ gt_obj_st * gt_init_input_keyboard(void);
 gt_obj_st * gt_init_imgbtn(void);
 gt_obj_st * gt_init_switch10(void);
 gt_obj_st * gt_init_player(void);
+gt_obj_st * gt_init_inputNum(void);
 
 
 typedef enum {
@@ -37,6 +39,7 @@ typedef enum {
         GT_ID_IMGBTN = 5,
         GT_ID_SWITCH10 = 6,
         GT_ID_PLAYER = 7,
+        GT_ID_INPUTNUM = 8,
 } gt_scr_id_et;
 
 
