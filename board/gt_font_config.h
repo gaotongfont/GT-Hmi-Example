@@ -28,6 +28,7 @@ typedef enum {
     gray_black_24 = 0,
 	gray_black_16,
 	gray_black_20,
+	vec_black_32,
 }gt_font_family_et;
 
 

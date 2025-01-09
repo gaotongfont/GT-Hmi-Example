@@ -30,13 +30,32 @@ static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_roller_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_graph_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_rect_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_statusbartitle = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect_wireframe = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_screen_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect3 = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_inputNum = NULL;
-static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect_wireframe = NULL;
-static GT_ATTRIBUTE_RAM_DATA gt_obj_st * rect1_blueCopy = NULL;
-static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_Styleandcolor_title = NULL;
 static GT_ATTRIBUTE_RAM_DATA gt_obj_st * label_input_titleCopy = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Counterbackground = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * inputNum_Currenttemperature = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Temperaturereduction = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Temperatureincrease = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * lab_Celsius = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * lab_Humiditypercentage = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Reducedhumidity = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Increasedhumidity = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * lab_Watervalvepercentage = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * inputNum_exhaustfan = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * lab_ExhaustfanHertz = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * inputNum_airblower = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * lab_SupplyfanHertz = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Watervalvereduction = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Watervalveincrease = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * inputNum_Valve = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * inputNum_Currenthumidity = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Reduceexhaustfan = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Increaseinexhaustfan = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Reducedsupplyfan = NULL;
+static GT_ATTRIBUTE_RAM_DATA gt_obj_st * img_Increasethesupplyfan = NULL;
 
 static GT_ATTRIBUTE_RAM_TEXT void txt_0_cb(gt_event_st * e) {
 	
@@ -52,6 +71,10 @@ static GT_ATTRIBUTE_RAM_TEXT void lab2_0_cb(gt_event_st * e) {
 
 static GT_ATTRIBUTE_RAM_TEXT void label_label_title_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_LABEL, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void label_txt_title_0_cb(gt_event_st * e) {
+	gt_disp_stack_load_scr_anim(GT_ID_TXT, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
 static GT_ATTRIBUTE_RAM_TEXT void lab6_0_cb(gt_event_st * e) {
@@ -72,6 +95,46 @@ static GT_ATTRIBUTE_RAM_TEXT void lab10_0_cb(gt_event_st * e) {
 
 static GT_ATTRIBUTE_RAM_TEXT void label_input_titleCopy_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_INPUT_KEYBOARD, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void img__0_cb(gt_event_st * e) {
+	gt_input_number_decrease(inputNum_Currenttemperature);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void img_Temperatureincrease_0_cb(gt_event_st * e) {
+	gt_input_number_increase(inputNum_Currenttemperature);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void img_Reducedhumidity_0_cb(gt_event_st * e) {
+	gt_input_number_decrease(inputNum_Currenthumidity);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void img_Increasedhumidity_0_cb(gt_event_st * e) {
+	gt_input_number_increase(inputNum_Currenthumidity);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void img_Watervalvereduction_0_cb(gt_event_st * e) {
+	gt_input_number_decrease(inputNum_Valve);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void img_Watervalveincrease_0_cb(gt_event_st * e) {
+	gt_input_number_increase(inputNum_Valve);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void img_Reduceexhaustfan_0_cb(gt_event_st * e) {
+	gt_input_number_decrease(inputNum_exhaustfan);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void img_Increaseinexhaustfan_0_cb(gt_event_st * e) {
+	gt_input_number_increase(inputNum_exhaustfan);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void img_Reducedsupplyfan_0_cb(gt_event_st * e) {
+	gt_input_number_decrease(inputNum_airblower);
+}
+
+static GT_ATTRIBUTE_RAM_TEXT void img_Increasethesupplyfan_0_cb(gt_event_st * e) {
+	gt_input_number_increase(inputNum_airblower);
 }
 
 gt_obj_st * gt_init_inputNum(void)
@@ -130,13 +193,13 @@ gt_obj_st * gt_init_inputNum(void)
 	label_txt_title = gt_label_create(inputNum);
 	gt_obj_set_pos(label_txt_title, 15, 143);
 	gt_obj_set_size(label_txt_title, 139, 40);
-	gt_label_set_font_color(label_txt_title, gt_color_hex(0x0080ff));
+	gt_label_set_font_color(label_txt_title, gt_color_hex(0x808080));
 	gt_label_set_font_family(label_txt_title, gray_black_16);
 	gt_label_set_font_cjk(label_txt_title, 0);
 	gt_label_set_font_align(label_txt_title, GT_ALIGN_LEFT_MID);
 	gt_label_set_text(label_txt_title, "txt 文本区");
 	gt_label_set_space(label_txt_title, 0, 0);
-
+	gt_obj_add_event_cb(label_txt_title, label_txt_title_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
 	/** label_imgbtn_title */
@@ -186,7 +249,7 @@ gt_obj_st * gt_init_inputNum(void)
 	label_inputNum_title = gt_label_create(inputNum);
 	gt_obj_set_pos(label_inputNum_title, 15, 393);
 	gt_obj_set_size(label_inputNum_title, 159, 40);
-	gt_label_set_font_color(label_inputNum_title, gt_color_hex(0x808080));
+	gt_label_set_font_color(label_inputNum_title, gt_color_hex(0x0080ff));
 	gt_label_set_font_family(label_inputNum_title, gray_black_16);
 	gt_label_set_font_cjk(label_inputNum_title, 0);
 	gt_label_set_font_align(label_inputNum_title, GT_ALIGN_LEFT_MID);
@@ -447,6 +510,19 @@ gt_obj_st * gt_init_inputNum(void)
 
 	
 
+	/** rect_wireframe */
+	/** 矩形线框 */
+	rect_wireframe = gt_rect_create(inputNum);
+	gt_obj_set_pos(rect_wireframe, 227, 58);
+	gt_obj_set_size(rect_wireframe, 531, 388);
+	gt_rect_set_radius(rect_wireframe, 0);
+	gt_rect_set_bg_color(rect_wireframe, gt_color_hex(0xffffff));
+	gt_rect_set_color_border(rect_wireframe, gt_color_hex(0xc0c0c0));
+	gt_rect_set_fill(rect_wireframe, 0);
+	gt_rect_set_border(rect_wireframe, 1);
+
+	
+
 	/** label_screen_title */
 	/** 用于显示“screen屏幕”的标题 Label */
 	label_screen_title = gt_label_create(inputNum);
@@ -487,46 +563,6 @@ gt_obj_st * gt_init_inputNum(void)
 
 	
 
-	/** rect_wireframe */
-	/** 矩形线框 */
-	rect_wireframe = gt_rect_create(inputNum);
-	gt_obj_set_pos(rect_wireframe, 237, 64);
-	gt_obj_set_size(rect_wireframe, 509, 364);
-	gt_rect_set_radius(rect_wireframe, 0);
-	gt_rect_set_bg_color(rect_wireframe, gt_color_hex(0xffffff));
-	gt_rect_set_color_border(rect_wireframe, gt_color_hex(0xc0c0c0));
-	gt_rect_set_fill(rect_wireframe, 1);
-	gt_rect_set_border(rect_wireframe, 1);
-
-	
-
-	/** rect1_blueCopy */
-	/** 蓝色矩形背景 */
-	rect1_blueCopy = gt_rect_create(inputNum);
-	gt_obj_set_pos(rect1_blueCopy, 214, 75);
-	gt_obj_set_size(rect1_blueCopy, 153, 38);
-	gt_rect_set_radius(rect1_blueCopy, 0);
-	gt_rect_set_bg_color(rect1_blueCopy, gt_color_hex(0xe3f1ff));
-	gt_rect_set_color_border(rect1_blueCopy, gt_color_hex(0xffffff));
-	gt_rect_set_fill(rect1_blueCopy, 1);
-	gt_rect_set_border(rect1_blueCopy, 0);
-
-	
-
-	/** label_Styleandcolor_title */
-	/** 用于显示“风格和颜色”的标题 Label */
-	label_Styleandcolor_title = gt_label_create(inputNum);
-	gt_obj_set_pos(label_Styleandcolor_title, 219, 76);
-	gt_obj_set_size(label_Styleandcolor_title, 163, 34);
-	gt_label_set_font_color(label_Styleandcolor_title, gt_color_hex(0x000000));
-	gt_label_set_font_family(label_Styleandcolor_title, gray_black_20);
-	gt_label_set_font_cjk(label_Styleandcolor_title, 0);
-	gt_label_set_font_align(label_Styleandcolor_title, GT_ALIGN_CENTER_MID);
-	gt_label_set_text(label_Styleandcolor_title, "风格&颜色");
-	gt_label_set_space(label_Styleandcolor_title, 0, 0);
-
-	
-
 	/** label_input_titleCopy */
 	/** 用于显示“input输入框”的标题 Label */
 	label_input_titleCopy = gt_label_create(inputNum);
@@ -539,6 +575,270 @@ gt_obj_st * gt_init_inputNum(void)
 	gt_label_set_text(label_input_titleCopy, "input &keyboard  输入框与键盘");
 	gt_label_set_space(label_input_titleCopy, 0, 0);
 	gt_obj_add_event_cb(label_input_titleCopy, label_input_titleCopy_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	
+
+	/** img_Counterbackground */
+	/** 计数器控件背景 */
+	img_Counterbackground = gt_img_create(inputNum);
+	gt_obj_set_pos(img_Counterbackground, 238, 70);
+	gt_obj_set_size(img_Counterbackground, 509, 364);
+	gt_img_set_src(img_Counterbackground, "f:img_jsq_509x364.jpg");
+
+	
+
+	/** inputNum_Currenttemperature */
+	/** 当前温度数值 */
+	inputNum_Currenttemperature = gt_input_number_create(inputNum);
+	gt_obj_set_pos(inputNum_Currenttemperature, 381, 143);
+	gt_obj_set_size(inputNum_Currenttemperature, 55, 41);
+	gt_input_number_set_font_color(inputNum_Currenttemperature, gt_color_hex(0xffffff));
+	gt_input_number_set_font_family(inputNum_Currenttemperature, vec_black_32);
+	gt_input_number_set_font_cjk(inputNum_Currenttemperature, 0);
+	gt_input_number_set_font_align(inputNum_Currenttemperature, GT_ALIGN_RIGHT_MID);
+	gt_input_number_set_value(inputNum_Currenttemperature, 46);
+	gt_input_number_set_step(inputNum_Currenttemperature, 1);
+	gt_input_number_set_min(inputNum_Currenttemperature, 10);
+	gt_input_number_set_max(inputNum_Currenttemperature, 50);
+	gt_input_number_set_fill_zero_front(inputNum_Currenttemperature, false);
+	gt_input_number_set_display_integer_length(inputNum_Currenttemperature, 2);
+	gt_input_number_set_display_decimal_length(inputNum_Currenttemperature, 0);
+
+	
+
+	/** img_Temperaturereduction */
+	/** 温度减少 */
+	img_Temperaturereduction = gt_img_create(inputNum);
+	gt_obj_set_pos(img_Temperaturereduction, 377, 222);
+	gt_obj_set_size(img_Temperaturereduction, 30, 30);
+	gt_img_set_src(img_Temperaturereduction, "f:img_down_30x30.png");
+	gt_obj_add_event_cb(img_Temperaturereduction, img__0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	
+
+	/** img_Temperatureincrease */
+	/** 温度增加 */
+	img_Temperatureincrease = gt_img_create(inputNum);
+	gt_obj_set_pos(img_Temperatureincrease, 437, 223);
+	gt_obj_set_size(img_Temperatureincrease, 30, 30);
+	gt_img_set_src(img_Temperatureincrease, "f:img_up_30x30.png");
+	gt_obj_add_event_cb(img_Temperatureincrease, img_Temperatureincrease_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	
+
+	/** lab_Celsius */
+	/** 摄氏度 */
+	lab_Celsius = gt_label_create(inputNum);
+	gt_obj_set_pos(lab_Celsius, 432, 144);
+	gt_obj_set_size(lab_Celsius, 34, 32);
+	gt_label_set_font_color(lab_Celsius, gt_color_hex(0xffffff));
+	gt_label_set_font_family(lab_Celsius, gray_black_20);
+	gt_label_set_font_cjk(lab_Celsius, 0);
+	gt_label_set_font_align(lab_Celsius, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(lab_Celsius, "℃");
+	gt_label_set_space(lab_Celsius, 0, 0);
+
+	
+
+	/** lab_Humiditypercentage */
+	/** 湿度百分比 */
+	lab_Humiditypercentage = gt_label_create(inputNum);
+	gt_obj_set_pos(lab_Humiditypercentage, 457, 320);
+	gt_obj_set_size(lab_Humiditypercentage, 37, 23);
+	gt_label_set_font_color(lab_Humiditypercentage, gt_color_hex(0xffffff));
+	gt_label_set_font_family(lab_Humiditypercentage, gray_black_20);
+	gt_label_set_font_cjk(lab_Humiditypercentage, 0);
+	gt_label_set_font_align(lab_Humiditypercentage, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(lab_Humiditypercentage, "%%");
+	gt_label_set_space(lab_Humiditypercentage, 0, 0);
+
+	
+
+	/** img_Reducedhumidity */
+	/** 湿度减少 */
+	img_Reducedhumidity = gt_img_create(inputNum);
+	gt_obj_set_pos(img_Reducedhumidity, 377, 375);
+	gt_obj_set_size(img_Reducedhumidity, 30, 30);
+	gt_img_set_src(img_Reducedhumidity, "f:img_down_30x30.png");
+	gt_obj_add_event_cb(img_Reducedhumidity, img_Reducedhumidity_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	
+
+	/** img_Increasedhumidity */
+	/** 湿度增加 */
+	img_Increasedhumidity = gt_img_create(inputNum);
+	gt_obj_set_pos(img_Increasedhumidity, 437, 375);
+	gt_obj_set_size(img_Increasedhumidity, 30, 30);
+	gt_img_set_src(img_Increasedhumidity, "f:img_up_30x30.png");
+	gt_obj_add_event_cb(img_Increasedhumidity, img_Increasedhumidity_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	
+
+	/** lab_Watervalvepercentage */
+	/** 水阀百分比 */
+	lab_Watervalvepercentage = gt_label_create(inputNum);
+	gt_obj_set_pos(lab_Watervalvepercentage, 686, 144);
+	gt_obj_set_size(lab_Watervalvepercentage, 30, 23);
+	gt_label_set_font_color(lab_Watervalvepercentage, gt_color_hex(0xffffff));
+	gt_label_set_font_family(lab_Watervalvepercentage, gray_black_20);
+	gt_label_set_font_cjk(lab_Watervalvepercentage, 0);
+	gt_label_set_font_align(lab_Watervalvepercentage, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(lab_Watervalvepercentage, "%%");
+	gt_label_set_space(lab_Watervalvepercentage, 0, 0);
+
+	
+
+	/** inputNum_exhaustfan */
+	/** 排风机数值 */
+	inputNum_exhaustfan = gt_input_number_create(inputNum);
+	gt_obj_set_pos(inputNum_exhaustfan, 609, 233);
+	gt_obj_set_size(inputNum_exhaustfan, 79, 42);
+	gt_input_number_set_font_color(inputNum_exhaustfan, gt_color_hex(0xffffff));
+	gt_input_number_set_font_family(inputNum_exhaustfan, vec_black_32);
+	gt_input_number_set_font_cjk(inputNum_exhaustfan, 0);
+	gt_input_number_set_font_align(inputNum_exhaustfan, GT_ALIGN_RIGHT_MID);
+	gt_input_number_set_value(inputNum_exhaustfan, 50.5);
+	gt_input_number_set_step(inputNum_exhaustfan, 0.5);
+	gt_input_number_set_min(inputNum_exhaustfan, 0);
+	gt_input_number_set_max(inputNum_exhaustfan, 100);
+	gt_input_number_set_fill_zero_front(inputNum_exhaustfan, false);
+	gt_input_number_set_display_integer_length(inputNum_exhaustfan, 2);
+	gt_input_number_set_display_decimal_length(inputNum_exhaustfan, 1);
+
+	
+
+	/** lab_ExhaustfanHertz */
+	/** 排风机赫兹 */
+	lab_ExhaustfanHertz = gt_label_create(inputNum);
+	gt_obj_set_pos(lab_ExhaustfanHertz, 686, 245);
+	gt_obj_set_size(lab_ExhaustfanHertz, 38, 23);
+	gt_label_set_font_color(lab_ExhaustfanHertz, gt_color_hex(0xffffff));
+	gt_label_set_font_family(lab_ExhaustfanHertz, gray_black_20);
+	gt_label_set_font_cjk(lab_ExhaustfanHertz, 0);
+	gt_label_set_font_align(lab_ExhaustfanHertz, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(lab_ExhaustfanHertz, "Hz");
+	gt_label_set_space(lab_ExhaustfanHertz, 0, 0);
+
+	
+
+	/** inputNum_airblower */
+	/** 送风机数值 */
+	inputNum_airblower = gt_input_number_create(inputNum);
+	gt_obj_set_pos(inputNum_airblower, 635, 332);
+	gt_obj_set_size(inputNum_airblower, 53, 43);
+	gt_input_number_set_font_color(inputNum_airblower, gt_color_hex(0xffffff));
+	gt_input_number_set_font_family(inputNum_airblower, vec_black_32);
+	gt_input_number_set_font_cjk(inputNum_airblower, 0);
+	gt_input_number_set_font_align(inputNum_airblower, GT_ALIGN_RIGHT_MID);
+	gt_input_number_set_value(inputNum_airblower, 35);
+	gt_input_number_set_step(inputNum_airblower, 5);
+	gt_input_number_set_min(inputNum_airblower, 10);
+	gt_input_number_set_max(inputNum_airblower, 100);
+	gt_input_number_set_fill_zero_front(inputNum_airblower, false);
+	gt_input_number_set_display_integer_length(inputNum_airblower, 2);
+	gt_input_number_set_display_decimal_length(inputNum_airblower, 0);
+
+	
+
+	/** lab_SupplyfanHertz */
+	/** 送风机赫兹 */
+	lab_SupplyfanHertz = gt_label_create(inputNum);
+	gt_obj_set_pos(lab_SupplyfanHertz, 686, 346);
+	gt_obj_set_size(lab_SupplyfanHertz, 38, 24);
+	gt_label_set_font_color(lab_SupplyfanHertz, gt_color_hex(0xffffff));
+	gt_label_set_font_family(lab_SupplyfanHertz, gray_black_20);
+	gt_label_set_font_cjk(lab_SupplyfanHertz, 0);
+	gt_label_set_font_align(lab_SupplyfanHertz, GT_ALIGN_CENTER_MID);
+	gt_label_set_text(lab_SupplyfanHertz, "Hz");
+	gt_label_set_space(lab_SupplyfanHertz, 0, 0);
+
+	
+
+	/** img_Watervalvereduction */
+	/** 水阀减少 */
+	img_Watervalvereduction = gt_img_create(inputNum);
+	gt_obj_set_pos(img_Watervalvereduction, 607, 178);
+	gt_obj_set_size(img_Watervalvereduction, 30, 30);
+	gt_img_set_src(img_Watervalvereduction, "f:img_down_30x30.png");
+	gt_obj_add_event_cb(img_Watervalvereduction, img_Watervalvereduction_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	
+
+	/** img_Watervalveincrease */
+	/** 水阀增加 */
+	img_Watervalveincrease = gt_img_create(inputNum);
+	gt_obj_set_pos(img_Watervalveincrease, 667, 178);
+	gt_obj_set_size(img_Watervalveincrease, 30, 30);
+	gt_img_set_src(img_Watervalveincrease, "f:img_up_30x30.png");
+	gt_obj_add_event_cb(img_Watervalveincrease, img_Watervalveincrease_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	
+
+	/** inputNum_Valve */
+	/** 水阀数值 */
+	inputNum_Valve = gt_input_number_create(inputNum);
+	gt_obj_set_pos(inputNum_Valve, 609, 129);
+	gt_obj_set_size(inputNum_Valve, 79, 42);
+	gt_input_number_set_font_color(inputNum_Valve, gt_color_hex(0xffffff));
+	gt_input_number_set_font_family(inputNum_Valve, vec_black_32);
+	gt_input_number_set_font_cjk(inputNum_Valve, 0);
+	gt_input_number_set_font_align(inputNum_Valve, GT_ALIGN_RIGHT_MID);
+	gt_input_number_set_value(inputNum_Valve, 9.2);
+	gt_input_number_set_step(inputNum_Valve, 0.1);
+	gt_input_number_set_min(inputNum_Valve, 0.1);
+	gt_input_number_set_max(inputNum_Valve, 10);
+	gt_input_number_set_fill_zero_front(inputNum_Valve, false);
+	gt_input_number_set_display_integer_length(inputNum_Valve, 2);
+	gt_input_number_set_display_decimal_length(inputNum_Valve, 1);
+
+	
+
+	/** inputNum_Currenthumidity */
+	/** 当前湿度数值 */
+	inputNum_Currenthumidity = gt_input_number_create(inputNum);
+	gt_obj_set_pos(inputNum_Currenthumidity, 347, 304);
+	gt_obj_set_size(inputNum_Currenthumidity, 115, 47);
+	gt_input_number_set_font_color(inputNum_Currenthumidity, gt_color_hex(0xffffff));
+	gt_input_number_set_font_family(inputNum_Currenthumidity, vec_black_32);
+	gt_input_number_set_font_cjk(inputNum_Currenthumidity, 0);
+	gt_input_number_set_font_align(inputNum_Currenthumidity, GT_ALIGN_RIGHT_MID);
+	gt_input_number_set_value(inputNum_Currenthumidity, 62.32);
+	gt_input_number_set_step(inputNum_Currenthumidity, 0.01);
+	gt_input_number_set_min(inputNum_Currenthumidity, 10);
+	gt_input_number_set_max(inputNum_Currenthumidity, 100);
+	gt_input_number_set_fill_zero_front(inputNum_Currenthumidity, false);
+	gt_input_number_set_display_integer_length(inputNum_Currenthumidity, 2);
+	gt_input_number_set_display_decimal_length(inputNum_Currenthumidity, 2);
+
+	
+
+	/** img_Reduceexhaustfan */
+	/** 排风机减少 */
+	img_Reduceexhaustfan = gt_img_create(inputNum);
+	gt_obj_set_pos(img_Reduceexhaustfan, 607, 279);
+	gt_obj_set_size(img_Reduceexhaustfan, 30, 30);
+	gt_img_set_src(img_Reduceexhaustfan, "f:img_down_30x30.png");
+	gt_obj_add_event_cb(img_Reduceexhaustfan, img_Reduceexhaustfan_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	
+
+	/** img_Increaseinexhaustfan */
+	/** 排风机增加 */
+	img_Increaseinexhaustfan = gt_img_create(inputNum);
+	gt_obj_set_pos(img_Increaseinexhaustfan, 667, 280);
+	gt_obj_set_size(img_Increaseinexhaustfan, 30, 30);
+	gt_img_set_src(img_Increaseinexhaustfan, "f:img_up_30x30.png");
+	gt_obj_add_event_cb(img_Increaseinexhaustfan, img_Increaseinexhaustfan_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	
+
+	/** img_Reducedsupplyfan */
+	/** 送风机减少 */
+	img_Reducedsupplyfan = gt_img_create(inputNum);
+	gt_obj_set_pos(img_Reducedsupplyfan, 607, 380);
+	gt_obj_set_size(img_Reducedsupplyfan, 30, 30);
+	gt_img_set_src(img_Reducedsupplyfan, "f:img_down_30x30.png");
+	gt_obj_add_event_cb(img_Reducedsupplyfan, img_Reducedsupplyfan_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
+	
+
+	/** img_Increasethesupplyfan */
+	/** 送风机增加 */
+	img_Increasethesupplyfan = gt_img_create(inputNum);
+	gt_obj_set_pos(img_Increasethesupplyfan, 667, 381);
+	gt_obj_set_size(img_Increasethesupplyfan, 30, 30);
+	gt_img_set_src(img_Increasethesupplyfan, "f:img_up_30x30.png");
+	gt_obj_add_event_cb(img_Increasethesupplyfan, img_Increasethesupplyfan_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 
 
 	return inputNum;

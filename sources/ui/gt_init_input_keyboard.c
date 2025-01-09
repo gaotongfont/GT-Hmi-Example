@@ -93,6 +93,10 @@ static GT_ATTRIBUTE_RAM_TEXT void label_player_title_0_cb(gt_event_st * e) {
 	gt_disp_stack_load_scr_anim(GT_ID_PLAYER, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
 }
 
+static GT_ATTRIBUTE_RAM_TEXT void label_inputNum_title_0_cb(gt_event_st * e) {
+	gt_disp_stack_load_scr_anim(GT_ID_INPUTNUM, GT_SCR_ANIM_TYPE_NONE, 500, 0, true);
+}
+
 static GT_ATTRIBUTE_RAM_TEXT void input_0_cb(gt_event_st * e) {
 	bool status = gt_obj_get_visible(keyboard_default);
 	gt_obj_set_visible(keyboard_default, !status);
@@ -265,7 +269,7 @@ gt_obj_st * gt_init_input_keyboard(void)
 	gt_label_set_font_align(label_inputNum_title, GT_ALIGN_LEFT_MID);
 	gt_label_set_text(label_inputNum_title, "inputNum 计数器");
 	gt_label_set_space(label_inputNum_title, 0, 0);
-
+	gt_obj_add_event_cb(label_inputNum_title, label_inputNum_title_0_cb, GT_EVENT_TYPE_INPUT_RELEASED, NULL);
 	
 
 	/** label_clock_title */
